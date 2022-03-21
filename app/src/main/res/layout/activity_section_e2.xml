@@ -1,0 +1,1323 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="preg"
+            type="edu.aku.hassannaqvi.wbcct_baseline.models.Pregnancy" />
+
+    </data>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/app_bg_gray"
+        android:orientation="vertical">
+
+
+        <!-- CUSTOM TOOLBAR -->
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            style="@null"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="@style/CustomToolbarTheme"
+            app:popupTheme="@style/CustomPopupTheme"
+            app:subtitle="@string/e2"
+            app:subtitleTextAppearance="@style/Toolbar.SubtitleText"
+            app:title="@string/mode"
+            app:titleTextAppearance="@style/Toolbar.TitleText" />
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <LinearLayout
+                android:id="@+id/GrpName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <!-- e2instr  Title   -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVe2instr"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/info"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/e2instr" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+                <!-- e201 CheckBox -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVe201"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_e201" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/e201" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            style="@style/sub_labels"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/e201ins" />
+
+                        <LinearLayout
+                            android:id="@+id/e201check"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:tag="0">
+
+                            <CheckBox
+                                android:id="@+id/e20101"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20101.equals(`1`)}"
+                                android:enabled="@{!preg.e20197.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20101(preg.e20101.equals(`1`)?``:`1`)}"
+                                android:text="@string/e20101" />
+
+                            <CheckBox
+                                android:id="@+id/e20102"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20102.equals(`2`)}"
+                                android:enabled="@{!preg.e20197.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20102(preg.e20102.equals(`2`)?``:`2`)}"
+                                android:text="@string/e20102" />
+
+                            <CheckBox
+                                android:id="@+id/e20103"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20103.equals(`3`)}"
+                                android:enabled="@{!preg.e20197.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20103(preg.e20103.equals(`3`)?``:`3`)}"
+                                android:text="@string/e20103" />
+
+                            <CheckBox
+                                android:id="@+id/e20104"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20104.equals(`4`)}"
+                                android:enabled="@{!preg.e20197.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20104(preg.e20104.equals(`4`)?``:`4`)}"
+                                android:text="@string/e20104" />
+
+                            <CheckBox
+                                android:id="@+id/e20105"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20105.equals(`5`)}"
+                                android:enabled="@{!preg.e20197.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20105(preg.e20105.equals(`5`)?``:`5`)}"
+                                android:text="@string/e20105" />
+
+                            <CheckBox
+                                android:id="@+id/e20106"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20106.equals(`6`)}"
+                                android:enabled="@{!preg.e20197.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20106(preg.e20106.equals(`6`)?``:`6`)}"
+                                android:text="@string/e20106" />
+
+                            <CheckBox
+                                android:id="@+id/e20107"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20107.equals(`7`)}"
+                                android:enabled="@{!preg.e20197.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20107(preg.e20107.equals(`7`)?``:`7`)}"
+                                android:text="@string/e20107" />
+
+                            <CheckBox
+                                android:id="@+id/e20197"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20197.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20197(preg.e20197.equals(`97`)?``:`97`)}"
+                                android:text="@string/e20197" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+                <!-- e202 CheckBox -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVe202"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_e202" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/e202" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            style="@style/sub_labels"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/e202t" />
+
+                        <LinearLayout
+                            android:id="@+id/e202check"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:tag="0">
+
+                            <CheckBox
+                                android:id="@+id/e20201"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20201.equals(`1`)}"
+                                android:enabled="@{!preg.e20297.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20201(preg.e20201.equals(`1`)?``:`1`)}"
+                                android:text="@string/e20201" />
+
+                            <CheckBox
+                                android:id="@+id/e20202"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20202.equals(`2`)}"
+                                android:enabled="@{!preg.e20297.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20202(preg.e20202.equals(`2`)?``:`2`)}"
+                                android:text="@string/e20202" />
+
+                            <CheckBox
+                                android:id="@+id/e20203"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20203.equals(`3`)}"
+                                android:enabled="@{!preg.e20297.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20203(preg.e20203.equals(`3`)?``:`3`)}"
+                                android:text="@string/e20203" />
+
+                            <CheckBox
+                                android:id="@+id/e20204"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20204.equals(`4`)}"
+                                android:enabled="@{!preg.e20297.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20204(preg.e20204.equals(`4`)?``:`4`)}"
+                                android:text="@string/e20204" />
+
+                            <CheckBox
+                                android:id="@+id/e20205"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20205.equals(`5`)}"
+                                android:enabled="@{!preg.e20297.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20205(preg.e20205.equals(`5`)?``:`5`)}"
+                                android:text="@string/e20205" />
+
+                            <CheckBox
+                                android:id="@+id/e20206"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20206.equals(`6`)}"
+                                android:enabled="@{!preg.e20297.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20206(preg.e20206.equals(`6`)?``:`6`)}"
+                                android:text="@string/e20206" />
+
+                            <CheckBox
+                                android:id="@+id/e20207"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20207.equals(`7`)}"
+                                android:enabled="@{!preg.e20297.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20207(preg.e20207.equals(`7`)?``:`7`)}"
+                                android:text="@string/e20207" />
+
+                            <CheckBox
+                                android:id="@+id/e20297"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20297.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20297(preg.e20297.equals(`97`)?``:`97`)}"
+                                android:text="@string/e20297" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+                <!-- e203 CheckBox -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVe203"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_e203" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/e203" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            style="@style/sub_labels"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/e203t" />
+
+                        <LinearLayout
+                            android:id="@+id/e203check"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:tag="0">
+
+                            <CheckBox
+                                android:id="@+id/e20301"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20301.equals(`1`)}"
+                                android:enabled="@{!preg.e20397.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20301(preg.e20301.equals(`1`)?``:`1`)}"
+                                android:text="@string/e20301" />
+
+                            <CheckBox
+                                android:id="@+id/e20302"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20302.equals(`2`)}"
+                                android:enabled="@{!preg.e20397.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20302(preg.e20302.equals(`2`)?``:`2`)}"
+                                android:text="@string/e20302" />
+
+                            <CheckBox
+                                android:id="@+id/e20303"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20303.equals(`3`)}"
+                                android:enabled="@{!preg.e20397.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20303(preg.e20303.equals(`3`)?``:`3`)}"
+                                android:text="@string/e20303" />
+
+                            <CheckBox
+                                android:id="@+id/e20304"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20304.equals(`4`)}"
+                                android:enabled="@{!preg.e20397.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20304(preg.e20304.equals(`4`)?``:`4`)}"
+                                android:text="@string/e20304" />
+
+                            <CheckBox
+                                android:id="@+id/e20305"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20305.equals(`5`)}"
+                                android:enabled="@{!preg.e20397.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20305(preg.e20305.equals(`5`)?``:`5`)}"
+                                android:text="@string/e20305" />
+
+                            <CheckBox
+                                android:id="@+id/e20306"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20306.equals(`6`)}"
+                                android:enabled="@{!preg.e20397.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20306(preg.e20306.equals(`6`)?``:`6`)}"
+                                android:text="@string/e20306" />
+
+                            <CheckBox
+                                android:id="@+id/e20307"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20307.equals(`7`)}"
+                                android:enabled="@{!preg.e20397.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20307(preg.e20307.equals(`7`)?``:`7`)}"
+                                android:text="@string/e20307" />
+
+                            <CheckBox
+                                android:id="@+id/e20397"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20397.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20397(preg.e20397.equals(`97`)?``:`97`)}"
+                                android:text="@string/e20397" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+                <!-- e204 CheckBox -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVe204"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_e204" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/e204" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            style="@style/sub_labels"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/e204t" />
+
+                        <LinearLayout
+                            android:id="@+id/e204check"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:tag="0">
+
+                            <CheckBox
+                                android:id="@+id/e20401"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20401.equals(`1`)}"
+                                android:enabled="@{!preg.e20497.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20401(preg.e20401.equals(`1`)?``:`1`)}"
+                                android:text="@string/e20401" />
+
+                            <CheckBox
+                                android:id="@+id/e20402"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20402.equals(`2`)}"
+                                android:enabled="@{!preg.e20497.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20402(preg.e20402.equals(`2`)?``:`2`)}"
+                                android:text="@string/e20402" />
+
+                            <CheckBox
+                                android:id="@+id/e20403"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20403.equals(`3`)}"
+                                android:enabled="@{!preg.e20497.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20403(preg.e20403.equals(`3`)?``:`3`)}"
+                                android:text="@string/e20403" />
+
+                            <CheckBox
+                                android:id="@+id/e20404"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20404.equals(`4`)}"
+                                android:enabled="@{!preg.e20497.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20404(preg.e20404.equals(`4`)?``:`4`)}"
+                                android:text="@string/e20404" />
+
+                            <CheckBox
+                                android:id="@+id/e20405"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20405.equals(`5`)}"
+                                android:enabled="@{!preg.e20497.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20405(preg.e20405.equals(`5`)?``:`5`)}"
+                                android:text="@string/e20405" />
+
+                            <CheckBox
+                                android:id="@+id/e20406"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20406.equals(`6`)}"
+                                android:enabled="@{!preg.e20497.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20406(preg.e20406.equals(`6`)?``:`6`)}"
+                                android:text="@string/e20406" />
+
+                            <CheckBox
+                                android:id="@+id/e20407"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20407.equals(`7`)}"
+                                android:enabled="@{!preg.e20497.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20407(preg.e20407.equals(`7`)?``:`7`)}"
+                                android:text="@string/e20407" />
+
+                            <CheckBox
+                                android:id="@+id/e20497"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20497.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20497(preg.e20497.equals(`97`)?``:`97`)}"
+                                android:text="@string/e20497" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+                <!-- e205 CheckBox -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVe205"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_e205" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/e205" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            style="@style/sub_labels"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/e205t" />
+
+                        <LinearLayout
+                            android:id="@+id/e205check"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:tag="0">
+
+                            <CheckBox
+                                android:id="@+id/e20501"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20501.equals(`1`)}"
+                                android:enabled="@{!preg.e20597.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20501(preg.e20501.equals(`1`)?``:`1`)}"
+                                android:text="@string/e20501" />
+
+                            <CheckBox
+                                android:id="@+id/e20502"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20502.equals(`2`)}"
+                                android:enabled="@{!preg.e20597.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20502(preg.e20502.equals(`2`)?``:`2`)}"
+                                android:text="@string/e20502" />
+
+                            <CheckBox
+                                android:id="@+id/e20503"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20503.equals(`3`)}"
+                                android:enabled="@{!preg.e20597.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20503(preg.e20503.equals(`3`)?``:`3`)}"
+                                android:text="@string/e20503" />
+
+                            <CheckBox
+                                android:id="@+id/e20504"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20504.equals(`4`)}"
+                                android:enabled="@{!preg.e20597.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20504(preg.e20504.equals(`4`)?``:`4`)}"
+                                android:text="@string/e20504" />
+
+                            <CheckBox
+                                android:id="@+id/e20505"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20505.equals(`5`)}"
+                                android:enabled="@{!preg.e20597.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20505(preg.e20505.equals(`5`)?``:`5`)}"
+                                android:text="@string/e20505" />
+
+                            <CheckBox
+                                android:id="@+id/e20506"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20506.equals(`6`)}"
+                                android:enabled="@{!preg.e20597.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20506(preg.e20506.equals(`6`)?``:`6`)}"
+                                android:text="@string/e20506" />
+
+                            <CheckBox
+                                android:id="@+id/e20507"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20507.equals(`7`)}"
+                                android:enabled="@{!preg.e20597.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20507(preg.e20507.equals(`7`)?``:`7`)}"
+                                android:text="@string/e20507" />
+
+                            <CheckBox
+                                android:id="@+id/e20597"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20597.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20597(preg.e20597.equals(`97`)?``:`97`)}"
+                                android:text="@string/e20597" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+                <!-- e206 CheckBox -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVe206"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_e206" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/e206" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            style="@style/sub_labels"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/e206t" />
+
+                        <LinearLayout
+                            android:id="@+id/e206check"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:tag="0">
+
+                            <CheckBox
+                                android:id="@+id/e20601"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20601.equals(`1`)}"
+                                android:enabled="@{!preg.e20697.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20601(preg.e20601.equals(`1`)?``:`1`)}"
+                                android:text="@string/e20601" />
+
+                            <CheckBox
+                                android:id="@+id/e20602"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20602.equals(`2`)}"
+                                android:enabled="@{!preg.e20697.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20602(preg.e20602.equals(`2`)?``:`2`)}"
+                                android:text="@string/e20602" />
+
+                            <CheckBox
+                                android:id="@+id/e20603"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20603.equals(`3`)}"
+                                android:enabled="@{!preg.e20697.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20603(preg.e20603.equals(`3`)?``:`3`)}"
+                                android:text="@string/e20603" />
+
+                            <CheckBox
+                                android:id="@+id/e20604"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20604.equals(`4`)}"
+                                android:enabled="@{!preg.e20697.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20604(preg.e20604.equals(`4`)?``:`4`)}"
+                                android:text="@string/e20604" />
+
+                            <CheckBox
+                                android:id="@+id/e20605"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20605.equals(`5`)}"
+                                android:enabled="@{!preg.e20697.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20605(preg.e20605.equals(`5`)?``:`5`)}"
+                                android:text="@string/e20605" />
+
+                            <CheckBox
+                                android:id="@+id/e20606"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20606.equals(`6`)}"
+                                android:enabled="@{!preg.e20697.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20606(preg.e20606.equals(`6`)?``:`6`)}"
+                                android:text="@string/e20606" />
+
+                            <CheckBox
+                                android:id="@+id/e20607"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20607.equals(`7`)}"
+                                android:enabled="@{!preg.e20697.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20607(preg.e20607.equals(`7`)?``:`7`)}"
+                                android:text="@string/e20607" />
+
+                            <CheckBox
+                                android:id="@+id/e20697"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20697.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20697(preg.e20697.equals(`97`)?``:`97`)}"
+                                android:text="@string/e20697" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+                <!-- e207 CheckBox -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVe207"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_e207" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/e207" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            style="@style/sub_labels"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/e207t" />
+
+                        <LinearLayout
+                            android:id="@+id/e207check"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:tag="0">
+
+                            <CheckBox
+                                android:id="@+id/e20701"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20701.equals(`1`)}"
+                                android:enabled="@{!preg.e20797.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20701(preg.e20701.equals(`1`)?``:`1`)}"
+                                android:text="@string/e20701" />
+
+                            <CheckBox
+                                android:id="@+id/e20702"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20702.equals(`2`)}"
+                                android:enabled="@{!preg.e20797.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20702(preg.e20702.equals(`2`)?``:`2`)}"
+                                android:text="@string/e20702" />
+
+                            <CheckBox
+                                android:id="@+id/e20703"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20703.equals(`3`)}"
+                                android:enabled="@{!preg.e20797.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20703(preg.e20703.equals(`3`)?``:`3`)}"
+                                android:text="@string/e20703" />
+
+                            <CheckBox
+                                android:id="@+id/e20704"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20704.equals(`4`)}"
+                                android:enabled="@{!preg.e20797.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20704(preg.e20704.equals(`4`)?``:`4`)}"
+                                android:text="@string/e20704" />
+
+                            <CheckBox
+                                android:id="@+id/e20705"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20705.equals(`5`)}"
+                                android:enabled="@{!preg.e20797.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20705(preg.e20705.equals(`5`)?``:`5`)}"
+                                android:text="@string/e20705" />
+
+                            <CheckBox
+                                android:id="@+id/e20706"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20706.equals(`6`)}"
+                                android:enabled="@{!preg.e20797.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20706(preg.e20706.equals(`6`)?``:`6`)}"
+                                android:text="@string/e20706" />
+
+                            <CheckBox
+                                android:id="@+id/e20707"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20707.equals(`7`)}"
+                                android:enabled="@{!preg.e20797.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20707(preg.e20707.equals(`7`)?``:`7`)}"
+                                android:text="@string/e20707" />
+
+                            <CheckBox
+                                android:id="@+id/e20797"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20797.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20797(preg.e20797.equals(`97`)?``:`97`)}"
+                                android:text="@string/e20797" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+                <!-- e208 CheckBox -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVe208"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_e208" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/e208" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            style="@style/sub_labels"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/e208t" />
+
+                        <LinearLayout
+                            android:id="@+id/e208check"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:tag="0">
+
+                            <CheckBox
+                                android:id="@+id/e20801"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20801.equals(`1`)}"
+                                android:enabled="@{!preg.e20897.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20801(preg.e20801.equals(`1`)?``:`1`)}"
+                                android:text="@string/e20801" />
+
+                            <CheckBox
+                                android:id="@+id/e20802"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20802.equals(`2`)}"
+                                android:enabled="@{!preg.e20897.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20802(preg.e20802.equals(`2`)?``:`2`)}"
+                                android:text="@string/e20802" />
+
+                            <CheckBox
+                                android:id="@+id/e20803"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20803.equals(`3`)}"
+                                android:enabled="@{!preg.e20897.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20803(preg.e20803.equals(`3`)?``:`3`)}"
+                                android:text="@string/e20803" />
+
+                            <CheckBox
+                                android:id="@+id/e20804"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20804.equals(`4`)}"
+                                android:enabled="@{!preg.e20897.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20804(preg.e20804.equals(`4`)?``:`4`)}"
+                                android:text="@string/e20804" />
+
+                            <CheckBox
+                                android:id="@+id/e20805"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20805.equals(`5`)}"
+                                android:enabled="@{!preg.e20897.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20805(preg.e20805.equals(`5`)?``:`5`)}"
+                                android:text="@string/e20805" />
+
+                            <CheckBox
+                                android:id="@+id/e20806"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20806.equals(`6`)}"
+                                android:enabled="@{!preg.e20897.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20806(preg.e20806.equals(`6`)?``:`6`)}"
+                                android:text="@string/e20806" />
+
+                            <CheckBox
+                                android:id="@+id/e20807"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20807.equals(`7`)}"
+                                android:enabled="@{!preg.e20897.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20807(preg.e20807.equals(`7`)?``:`7`)}"
+                                android:text="@string/e20807" />
+
+                            <CheckBox
+                                android:id="@+id/e20897"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20897.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20897(preg.e20897.equals(`97`)?``:`97`)}"
+                                android:text="@string/e20897" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+                <!-- e209 CheckBox -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVe209"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_e209" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/e209" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            style="@style/sub_labels"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/e209t" />
+
+                        <LinearLayout
+                            android:id="@+id/e209check"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:tag="0">
+
+                            <CheckBox
+                                android:id="@+id/e20901"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20901.equals(`1`)}"
+                                android:enabled="@{!preg.e20997.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20901(preg.e20901.equals(`1`)?``:`1`)}"
+                                android:text="@string/e20901" />
+
+                            <CheckBox
+                                android:id="@+id/e20902"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20902.equals(`2`)}"
+                                android:enabled="@{!preg.e20997.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20902(preg.e20902.equals(`2`)?``:`2`)}"
+                                android:text="@string/e20902" />
+
+                            <CheckBox
+                                android:id="@+id/e20903"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20903.equals(`3`)}"
+                                android:enabled="@{!preg.e20997.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20903(preg.e20903.equals(`3`)?``:`3`)}"
+                                android:text="@string/e20903" />
+
+                            <CheckBox
+                                android:id="@+id/e20904"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20904.equals(`4`)}"
+                                android:enabled="@{!preg.e20997.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20904(preg.e20904.equals(`4`)?``:`4`)}"
+                                android:text="@string/e20904" />
+
+                            <CheckBox
+                                android:id="@+id/e20905"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20905.equals(`5`)}"
+                                android:enabled="@{!preg.e20997.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20905(preg.e20905.equals(`5`)?``:`5`)}"
+                                android:text="@string/e20905" />
+
+                            <CheckBox
+                                android:id="@+id/e20906"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20906.equals(`6`)}"
+                                android:enabled="@{!preg.e20997.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20906(preg.e20906.equals(`6`)?``:`6`)}"
+                                android:text="@string/e20906" />
+
+                            <CheckBox
+                                android:id="@+id/e20907"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20907.equals(`7`)}"
+                                android:enabled="@{!preg.e20997.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20907(preg.e20907.equals(`7`)?``:`7`)}"
+                                android:text="@string/e20907" />
+
+                            <CheckBox
+                                android:id="@+id/e20997"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e20997.equals(`97`)}"
+                                android:onClick="@{()->preg.setE20997(preg.e20997.equals(`97`)?``:`97`)}"
+                                android:text="@string/e20997" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+                <!-- e210 CheckBox -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVe210"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_e210" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/e210" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            style="@style/sub_labels"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/e210t" />
+
+                        <LinearLayout
+                            android:id="@+id/e210check"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:tag="0">
+
+                            <CheckBox
+                                android:id="@+id/e21001"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e21001.equals(`1`)}"
+                                android:enabled="@{!preg.e21097.equals(`97`)}"
+                                android:onClick="@{()->preg.setE21001(preg.e21001.equals(`1`)?``:`1`)}"
+                                android:text="@string/e21001" />
+
+                            <CheckBox
+                                android:id="@+id/e21002"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e21002.equals(`2`)}"
+                                android:enabled="@{!preg.e21097.equals(`97`)}"
+                                android:onClick="@{()->preg.setE21002(preg.e21002.equals(`2`)?``:`2`)}"
+                                android:text="@string/e21002" />
+
+                            <CheckBox
+                                android:id="@+id/e21003"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e21003.equals(`3`)}"
+                                android:enabled="@{!preg.e21097.equals(`97`)}"
+                                android:onClick="@{()->preg.setE21003(preg.e21003.equals(`3`)?``:`3`)}"
+                                android:text="@string/e21003" />
+
+                            <CheckBox
+                                android:id="@+id/e21004"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e21004.equals(`4`)}"
+                                android:enabled="@{!preg.e21097.equals(`97`)}"
+                                android:onClick="@{()->preg.setE21004(preg.e21004.equals(`4`)?``:`4`)}"
+                                android:text="@string/e21004" />
+
+                            <CheckBox
+                                android:id="@+id/e21005"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e21005.equals(`5`)}"
+                                android:enabled="@{!preg.e21097.equals(`97`)}"
+                                android:onClick="@{()->preg.setE21005(preg.e21005.equals(`5`)?``:`5`)}"
+                                android:text="@string/e21005" />
+
+                            <CheckBox
+                                android:id="@+id/e21006"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e21006.equals(`6`)}"
+                                android:enabled="@{!preg.e21097.equals(`97`)}"
+                                android:onClick="@{()->preg.setE21006(preg.e21006.equals(`6`)?``:`6`)}"
+                                android:text="@string/e21006" />
+
+                            <CheckBox
+                                android:id="@+id/e21007"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e21007.equals(`7`)}"
+                                android:enabled="@{!preg.e21097.equals(`97`)}"
+                                android:onClick="@{()->preg.setE21007(preg.e21007.equals(`7`)?``:`7`)}"
+                                android:text="@string/e21007" />
+
+                            <CheckBox
+                                android:id="@+id/e21097"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{preg.e21097.equals(`97`)}"
+                                android:onClick="@{()->preg.setE21097(preg.e21097.equals(`97`)?``:`97`)}"
+                                android:text="@string/e21097" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+                <!--EndButton LinearLayout-->
+                <LinearLayout
+                    android:id="@+id/llbtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="24dp"
+                    android:orientation="horizontal"
+                    android:padding="24dp">
+
+                    <Button
+                        android:id="@+id/btn_End"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:gravity="center"
+                        android:onClick="btnEnd"
+                        android:text="Cancel"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/btn_Continue"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/capsule"
+                        android:backgroundTint="@color/colorAccent"
+                        android:backgroundTintMode="src_atop"
+                        android:gravity="center"
+                        android:onClick="btnContinue"
+                        android:text="Save"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+                <!--EndButton LinearLayout-->
+
+
+            </LinearLayout>
+
+
+        </ScrollView>
+
+
+    </LinearLayout>
+
+
+</layout>
