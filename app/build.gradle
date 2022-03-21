@@ -51,7 +51,7 @@ android {
         versionProps.store(versionPropsFile.newWriter(), null)
 
         defaultConfig {
-            applicationId "edu.aku.hassannaqvi.enp_baseline"
+            applicationId "edu.aku.hassannaqvi.wbcct_baseline"
             versionCode versionBuild
             versionName "${versionNumber}.${versionPatch}${versionType}"
             minSdk 22
