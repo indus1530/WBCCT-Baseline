@@ -182,8 +182,8 @@ public class DataDownWorkerALL extends Worker {
 
             urlConnection = (HttpsURLConnection) url.openConnection();
             urlConnection.setSSLSocketFactory(buildSslSocketFactory(mContext));
-            urlConnection.setReadTimeout(5000 /* milliseconds */);
-            urlConnection.setConnectTimeout(5000 /* milliseconds */);
+            urlConnection.setReadTimeout(300000 /* milliseconds */);
+            urlConnection.setConnectTimeout(300000 /* milliseconds */);
             urlConnection.setRequestMethod("POST");
             urlConnection.setDoOutput(true);
             urlConnection.setDoInput(true);
