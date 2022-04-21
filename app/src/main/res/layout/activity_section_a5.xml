@@ -711,12 +711,11 @@
                                 style="@style/textView"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:layout_weight="2"
                                 android:text="@string/astaa" />
 
                             <RadioButton
                                 android:id="@+id/astaaa"
-                                android:layout_width="wrap_content"
+                                android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{form.astaa.equals(`1`)}"
@@ -725,7 +724,7 @@
 
                             <RadioButton
                                 android:id="@+id/astaab"
-                                android:layout_width="wrap_content"
+                                android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{form.astaa.equals(`2`)}"
@@ -742,9 +741,8 @@
 
                             <TextView
                                 style="@style/textView"
-                                android:layout_width="0dp"
+                                android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:gravity="top|center"
                                 android:text="@string/astab" />
 
@@ -752,7 +750,7 @@
                                 android:id="@+id/astab"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1">
+                                android:layout_weight="3">
 
                                 <RadioButton
                                     android:id="@+id/astaba"
