@@ -329,7 +329,7 @@
                         <TextView
                             style="@style/info"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:text="@string/sa1inst2" />
 
                         <LinearLayout
@@ -422,7 +422,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{form.a112.equals(`2`)}"
-                                android:onClick="@{()->form.setA112(`2`) + a113.clearCheck() + a114.clearCheck()}"
+                                android:onClick="@{()->form.setA112(`2`)}"
                                 android:text="@string/a11202" />
 
                         </RadioGroup>
@@ -435,8 +435,7 @@
                 <!-- a113  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVa113"
-                    style="@style/cardView"
-                    android:visibility="@{form.a112.equals(`1`) ? View.VISIBLE : View.GONE}">
+                    style="@style/cardView">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -497,7 +496,7 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVa114"
                     style="@style/cardView"
-                    android:visibility="@{form.a112.equals(`1`) &amp;&amp; form.a113.equals(`1`) ? View.VISIBLE : View.GONE}">
+                    android:visibility="@{form.a113.equals(`1`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
