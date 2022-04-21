@@ -211,7 +211,7 @@
                                 android:text="@={form.a108y}"
                                 android:textDirection="ltr"
                                 app:maxValue="2022"
-                                app:minValue="2021"
+                                app:minValue="2022"
                                 app:type="range" />
 
                         </LinearLayout>

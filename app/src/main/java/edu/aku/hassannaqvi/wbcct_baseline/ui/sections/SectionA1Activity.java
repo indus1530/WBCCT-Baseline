@@ -63,8 +63,8 @@ public class SectionA1Activity extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 if (bi.a108y.getText().toString().isEmpty()) return;
-                bi.a108m.setMinvalue(Integer.parseInt(bi.a108y.getText().toString()) == 2021 ? 12f : 1f);
-                bi.a108d.setMinvalue(Integer.parseInt(bi.a108y.getText().toString()) == 2021 ? 10f : 1f);
+                bi.a108m.setMinvalue(Integer.parseInt(bi.a108y.getText().toString()) == 2022 ? 2f : 1f);
+                bi.a108d.setMinvalue(Integer.parseInt(bi.a108y.getText().toString()) == 2022 ? 8f : 1f);
                 bi.a108m.setMaxvalue(Integer.parseInt(bi.a108y.getText().toString()) == Calendar.getInstance().get(Calendar.YEAR) ?
                         Calendar.getInstance().get(Calendar.MONTH) + 1 : 12f);
                 bi.a108d.setMaxvalue(Integer.parseInt(bi.a108y.getText().toString()) == Calendar.getInstance().get(Calendar.YEAR)
@@ -86,6 +86,7 @@ public class SectionA1Activity extends AppCompatActivity {
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 if (bi.a108y.getText().toString().isEmpty() || bi.a108m.getText().toString().isEmpty())
                     return;
+                bi.a108d.setMinvalue(Integer.parseInt(bi.a108y.getText().toString()) == 2022 && Integer.parseInt(bi.a108m.getText().toString()) == 2 ? 8 : 1f);
                 bi.a108d.setMaxvalue(Integer.parseInt(bi.a108y.getText().toString()) == Calendar.getInstance().get(Calendar.YEAR)
                         && Integer.parseInt(bi.a108m.getText().toString()) == Calendar.getInstance().get(Calendar.MONTH) + 1 ?
                         Calendar.getInstance().get(Calendar.DAY_OF_MONTH) : 31f);
