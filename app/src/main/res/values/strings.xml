@@ -601,7 +601,8 @@
     <string name="a40504"> Ash / Mud / Sand </string>
     <string name="a40505"> None </string>
     <string name="a406">In what situations do you wash your hands with soap? [Multiple responses]</string>
-    <string name="a406t1">This is an open-ended question. Do not read the answer choices. After the respondent stops listing times, ask “Are there any other situations where you wash your hands with soap?” Keep asking this question until the respondent thinks there are no other times. </string>
+    <string name="a406t1">A406 is a question to assess the participant’s knowledge and to be asked even if they don’t have or use soap </string>
+    <string name="a406t2">This is an open-ended question. Do not read the answer choices. After the respondent stops listing times, ask “Are there any other situations where you wash your hands with soap?” Keep asking this question until the respondent thinks there are no other times. </string>
     <string name="a40601">Before preparing food</string>
     <string name="a40602">Before cooking food</string>
     <string name="a40603">Before eating</string>
