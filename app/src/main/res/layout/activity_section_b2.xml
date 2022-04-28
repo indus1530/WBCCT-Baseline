@@ -965,7 +965,8 @@
                             android:checked="@{rcpt.b209.equals(`998`)}"
                             android:onClick="@{()->rcpt.setB209(rcpt.b209.equals(`998`)?``:`998`) + b209a.clearCheck() + b209b.clearCheck() + b209c.clearCheck()}"
                             android:tag="-1"
-                            android:text="@string/b209d998" />
+                            android:text="@string/b209d998"
+                            android:visibility="gone" />
 
                         <!--b209a-->
                         <RadioGroup
