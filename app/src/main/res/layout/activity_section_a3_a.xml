@@ -194,6 +194,14 @@
                                 android:text="@string/a30114" />
 
                             <RadioButton
+                                android:id="@+id/a30115"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.a301.equals(`15`)}"
+                                android:onClick="@{()->form.setA301(`15`)}"
+                                android:text="@string/a30115" />
+
+                            <RadioButton
                                 android:id="@+id/a30196"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
