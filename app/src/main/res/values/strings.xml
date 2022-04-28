@@ -915,7 +915,7 @@
 
     <string name="modc"> Module C: Women of Reproductive Age 15 – 49 Years </string>
     <string name="c1"> C1: Reproductive History: </string>
-    <string name="cs1t2"> Instructions: Respondent of Module C and D will be the mother or caregiver (15–49 years of age) of the youngest under 5 years child available in the household. </string>
+    <string name="cs1t2"> Instructions: Respondent of Module C and D will be the mother or caregiver (15–49 years of age) of the youngest under 2 years child available in the household. </string>
     <string name="cs1t3"> In Case of caregiver, skip Module C, and respond to Module D only. </string>
     <string name="c101">Name of respondent</string>
     <string name="c102">Relationship of respondent with child</string>
