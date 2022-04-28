@@ -51,7 +51,8 @@
                 <!-- cNA CheckBox   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVcNA"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="gone">
 
                     <LinearLayout
                         android:layout_width="match_parent"
