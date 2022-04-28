@@ -97,28 +97,22 @@ public class FamilyMembersListActivity extends AppCompatActivity {
                             }
                         }
 
-                        /** Populate Under-5 Child
-                         *
-                         *      If age in months is less than 60
-                         * */
-                        if (MainApp.familyMember.getAgeMon() < 60) {
 
+                        /** Populate Under-2 Child
+                         *  If age in months is less than 24
+                         * */
+                        if (MainApp.familyMember.getAgeMon() < 24)
                             childOfSelectedMWRAList.add(Integer.valueOf(MainApp.familyMember.getA201()));
 
-                        }
 
                         /** Populate Recipient
-                         *
-                         *      If any BISP is marked
-                         *
+                         *  If any BISP is marked
                          * */
-                        if (
-                                MainApp.familyMember.getA20701().equals("1")
-                                        || MainApp.familyMember.getA20702().equals("2")
-                                        || MainApp.familyMember.getA20703().equals("3")
-                                        || MainApp.familyMember.getA20704().equals("4")
-                                        || MainApp.familyMember.getA20796().equals("96")) {
-
+                        if (MainApp.familyMember.getA20701().equals("1")
+                                || MainApp.familyMember.getA20702().equals("2")
+                                || MainApp.familyMember.getA20703().equals("3")
+                                || MainApp.familyMember.getA20704().equals("4")
+                                || MainApp.familyMember.getA20796().equals("96")) {
                             recipientsList.add(Integer.valueOf(MainApp.familyMember.getA201()));
                         }
 
@@ -144,11 +138,11 @@ public class FamilyMembersListActivity extends AppCompatActivity {
                         /** Populate Anthro List:
                          *
                          *   Any female 15 - 49 (both married and unmarried)
-                         *   Any Child Under 0 - 5
+                         *   Any Child Under 0 - 2
                          *
                          */
                         if (MainApp.familyMember.getA214().equals("1")) {
-                            if ((Integer.parseInt(MainApp.familyMember.getA206y()) < 5)) {
+                            if ((Integer.parseInt(MainApp.familyMember.getA206y()) < 2)) {
                                 anthroChildList.add(Integer.valueOf(MainApp.familyMember.getA201()));
                             }
                             if (
@@ -222,66 +216,55 @@ public class FamilyMembersListActivity extends AppCompatActivity {
                 }
             }
 
-            /** Populate Under-5 Child
-             *
-             *      If age in months is less than 60
+
+            /** Populate Under-2 Child
+             *  age in months is less than 24
              * */
-            if (fm.getAgeMon() < 60) {
+            if (fm.getAgeMon() < 24) childOfSelectedMWRAList.add(Integer.valueOf(fm.getA201()));
 
-                childOfSelectedMWRAList.add(Integer.valueOf(fm.getA201()));
-
-            }
 
             /** Populate Recipient
-             *
-             *      If any BISP is marked
-             *
+             *  If any BISP is marked
              * */
-            if (
-                    fm.getA20701().equals("1")
-                            || fm.getA20702().equals("2")
-                            || fm.getA20703().equals("3")
-                            || fm.getA20704().equals("4")
-                            || fm.getA20796().equals("96")) {
-
+            if (fm.getA20701().equals("1")
+                    || fm.getA20702().equals("2")
+                    || fm.getA20703().equals("3")
+                    || fm.getA20704().equals("4")
+                    || fm.getA20796().equals("96")) {
                 recipientsList.add(Integer.valueOf(fm.getA201()));
             }
 
+
             /** Populate First Pregnant:
-             *
-             *   Is first time pregnant:    Y
-             *
+             *  Is first time pregnant: Y
              */
             if (fm.getA210().equals("1") && fm.getA214().equals("1")) {
 
                 pregFirstList.add(Integer.valueOf(fm.getA201()));
             }
+
+
             /** Populate Caregiver List:
-             *
-             *   Any female 15
-             *
+             *  Any female 15
              */
-            if (Integer.parseInt(fm.getA206y()) > 14
-                    && fm.getA204().equals("2")) {
+            if (Integer.parseInt(fm.getA206y()) > 14 && fm.getA204().equals("2"))
                 caregiverList.add(Integer.valueOf(fm.getA201()));
-            }
+
 
             /** Populate Anthro List:
-             *
              *   Any female 15 - 49 (both married and unmarried)
              *   Any Child Under 0 - 5
-             *
              */
             if (fm.getA214().equals("1")) {
-                if ((Integer.parseInt(fm.getA206y()) < 5)) {
+                if ((Integer.parseInt(fm.getA206y()) < 5))
                     anthroChildList.add(Integer.valueOf(fm.getA201()));
-                }
-                if (
-                        Integer.parseInt(fm.getA206y()) > 14 && Integer.parseInt(fm.getA206y()) < 50 && fm.getA204().equals("2")) {
+                if (Integer.parseInt(fm.getA206y()) > 14 && Integer.parseInt(fm.getA206y()) < 50 && fm.getA204().equals("2")) {
                     anthroWRAList.add(Integer.valueOf(fm.getA201()));
                 }
             }
         }
+
+
         // Set Selected Members
         for (int i = 0; i < MainApp.familyList.size(); i++) {
 
@@ -469,7 +452,7 @@ public class FamilyMembersListActivity extends AppCompatActivity {
 
         }
         finish();
-        startActivity(new Intent(this, MainApp.selectedChild.equals("") || MainApp.selectedRecipient.equals("") ? EndingActivity.class : SectionA3AActivity.class).putExtra("complete", true));
+        startActivity(new Intent(this, MainApp.selectedChild.equals("") /*|| MainApp.selectedRecipient.equals("")*/ ? EndingActivity.class : SectionA3AActivity.class).putExtra("complete", true));
 
         //MainApp.familyMember = MainApp.familyList.get(Integer.parseInt(MainApp.selectedMWRA));
 
@@ -816,7 +799,7 @@ public class FamilyMembersListActivity extends AppCompatActivity {
             }
 
             if (recipientsList.size() > 0 && bi.recipientList.getSelectedItemPosition() == 0) {
-                Toast.makeText(this, "Adolescent male not selected", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "BISP Recipient not Selected", Toast.LENGTH_SHORT).show();
                 return;
             }
 

@@ -84,12 +84,14 @@ public class Form extends BaseObservable implements Observable {
     private String a112 = _EMPTY_;
     private String a113 = _EMPTY_;
     private String a114 = _EMPTY_;
+    private String a114a = _EMPTY_;
     private String a115h = _EMPTY_;
     private String a115m = _EMPTY_;
     private String a116h = _EMPTY_;
     private String a116m = _EMPTY_;
     private String a117 = _EMPTY_;
     private String a118 = _EMPTY_;
+    private String a119 = _EMPTY_;
     private String a301 = _EMPTY_;
     private String a30196x = _EMPTY_;
     private String a302 = _EMPTY_;
@@ -605,6 +607,16 @@ public class Form extends BaseObservable implements Observable {
     }
 
     @Bindable
+    public String getA114a() {
+        return a114a;
+    }
+
+    public void setA114a(String a114a) {
+        this.a114a = a114a;
+        notifyPropertyChanged(BR.a114a);
+    }
+
+    @Bindable
     public String getA115h() {
         return a115h;
     }
@@ -662,6 +674,16 @@ public class Form extends BaseObservable implements Observable {
     public void setA118(String a118) {
         this.a118 = a118;
         notifyPropertyChanged(BR.a118);
+    }
+
+    @Bindable
+    public String getA119() {
+        return a119;
+    }
+
+    public void setA119(String a119) {
+        this.a119 = a119;
+        notifyPropertyChanged(BR.a119);
     }
 
     @Bindable
@@ -2025,12 +2047,14 @@ public class Form extends BaseObservable implements Observable {
             this.a112 = json.getString("a112");
             this.a113 = json.getString("a113");
             this.a114 = json.getString("a114");
+            this.a114a = json.getString("a114a");
             this.a115h = json.getString("a115h");
             this.a115m = json.getString("a115m");
             this.a116h = json.getString("a116h");
             this.a116m = json.getString("a116m");
             this.a117 = json.getString("a117");
             this.a118 = json.getString("a118");
+            this.a119 = json.getString("a119");
         }
     }
 
@@ -2236,12 +2260,14 @@ public class Form extends BaseObservable implements Observable {
                 .put("a112", a112)
                 .put("a113", a113)
                 .put("a114", a114)
+                .put("a114a", a114a)
                 .put("a115h", a115h)
                 .put("a115m", a115m)
                 .put("a116h", a116h)
                 .put("a116m", a116m)
                 .put("a117", a117)
-                .put("a118", a118);
+                .put("a118", a118)
+                .put("a119", a119);
         return json.toString();
     }
 

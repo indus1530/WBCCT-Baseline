@@ -149,8 +149,8 @@ public class SectionA1Activity extends AppCompatActivity {
         if (!insertNewRecord()) return;
         if (updateDB()) {
             Intent i;
-            if (form.getA112().equals("2")
-                    || form.getA113().equals("2")
+            if (/*form.getA112().equals("2")
+                    || */form.getA113().equals("2")
                     || form.getA114().equals("2")) {
                 i = new Intent(this, EndingActivity.class).putExtra("complete", false);
             } else {

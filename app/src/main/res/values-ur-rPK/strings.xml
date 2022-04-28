@@ -97,9 +97,11 @@
     <string name="a113"> کیا اس گھرانے میں دو سال سے کم عمر کا بچہ ہے ؟ </string>
     <string name="a11301">ہاں</string>
     <string name="a11302"> نہیں</string>
-    <string name="a114">کیا انٹرویو کی اجازت لی گئی ہے؟</string>
-    <string name="a11401">ہاں</string>
-    <string name="a11402"> نہیں</string>
+    <string name="a114"> کیا انٹرویو کی اجازت لی گئی ہے ؟ </string>
+    <string name="a11401"> ہاں </string>
+    <string name="a11402"> نہیں </string>
+    <string name="Q_a114a">a114a</string>
+    <string name="a114a"> گهرانے کی درجہ بندی </string>
     <string name="a115">انٹرویو شروع ہونے کا وقت</string>
     <string name="a115h">گھنٹے</string>
     <string name="a115m">منٹ</string>
@@ -108,6 +110,8 @@
     <string name="a116m">منٹ</string>
     <string name="a117"> انٹرویو لینے والے کا نام</string>
     <string name="a118">انٹرویو لینے والے کا کوڈ</string>
+    <string name="Q_a119">a119</string>
+    <string name="a119"> ٹیم لیڈر کا نام اور دستخط :  </string>
     <string name="sa2inst">. ہدایات: گھر کے سربراہ سے بھریں- اگر موجود نہ ہو تو گھر میں موجود کسی بھی بالغ فرد  کے ذریعہ پُر کریں</string>
     <string name="sa2name">جواب دہندہ کا نام</string>
     <string name="a201">لائن نمبر</string>
