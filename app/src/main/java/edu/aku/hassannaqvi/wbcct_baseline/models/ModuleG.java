@@ -30,7 +30,7 @@ import edu.aku.hassannaqvi.wbcct_baseline.contracts.TableContracts.FormsTable;
 import edu.aku.hassannaqvi.wbcct_baseline.core.MainApp;
 
 
-public class Form extends BaseObservable implements Observable {
+public class ModuleG extends BaseObservable implements Observable {
 
     private final String TAG = "Form";
     private final transient PropertyChangeRegistry propertyChangeRegistry = new PropertyChangeRegistry();
@@ -336,7 +336,7 @@ public class Form extends BaseObservable implements Observable {
     private String istg0296x = _EMPTY_;
 
 
-    public Form() {
+    public ModuleG() {
 
 /*        setSysDate(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()));
         setUserName(MainApp.user.getUserName());
@@ -3383,7 +3383,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
 
-    public Form Hydrate(Cursor cursor) throws JSONException {
+    public ModuleG Hydrate(Cursor cursor) throws JSONException {
         this.id = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_ID));
         this.uid = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_UID));
         this.projectName = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_PROJECT_NAME));

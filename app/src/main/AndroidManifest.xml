@@ -16,7 +16,7 @@
     <uses-permission android:name="android.permission.CAMERA" />
 
     <application
-        android:name="edu.aku.hassannaqvi.wbcct_baseline.core.MainApp"
+        android:name=".core.MainApp"
         android:allowBackup="false"
         android:hardwareAccelerated="true"
         android:icon="@drawable/app_icon"
@@ -30,128 +30,131 @@
         android:usesCleartextTraffic="false"
         tools:replace="android:allowBackup">
         <activity
-            android:name="edu.aku.hassannaqvi.wbcct_baseline.ui.LockActivity"
+            android:name=".ui.sections.SectionG1Activity"
             android:exported="true" />
         <activity
-            android:name="edu.aku.hassannaqvi.wbcct_baseline.ui.sections.SectionA3BActivity"
+            android:name=".ui.LockActivity"
             android:exported="true" />
         <activity
-            android:name="edu.aku.hassannaqvi.wbcct_baseline.ui.sections.SectionF2Activity"
+            android:name=".ui.sections.SectionA3BActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.sections.SectionF2Activity"
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1" />
         <activity
-            android:name="edu.aku.hassannaqvi.wbcct_baseline.ui.sections.SectionF1Activity"
+            android:name=".ui.sections.SectionF1Activity"
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1" />
         <activity
-            android:name="edu.aku.hassannaqvi.wbcct_baseline.ui.sections.SectionE2Activity"
+            android:name=".ui.sections.SectionE2Activity"
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1" />
         <activity
-            android:name="edu.aku.hassannaqvi.wbcct_baseline.ui.sections.SectionE1Activity"
+            android:name=".ui.sections.SectionE1Activity"
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1" />
         <activity
-            android:name="edu.aku.hassannaqvi.wbcct_baseline.ui.sections.SectionD4Activity"
+            android:name=".ui.sections.SectionD4Activity"
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1" />
         <activity
-            android:name="edu.aku.hassannaqvi.wbcct_baseline.ui.sections.SectionD3Activity"
+            android:name=".ui.sections.SectionD3Activity"
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1" />
         <activity
-            android:name="edu.aku.hassannaqvi.wbcct_baseline.ui.sections.SectionD2Activity"
+            android:name=".ui.sections.SectionD2Activity"
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1" />
         <activity
-            android:name="edu.aku.hassannaqvi.wbcct_baseline.ui.sections.SectionD1Activity"
+            android:name=".ui.sections.SectionD1Activity"
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1" />
         <activity
-            android:name="edu.aku.hassannaqvi.wbcct_baseline.ui.sections.SectionC6Activity"
+            android:name=".ui.sections.SectionC6Activity"
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1" />
         <activity
-            android:name="edu.aku.hassannaqvi.wbcct_baseline.ui.sections.SectionC5Activity"
+            android:name=".ui.sections.SectionC5Activity"
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1" />
         <activity
-            android:name="edu.aku.hassannaqvi.wbcct_baseline.ui.sections.SectionC4Activity"
+            android:name=".ui.sections.SectionC4Activity"
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1" />
         <activity
-            android:name="edu.aku.hassannaqvi.wbcct_baseline.ui.sections.SectionC3Activity"
+            android:name=".ui.sections.SectionC3Activity"
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1" />
         <activity
-            android:name="edu.aku.hassannaqvi.wbcct_baseline.ui.sections.SectionC2Activity"
+            android:name=".ui.sections.SectionC2Activity"
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1" />
         <activity
-            android:name="edu.aku.hassannaqvi.wbcct_baseline.ui.sections.SectionC1Activity"
+            android:name=".ui.sections.SectionC1Activity"
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1" />
         <activity
-            android:name="edu.aku.hassannaqvi.wbcct_baseline.ui.sections.SectionB2Activity"
+            android:name=".ui.sections.SectionB2Activity"
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1" />
         <activity
-            android:name="edu.aku.hassannaqvi.wbcct_baseline.ui.sections.SectionB1Activity"
+            android:name=".ui.sections.SectionB1Activity"
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1" />
         <activity
-            android:name="edu.aku.hassannaqvi.wbcct_baseline.ui.sections.SectionA5Activity"
+            android:name=".ui.sections.SectionA5Activity"
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1" />
         <activity
-            android:name="edu.aku.hassannaqvi.wbcct_baseline.ui.sections.SectionA4Activity"
+            android:name=".ui.sections.SectionA4Activity"
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1" />
         <activity
-            android:name="edu.aku.hassannaqvi.wbcct_baseline.ui.sections.SectionA3AActivity"
+            android:name=".ui.sections.SectionA3AActivity"
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1" />
         <activity
-            android:name="edu.aku.hassannaqvi.wbcct_baseline.ui.sections.SectionA2Activity"
+            android:name=".ui.sections.SectionA2Activity"
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1" />
         <activity
-            android:name="edu.aku.hassannaqvi.wbcct_baseline.ui.sections.SectionA1Activity"
+            android:name=".ui.sections.SectionA1Activity"
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1" />
         <activity
-            android:name="edu.aku.hassannaqvi.wbcct_baseline.ui.sections.ConsentActivity"
+            android:name=".ui.sections.ConsentActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
-            android:name="edu.aku.hassannaqvi.wbcct_baseline.ui.IdentificationActivity"
+            android:name=".ui.IdentificationActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
-            android:name="edu.aku.hassannaqvi.wbcct_baseline.ui.LoginActivity"
+            android:name=".ui.LoginActivity"
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.splashscreen"
@@ -163,46 +166,46 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="edu.aku.hassannaqvi.wbcct_baseline.ui.TakePhoto"
+            android:name=".ui.TakePhoto"
             android:hardwareAccelerated="true"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="edu.aku.hassannaqvi.wbcct_baseline.MainActivity"
+            android:name=".MainActivity"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
-            android:name="edu.aku.hassannaqvi.wbcct_baseline.ui.EndingActivity"
+            android:name=".ui.EndingActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
-            android:name="edu.aku.hassannaqvi.wbcct_baseline.ui.SyncActivity"
+            android:name=".ui.SyncActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
-            android:name="edu.aku.hassannaqvi.wbcct_baseline.database.AndroidManager"
+            android:name=".database.AndroidManager"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light" />
         <activity
-            android:name="edu.aku.hassannaqvi.wbcct_baseline.ui.lists.FormsReportPending"
+            android:name=".ui.lists.FormsReportPending"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
         <activity
-            android:name="edu.aku.hassannaqvi.wbcct_baseline.ui.lists.FormsReportCluster"
+            android:name=".ui.lists.FormsReportCluster"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
         <activity
-            android:name="edu.aku.hassannaqvi.wbcct_baseline.ui.lists.FormsReportDate"
+            android:name=".ui.lists.FormsReportDate"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
         <activity
-            android:name="edu.aku.hassannaqvi.wbcct_baseline.ui.lists.FamilyMembersListActivity"
+            android:name=".ui.lists.FamilyMembersListActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name="edu.aku.hassannaqvi.wbcct_baseline.ui.ChangePasswordActivity"
+            android:name=".ui.ChangePasswordActivity"
             android:exported="true"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustResize" /> <!-- <meta-data android:name="YEK_REVRES" android:value="V@ca#!0n$urvIv0r" /> -->
