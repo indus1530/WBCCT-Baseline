@@ -203,6 +203,7 @@
                                     android:layout_height="wrap_content"
                                     android:checked="@{mwra.c402.equals(`6`)}"
                                     android:onClick="@{()->mwra.setC402(`6`)}"
+                                    android:visibility="gone"
                                     android:text="@string/c40206" />
 
                                 <RadioButton
