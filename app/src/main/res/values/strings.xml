@@ -1590,10 +1590,10 @@
     <string name="cstabc"> Available eligible respondent not competent for interview </string>
     <string name="cstab96"> Others, (Specify) </string>
 
-    <string name="modd"> Module D: Child Under 0 – 59 Months </string>
-    <string name="d1"> D1: Under 5 Child Information: </string>
-    <string name="dinstrc1">Instructions: Respondent of Module D will be the mother (15–49 years of age) or caregiver of the selected child under-5 years available in the household. </string>
-    <string name="dinstrc2">If there are more than one under-5 children available in the household then use Kish grid for selection.</string>
+    <string name="modd"> Module D: Child Under 0 – 23 Months </string>
+    <string name="d1"> D1: Under 2 Child Information: </string>
+    <string name="dinstrc1">Instructions: Respondent of Module D will be the mother (15–49 years of age) or caregiver of the selected child under-2 years available in the household. </string>
+    <string name="dinstrc2">If there are more than one under-2 children available in the household then use Kish grid for selection.</string>
     <string name="dinstrc3">Section D2 ‘IYCF and Food diversity’ will only be filled for children 0–23 months. If the child’s age is 24–59 months, then Section D2 will be skipped.</string>
     <string name="d101">Name of the Child</string>
     <string name="d102">Line number of the Child</string>
@@ -1607,7 +1607,7 @@
     <string name="d105998">Don’t Know</string>
 
     <string name="d2"> D2: IYCF and Food Diversity (FD) : </string>
-    <string name="d2instr">INSTRUCTION: This section is to be asked if the child’s age is 0-23 months, if the child is 24-59 months of age, this section will be skipped. </string>
+    <string name="d2instr"> This section is to be asked if the child’s age is 0–23 months, if the child is above 23 months or of 24 months of age, this section will be skipped. </string>
     <string name="d201title">Breast feeding</string>
     <string name="d201">Was [name] ever breastfed?</string>
     <string name="d20101">Yes</string>
