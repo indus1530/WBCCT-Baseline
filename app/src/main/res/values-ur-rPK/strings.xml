@@ -2890,16 +2890,16 @@
     <string name="sg15c02">جزوی طور پراختلاف</string>
     <string name="sg15c03">جزوی طور پر متفق</string>
     <string name="sg15c04">بہت زیادہ اتفاق</string>
-    <string name="istgtitle">ماڈیولA سوالنامے کا نتیجہ</string>
-    <string name="istg01">کیا ماڈیول مکمل ہو گیا تھا؟</string>
-    <string name="istg0101">ہاں</string>
-    <string name="istg0102">نہیں</string>
-    <string name="istg02">مکمل نہ ہونے کی وجہ؟</string>
-    <string name="istg0201">اجازت نہیں ملی</string>
-    <string name="istg0202">گھرانا اہل نہیں ہے</string>
-    <string name="istg0203">اہل جواب دہندہ گھر پر موجود نہیں</string>
-    <string name="istg0204">اہل جواب دہندہ انٹرویو کے لیے موزوں نہیں</string>
-    <string name="istg0296">دیگر وضاحت کریں</string>
+    <string name="istg">ماڈیول G سوالنامے کا نتیجہ </string>
+    <string name="istga"> کیا ماڈیول مکمل ہو گیا تھا ؟ </string>
+    <string name="istgaa">ہاں</string>
+    <string name="istgab">نہیں</string>
+    <string name="istgb">مکمل نہ ہونے کی وجہ؟</string>
+    <string name="istgba">اجازت نہیں ملی</string>
+    <string name="istgbb">گھرانا اہل نہیں ہے</string>
+    <string name="istgbc">اہل جواب دہندہ گھر پر موجود نہیں</string>
+    <string name="istgbd">اہل جواب دہندہ انٹرویو کے لیے موزوں نہیں</string>
+    <string name="istgb96">دیگر وضاحت کریں</string>
 
 
     <!-- Question Strings -->

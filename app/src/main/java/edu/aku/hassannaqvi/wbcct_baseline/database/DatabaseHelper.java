@@ -41,6 +41,7 @@ import edu.aku.hassannaqvi.wbcct_baseline.contracts.TableContracts.PregnancyTabl
 import edu.aku.hassannaqvi.wbcct_baseline.contracts.TableContracts.RecipientTable;
 import edu.aku.hassannaqvi.wbcct_baseline.contracts.TableContracts.UsersTable;
 import edu.aku.hassannaqvi.wbcct_baseline.contracts.TableContracts.VersionTable;
+import edu.aku.hassannaqvi.wbcct_baseline.contracts.TableContracts.WEDMTable;
 import edu.aku.hassannaqvi.wbcct_baseline.core.MainApp;
 import edu.aku.hassannaqvi.wbcct_baseline.models.AnthroChild;
 import edu.aku.hassannaqvi.wbcct_baseline.models.AnthroWRA;
@@ -54,6 +55,7 @@ import edu.aku.hassannaqvi.wbcct_baseline.models.Pregnancy;
 import edu.aku.hassannaqvi.wbcct_baseline.models.Recipient;
 import edu.aku.hassannaqvi.wbcct_baseline.models.Users;
 import edu.aku.hassannaqvi.wbcct_baseline.models.VersionApp;
+import edu.aku.hassannaqvi.wbcct_baseline.models.WEDM;
 
 
 
@@ -84,6 +86,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(CreateTable.SQL_CREATE_FAMILYMEMBERS);
         db.execSQL(CreateTable.SQL_CREATE_RECIPIENT);
         db.execSQL(CreateTable.SQL_CREATE_MWRA);
+        db.execSQL(CreateTable.SQL_CREATE_WEDM);
         db.execSQL(CreateTable.SQL_CREATE_ANTHROWRA);
         db.execSQL(CreateTable.SQL_CREATE_CHILD);
         db.execSQL(CreateTable.SQL_CREATE_ANTHROCHILD);
@@ -199,6 +202,34 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         newRowId = db.insert(
                 MwraTable.TABLE_NAME,
                 MwraTable.COLUMN_NAME_NULLABLE,
+                values);
+        return newRowId;
+    }
+
+    public Long addWEDM(WEDM wedm) throws JSONException {
+        SQLiteDatabase db = this.getWritableDatabase(DATABASE_PASSWORD);
+        ContentValues values = new ContentValues();
+        values.put(WEDMTable.COLUMN_PROJECT_NAME, wedm.getProjectName());
+        values.put(WEDMTable.COLUMN_UID, wedm.getUid());
+        values.put(WEDMTable.COLUMN_UUID, wedm.getUuid());
+        values.put(WEDMTable.COLUMN_FMUID, wedm.getFmuid());
+        values.put(WEDMTable.COLUMN_SNO, wedm.getSno());
+        values.put(WEDMTable.COLUMN_PSU_CODE, wedm.getpsuCode());
+        values.put(WEDMTable.COLUMN_HHID, wedm.getHhid());
+        values.put(WEDMTable.COLUMN_USERNAME, wedm.getUserName());
+        values.put(WEDMTable.COLUMN_SYSDATE, wedm.getSysDate());
+        values.put(WEDMTable.COLUMN_SG1, wedm.sG1toString());
+        values.put(WEDMTable.COLUMN_ISTATUS, wedm.getiStatus());
+        values.put(WEDMTable.COLUMN_DEVICETAGID, wedm.getDeviceTag());
+        values.put(WEDMTable.COLUMN_DEVICEID, wedm.getDeviceId());
+        values.put(WEDMTable.COLUMN_APPVERSION, wedm.getAppver());
+        values.put(WEDMTable.COLUMN_SYNCED, wedm.getSynced());
+        values.put(WEDMTable.COLUMN_SYNCED_DATE, wedm.getSyncDate());
+
+        long newRowId;
+        newRowId = db.insert(
+                WEDMTable.TABLE_NAME,
+                WEDMTable.COLUMN_NAME_NULLABLE,
                 values);
         return newRowId;
     }
@@ -463,6 +494,21 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String[] selectionArgs = {String.valueOf(MainApp.mwra.getId())};
 
         return db.update(MwraTable.TABLE_NAME,
+                values,
+                selection,
+                selectionArgs);
+    }
+
+    public int updatesWEDMColumn(String column, String value) {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+
+        ContentValues values = new ContentValues();
+        values.put(column, value);
+
+        String selection = WEDMTable._ID + " =? ";
+        String[] selectionArgs = {String.valueOf(MainApp.wedm.getId())};
+
+        return db.update(WEDMTable.TABLE_NAME,
                 values,
                 selection,
                 selectionArgs);
@@ -942,6 +988,41 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return all;
     }
 
+    public JSONArray getUnsyncedWEDM() throws JSONException {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        Cursor c = null;
+        String[] columns = null;
+        String whereClause;
+        whereClause = WEDMTable.COLUMN_SYNCED + " = '' ";
+
+        String[] whereArgs = null;
+        String groupBy = null;
+        String having = null;
+        String orderBy = WEDMTable.COLUMN_ID + " ASC";
+
+        JSONArray all = new JSONArray();
+        c = db.query(
+                WEDMTable.TABLE_NAME,  // The table to query
+                columns,                   // The columns to return
+                whereClause,               // The columns for the WHERE clause
+                whereArgs,                 // The values for the WHERE clause
+                groupBy,                   // don't group the rows
+                having,                    // don't filter by row groups
+                orderBy                    // The sort order
+        );
+        while (c.moveToNext()) {
+            Log.d(TAG, "getUnsyncedWEDM: " + c.getCount());
+            WEDM wedm = new WEDM();
+            all.put(wedm.Hydrate(c).toJSONObject());
+        }
+
+        c.close();
+
+        Log.d(TAG, "getUnsyncedWEDM: " + all.toString().length());
+        Log.d(TAG, "getUnsyncedWEDM: " + all);
+        return all;
+    }
+
     public JSONArray getUnsyncedPregnancy() throws JSONException {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c = null;
@@ -1148,6 +1229,20 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String[] whereArgs = {id};
         int count = db.update(
                 MwraTable.TABLE_NAME,
+                values,
+                where,
+                whereArgs);
+    }
+
+    public void updateSyncedWEDM(String id) {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        ContentValues values = new ContentValues();
+        values.put(WEDMTable.COLUMN_SYNCED, true);
+        values.put(WEDMTable.COLUMN_SYNCED_DATE, new Date().toString());
+        String where = WEDMTable.COLUMN_ID + " = ?";
+        String[] whereArgs = {id};
+        int count = db.update(
+                WEDMTable.TABLE_NAME,
                 values,
                 where,
                 whereArgs);
@@ -2072,6 +2167,34 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.close();
 
         return mwra;
+    }
+
+
+    public WEDM getWEDMByUUid() throws JSONException {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        Cursor c;
+        String[] columns = null;
+        String whereClause;
+        whereClause = WEDMTable.COLUMN_UUID + "=? ";
+        String[] whereArgs = {MainApp.form.getUid()};
+        String groupBy = null;
+        String having = null;
+        String orderBy = MwraTable.COLUMN_ID + " ASC";
+        WEDM wedm = new WEDM();
+        c = db.query(
+                WEDMTable.TABLE_NAME,  // The table to query
+                columns,                   // The columns to return
+                whereClause,               // The columns for the WHERE clause
+                whereArgs,                 // The values for the WHERE clause
+                groupBy,                   // don't group the rows
+                having,                    // don't filter by row groups
+                orderBy                    // The sort order
+        );
+        while (c.moveToNext()) {
+            wedm = new WEDM().Hydrate(c);
+        }
+        db.close();
+        return wedm;
     }
 
     public Pregnancy getPregByFmUID(String fmuid) throws JSONException {

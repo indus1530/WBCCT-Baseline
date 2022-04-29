@@ -35,6 +35,7 @@ import edu.aku.hassannaqvi.wbcct_baseline.models.MWRA;
 import edu.aku.hassannaqvi.wbcct_baseline.models.Pregnancy;
 import edu.aku.hassannaqvi.wbcct_baseline.models.Recipient;
 import edu.aku.hassannaqvi.wbcct_baseline.models.Users;
+import edu.aku.hassannaqvi.wbcct_baseline.models.WEDM;
 import edu.aku.hassannaqvi.wbcct_baseline.ui.LockActivity;
 
 
@@ -67,6 +68,7 @@ public class MainApp extends Application {
     public static AnthroChild anthc;
     public static AnthroWRA anthw;
     public static MWRA mwra;
+    public static WEDM wedm;
     public static Pregnancy pregnancy;
     public static Child child;
 

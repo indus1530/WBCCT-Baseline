@@ -3011,16 +3011,16 @@ Has anyone ever done any of the following to you during the last 12 months?</str
     <string name="sg15c02">Partly Disagree</string>
     <string name="sg15c03">Partly Agree</string>
     <string name="sg15c04">Strongly Agree</string>
-    <string name="istgtitle">Result of Module A Questionnaire</string>
-    <string name="istg01">Was module completed?</string>
-    <string name="istg0101">Yes</string>
-    <string name="istg0102">No</string>
-    <string name="istg02">Reason for not completing</string>
-    <string name="istg0201">Consent not provided</string>
-    <string name="istg0202">Household is not eligible </string>
-    <string name="istg0203">No eligible respondent available</string>
-    <string name="istg0204">Available eligible respondent not competent for interview</string>
-    <string name="istg0296">Others, (Specify)</string>
+    <string name="istg">Result of Module A Questionnaire</string>
+    <string name="istga">Was module completed?</string>
+    <string name="istgaa">Yes</string>
+    <string name="istgab">No</string>
+    <string name="istgb">Reason for not completing</string>
+    <string name="istgba">Consent not provided</string>
+    <string name="istgbb">Household is not eligible </string>
+    <string name="istgbc">No eligible respondent available</string>
+    <string name="istgbd">Available eligible respondent not competent for interview</string>
+    <string name="istgb96">Others, (Specify)</string>
 
 
     <string name='Q_a101'>a101</string>
@@ -3581,9 +3581,7 @@ Has anyone ever done any of the following to you during the last 12 months?</str
     <string name='Q_district'>district</string>
     <string name='Q_hcla'>hcla</string>
     <string name='Q_household'>household</string>
-    <string name='Q_istg01'>istg01</string>
-    <string name='Q_istg02'>istg02</string>
-    <string name='Q_istgtitle'>istgtitle</string>
+    <string name='Q_istg'>istg</string>
     <string name='Q_qnumber'>qnumber</string>
     <string name='Q_sg10a'>sg10a</string>
     <string name='Q_sg10inst'>sg10inst</string>
