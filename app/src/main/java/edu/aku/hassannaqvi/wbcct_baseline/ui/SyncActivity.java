@@ -178,6 +178,16 @@ public class SyncActivity extends AppCompatActivity {
 
                 }
 
+                //WEDM
+                uploadTables.add(new SyncModel(TableContracts.WEDMTable.TABLE_NAME));
+                try {
+                    MainApp.uploadData.add(db.getUnsyncedWEDM());
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    Toast.makeText(SyncActivity.this, "JSONException(MWRA)" + e.getMessage(), Toast.LENGTH_LONG).show();
+
+                }
+
                 //Pregnancy
                 uploadTables.add(new SyncModel(TableContracts.PregnancyTable.TABLE_NAME));
                 try {
