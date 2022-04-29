@@ -30,7 +30,7 @@
             android:minHeight="?attr/actionBarSize"
             android:theme="@style/CustomToolbarTheme"
             app:popupTheme="@style/CustomPopupTheme"
-            app:subtitle="@string/sginst2"
+            app:subtitle="@string/sg1inst3"
             app:subtitleTextAppearance="@style/Toolbar.SubtitleText"
             app:title="@string/sginst1"
             app:titleTextAppearance="@style/Toolbar.TitleText" />
@@ -48,248 +48,6 @@
                 android:orientation="vertical">
 
 
-                <!-- villagename  Input   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVvillagename"
-                    style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:text="@string/Q_villagename" />
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:text="@string/villagename" />
-
-                        </LinearLayout>
-
-                        <EditText
-                            android:id="@+id/villagename"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
-                            android:hint="@string/villagename"
-                            android:text="@={form.villagename}" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <!-- district  Input   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVdistrict"
-                    style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:text="@string/Q_district" />
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:text="@string/district" />
-
-                        </LinearLayout>
-
-                        <EditText
-                            android:id="@+id/district"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
-                            android:hint="@string/district"
-                            android:text="@={form.district}" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <!-- hcla  Radio   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVhcla"
-                    style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:text="@string/Q_hcla" />
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:text="@string/hcla" />
-
-                        </LinearLayout>
-
-                        <RadioGroup
-                            android:id="@+id/hcla"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
-
-                            <RadioButton
-                                android:id="@+id/hcla01"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:checked="@{form.hcla.equals(`1`)}"
-                                android:onClick="@{()->form.setHcla(`1`)}"
-                                android:text="@string/hcla01" />
-
-                            <RadioButton
-                                android:id="@+id/hcla02"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:checked="@{form.hcla.equals(`2`)}"
-                                android:onClick="@{()->form.setHcla(`2`)}"
-                                android:text="@string/hcla02" />
-
-                            <RadioButton
-                                android:id="@+id/hcla03"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:checked="@{form.hcla.equals(`3`)}"
-                                android:onClick="@{()->form.setHcla(`3`)}"
-                                android:text="@string/hcla03" />
-                        </RadioGroup>
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <!-- household  Input-Numeric   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVhousehold"
-                    style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:text="@string/Q_household" />
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:text="@string/household" />
-
-                        </LinearLayout>
-
-                        <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/household"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="@string/household"
-                            android:inputType="number"
-                            android:maxLength="2"
-                            android:text="@={form.household}"
-                            app:maxValue="25"
-                            app:minValue="1"
-                            app:type="range" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <!-- qnumber  Input-Numeric   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVqnumber"
-                    style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:text="@string/Q_qnumber" />
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:text="@string/qnumber" />
-
-                        </LinearLayout>
-
-                        <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/qnumber"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="@string/qnumber"
-                            android:inputType="number"
-                            android:maxLength="2"
-                            android:text="@={form.qnumber}"
-                            app:maxValue="25"
-                            app:minValue="1"
-                            app:type="range" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <!-- sg1inst3  Title   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVsg1inst3"
-                    style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/sg1inst3" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
                 <!-- sg1inst4  Title   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVsg1inst4"
@@ -301,11 +59,15 @@
                         android:orientation="vertical">
 
                         <TextView
+                            style="@style/labelsHead"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/sg1inst4" />
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- sg1inst1  Title   -->
                 <androidx.cardview.widget.CardView
@@ -318,11 +80,15 @@
                         android:orientation="vertical">
 
                         <TextView
+                            style="@style/sub_labels"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/sg1inst1" />
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- sg1a  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -393,6 +159,7 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
+
                 <!-- sg1b  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVsg1b"
@@ -461,6 +228,7 @@
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- sg1c  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -7112,7 +6880,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <!-- sg10inst  Title   -->
-                <androidx.cardview.widget.CardView
+                <!--<androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVsg10inst"
                     style="@style/cardView">
 
@@ -7128,7 +6896,7 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <!-- sg10a  Input-Numeric   -->
+                &lt;!&ndash; sg10a  Input-Numeric   &ndash;&gt;
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVsg10a"
                     style="@style/cardView">
@@ -7171,7 +6939,7 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <!-- sg11inst  Title   -->
+                &lt;!&ndash; sg11inst  Title   &ndash;&gt;
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVsg11inst"
                     style="@style/cardView">
@@ -7188,7 +6956,7 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <!-- sg11inst1  Title   -->
+                &lt;!&ndash; sg11inst1  Title   &ndash;&gt;
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVsg11inst1"
                     style="@style/cardView">
@@ -7205,7 +6973,7 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <!-- sg11a  Input-Numeric   -->
+                &lt;!&ndash; sg11a  Input-Numeric   &ndash;&gt;
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVsg11a"
                     style="@style/cardView">
@@ -7248,7 +7016,7 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <!-- sg12inst  Title   -->
+                &lt;!&ndash; sg12inst  Title   &ndash;&gt;
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVsg12inst"
                     style="@style/cardView">
@@ -7265,7 +7033,7 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <!-- sg12inst1  Title   -->
+                &lt;!&ndash; sg12inst1  Title   &ndash;&gt;
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVsg12inst1"
                     style="@style/cardView">
@@ -7282,7 +7050,7 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <!-- sg12a  Radio   -->
+                &lt;!&ndash; sg12a  Radio   &ndash;&gt;
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVsg12a"
                     style="@style/cardView">
@@ -7351,7 +7119,7 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <!-- sg12ar  Radio   -->
+                &lt;!&ndash; sg12ar  Radio   &ndash;&gt;
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVsg12ar"
                     style="@style/cardView">
@@ -7412,7 +7180,7 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <!-- sg12an  Input-Numeric   -->
+                &lt;!&ndash; sg12an  Input-Numeric   &ndash;&gt;
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVsg12an"
                     style="@style/cardView">
@@ -7455,7 +7223,7 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <!-- sg12b  Radio   -->
+                &lt;!&ndash; sg12b  Radio   &ndash;&gt;
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVsg12b"
                     style="@style/cardView">
@@ -7524,7 +7292,7 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <!-- sg12br  Radio   -->
+                &lt;!&ndash; sg12br  Radio   &ndash;&gt;
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVsg12br"
                     style="@style/cardView">
@@ -7585,7 +7353,7 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <!-- sg12bn  Input-Numeric   -->
+                &lt;!&ndash; sg12bn  Input-Numeric   &ndash;&gt;
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVsg12bn"
                     style="@style/cardView">
@@ -7628,7 +7396,7 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <!-- sg12c  Radio   -->
+                &lt;!&ndash; sg12c  Radio   &ndash;&gt;
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVsg12c"
                     style="@style/cardView">
@@ -7697,7 +7465,7 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <!-- sg12cr  Radio   -->
+                &lt;!&ndash; sg12cr  Radio   &ndash;&gt;
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVsg12cr"
                     style="@style/cardView">
@@ -7758,7 +7526,7 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <!-- sg12cn  Input-Numeric   -->
+                &lt;!&ndash; sg12cn  Input-Numeric   &ndash;&gt;
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVsg12cn"
                     style="@style/cardView">
@@ -7801,7 +7569,7 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <!-- sg12d  Radio   -->
+                &lt;!&ndash; sg12d  Radio   &ndash;&gt;
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVsg12d"
                     style="@style/cardView">
@@ -7870,7 +7638,7 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <!-- sg12dr  Radio   -->
+                &lt;!&ndash; sg12dr  Radio   &ndash;&gt;
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVsg12dr"
                     style="@style/cardView">
@@ -7931,7 +7699,7 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <!-- sg12dn  Input-Numeric   -->
+                &lt;!&ndash; sg12dn  Input-Numeric   &ndash;&gt;
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVsg12dn"
                     style="@style/cardView">
@@ -7974,7 +7742,7 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <!-- sg12e  Radio   -->
+                &lt;!&ndash; sg12e  Radio   &ndash;&gt;
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVsg12e"
                     style="@style/cardView">
@@ -8043,7 +7811,7 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <!-- sg12er  Radio   -->
+                &lt;!&ndash; sg12er  Radio   &ndash;&gt;
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVsg12er"
                     style="@style/cardView">
@@ -8104,7 +7872,7 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <!-- sg12en  Input-Numeric   -->
+                &lt;!&ndash; sg12en  Input-Numeric   &ndash;&gt;
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVsg12en"
                     style="@style/cardView">
@@ -8145,10 +7913,10 @@
                             app:minValue="1"
                             app:type="range" />
                     </LinearLayout>
-                </androidx.cardview.widget.CardView>
+                </androidx.cardview.widget.CardView>-->
 
                 <!-- sg13inst  Title   -->
-                <androidx.cardview.widget.CardView
+                <!--<androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVsg13inst"
                     style="@style/cardView">
 
@@ -8164,7 +7932,7 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <!-- sg13inst1  Title   -->
+                &lt;!&ndash; sg13inst1  Title   &ndash;&gt;
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVsg13inst1"
                     style="@style/cardView">
@@ -8181,7 +7949,7 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <!-- sg13a  Radio   -->
+                &lt;!&ndash; sg13a  Radio   &ndash;&gt;
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVsg13a"
                     style="@style/cardView">
@@ -8250,7 +8018,7 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <!-- sg14inst  Title   -->
+                &lt;!&ndash; sg14inst  Title   &ndash;&gt;
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVsg14inst"
                     style="@style/cardView">
@@ -8267,7 +8035,7 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <!-- sg14inst1  Title   -->
+                &lt;!&ndash; sg14inst1  Title   &ndash;&gt;
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVsg14inst1"
                     style="@style/cardView">
@@ -8284,7 +8052,7 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <!-- sg14a  Radio   -->
+                &lt;!&ndash; sg14a  Radio   &ndash;&gt;
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVsg14a"
                     style="@style/cardView">
@@ -8353,7 +8121,7 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <!-- sg14b  Radio   -->
+                &lt;!&ndash; sg14b  Radio   &ndash;&gt;
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVsg14b"
                     style="@style/cardView">
@@ -8422,7 +8190,7 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <!-- sg14c  Radio   -->
+                &lt;!&ndash; sg14c  Radio   &ndash;&gt;
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVsg14c"
                     style="@style/cardView">
@@ -8491,7 +8259,7 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <!-- sg15inst  Title   -->
+                &lt;!&ndash; sg15inst  Title   &ndash;&gt;
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVsg15inst"
                     style="@style/cardView">
@@ -8508,7 +8276,7 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <!-- sg15inst1  Title   -->
+                &lt;!&ndash; sg15inst1  Title   &ndash;&gt;
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVsg15inst1"
                     style="@style/cardView">
@@ -8525,7 +8293,7 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <!-- sg15a  Radio   -->
+                &lt;!&ndash; sg15a  Radio   &ndash;&gt;
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVsg15a"
                     style="@style/cardView">
@@ -8594,7 +8362,7 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <!-- sg15b  Radio   -->
+                &lt;!&ndash; sg15b  Radio   &ndash;&gt;
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVsg15b"
                     style="@style/cardView">
@@ -8663,7 +8431,7 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <!-- sg15c  Radio   -->
+                &lt;!&ndash; sg15c  Radio   &ndash;&gt;
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVsg15c"
                     style="@style/cardView">
@@ -8730,7 +8498,7 @@
                                 android:text="@string/sg15c04" />
                         </RadioGroup>
                     </LinearLayout>
-                </androidx.cardview.widget.CardView>
+                </androidx.cardview.widget.CardView>-->
 
 
                 <!-- istg  Radio   -->

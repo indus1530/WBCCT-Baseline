@@ -203,6 +203,9 @@
     <string name="a11402">No</string>
     <string name="Q_a114a">a114a</string>
     <string name="a114a"> Household Classification: </string>
+    <string name="a114aa"> BISP Beneficiary Household </string>
+    <string name="a114ab"> BISP + ENP/CCT Beneficiary Household </string>
+    <string name="a114ac"> Non - BISP / ENP Household </string>
     <string name="a115"> Interview Start Time </string>
     <string name="a115h"> Hours </string>
     <string name="a115m"> Minutes </string>
@@ -2409,10 +2412,6 @@
     <string name="sginst1">Module G: Women Empowerment and Decision Making</string>
     <string name="sginst2">Household Identification</string>
     <string name="villagename">Village Name:</string>
-    <string name="hcla">Household Classification:</string>
-    <string name="hcla01">BISP Beneficiary Household</string>
-    <string name="hcla02">BISP + ENP/CCT Beneficiary Household</string>
-    <string name="hcla03">Non-BISP/ENP Household</string>
     <string name="household">Household number:</string>
     <string name="qnumber">Questionnaire number</string>
     <string name="sg1inst3">PERSONAL LEVEL INDICATORS</string>

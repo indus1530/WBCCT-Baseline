@@ -102,6 +102,9 @@
     <string name="a11402"> نہیں </string>
     <string name="Q_a114a">a114a</string>
     <string name="a114a"> گهرانے کی درجہ بندی </string>
+    <string name="a114aa">بے نظیر انکم سپورٹ پروگرام /احساس کفالت پروگرام سے مستفیدہونے والا گھرانہـ</string>
+    <string name="a114ab">بے نظیر انکم سپورٹ پروگرام /احساس کفالت پروگرام  اور احساس نشوونما پروگرام (ENP/CCT) سے مستفیدہونے والا گھرانہـ</string>
+    <string name="a114ac">ایسا گھرانہ جو بے نظیر انکم سپورٹ پروگرام /احساس کفالت پروگرام اور احساس نشوونما پروگرام سے مستفید نہ ہورہا ہوـ</string>
     <string name="a115">انٹرویو شروع ہونے کا وقت</string>
     <string name="a115h">گھنٹے</string>
     <string name="a115m">منٹ</string>
@@ -1478,9 +1481,9 @@
     <string name="cstabc"> اہل جواب دہندہ انٹرویو کے لیے موزوں نہیں </string>
     <string name="cstab96"> دیگر وضاحت کریں </string>
 
-    <string name="dinstrc1">ہدایات: ماڈیول D کی  جواب دہندہ گھر میں  موجود 2 سال سے کم عمر منتخب بچے کی ماں( 15-49 سال عمر)   یا دیکھ بھال کرنے والی  خاتون  ہوگی۔</string>
+    <string name="dinstrc1">ہدایات: ماڈیول D کی  جواب دہندہ گھر میں  موجود 2 سال سے کم عمر منتخب بچے کی ماں( 15–49 سال عمر)   یا دیکھ بھال کرنے والی  خاتون  ہوگی۔</string>
     <string name="dinstrc2"> اگر گھر میں دو  سال سے کم عمر بچے ایک سے زیادہ ہیں تو کش گرڈ کے ذریعے انتخاب  کریں۔</string>
-    <string name="dinstrc3"> سیکشن”  “D2 : IYCF اور فوڈ ڈائیورسٹی ' صرف 0–23 ماہ کے بچوں کے لیے بھرا جائے گا۔ اگر بچے کی عمر 24 ماہ ہے، تو سیکشن D2”   “کو چھوڑ دیں۔</string>
+    <string name="dinstrc3"> سیکشن”  “D2 : IYCF اور فوڈ ڈائیورسٹی \' صرف 0–23 ماہ کے بچوں کے لیے بھرا جائے گا۔ اگر بچے کی عمر 24 ماہ ہے، تو سیکشن D2”   “کو چھوڑ دیں۔</string>
     <!--<string name="secdtitle">سیکشن ڈی1:پانچ سال سے کم عمر بچوں کی معلومات</string>-->
     <!--<string name="d1"> بچے کے بارے میں معلومات </string>-->
     <string name="d101"> بچے  کا نام </string>
@@ -2288,10 +2291,6 @@
     <string name="sginst2">گهرانے کی شناخت</string>
     <string name="villagename">گاؤں کا نام</string>
     <string name="district"> ضلع</string>
-    <string name="hcla">گهرانے کی درجہ بندی</string>
-    <string name="hcla01">بے نظیر انکم سپورٹ پروگرام /احساس کفالت پروگرام سے مستفیدہونے والا گھرانہـ</string>
-    <string name="hcla02">بے نظیر انکم سپورٹ پروگرام /احساس کفالت پروگرام  اور احساس نشوونما پروگرام (ENP/CCT) سے مستفیدہونے والا گھرانہـ</string>
-    <string name="hcla03">ایسا گھرانہ جو بے نظیر انکم سپورٹ پروگرام /احساس کفالت پروگرام اور احساس نشوونما پروگرام سے مستفید نہ ہورہا ہوـ</string>
     <string name="household"> گھرانہ نمبر</string>
     <string name="qnumber">سوالنامہ نمبر</string>
     <string name="sg1inst3">ذاتی سطح کے اشارے</string>
@@ -3463,9 +3462,7 @@
     <string name='Q_district'>district</string>
     <string name='Q_hcla'>hcla</string>
     <string name='Q_household'>household</string>
-    <string name='Q_istg01'>istg01</string>
-    <string name='Q_istg02'>istg02</string>
-    <string name='Q_istgtitle'>istgtitle</string>
+    <string name='Q_istg'>istg</string>
     <string name='Q_qnumber'>qnumber</string>
     <string name='Q_sg10a'>sg10a</string>
     <string name='Q_sg10inst'>sg10inst</string>
@@ -3617,6 +3614,17 @@
     <string name='Q_sginst2'>sginst2</string>
     <string name='Q_sginst3'>sginst3</string>
     <string name='Q_villagename'>villagename</string>
+
+
+    <string name="title_activity_lock">LockActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 
 
 </resources>
