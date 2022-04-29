@@ -1,7 +1,6 @@
 package edu.aku.hassannaqvi.wbcct_baseline.ui.sections;
 
 import static edu.aku.hassannaqvi.wbcct_baseline.core.MainApp.form;
-import static edu.aku.hassannaqvi.wbcct_baseline.core.MainApp.selectedMWRA;
 import static edu.aku.hassannaqvi.wbcct_baseline.core.MainApp.sharedPref;
 
 import android.content.Intent;
@@ -70,32 +69,7 @@ public class SectionA5Activity extends AppCompatActivity {
         if (!formValidation()) return;
         if (updateDB()) {
             finish();
-            if (!MainApp.selectedRecipient.isEmpty()) {
-                startActivity(new Intent(this, SectionB1Activity.class));
-            } else {
-
-                // selected familymember (Child)
-                try {
-                    // populate mother/caregiver data if already exisits
-                    MainApp.mwra = db.getMWRAByFMUID(MainApp.familyMember.getUid());
-                    if (!selectedMWRA.equals("97")) {
-                        MainApp.familyMember = db.getSelectedMemberBYUID(MainApp.form.getUid(), "2");
-
-                        MainApp.mwra = db.getMWRAByFMUID(MainApp.familyMember.getUid());
-                        startActivity(new Intent(this, SectionC1Activity.class));
-                    } else {
-                        MainApp.familyMember = db.getSelectedMemberBYUID(MainApp.form.getUid(), "1");
-
-                        MainApp.child = db.getChildByFMUID(MainApp.familyMember.getUid());
-                        startActivity(new Intent(this, SectionD1Activity.class));
-                    }
-
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                    Toast.makeText(this, "JSONException(familymember/mwra): " + e.getMessage(), Toast.LENGTH_SHORT).show();
-
-                }
-            }
+            startActivity(new Intent(this, SectionG1Activity.class));
             //startActivity(new Intent(this, SectionB1Activity.class));
         } else Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
     }
