@@ -79,7 +79,7 @@
         <entry key="..\:/Users/abdul.sajid/Desktop/Android App/WBCCT-Baseline/app/src/main/res/layout/activity_section_e1.xml" value="0.55859375" />
         <entry key="..\:/Users/abdul.sajid/Desktop/Android App/WBCCT-Baseline/app/src/main/res/layout/activity_section_f2.xml" value="0.55859375" />
         <entry key="..\:/Users/abdul.sajid/Desktop/Android App/WBCCT-Baseline/app/src/main/res/layout/activity_section_g1.xml" value="0.55859375" />
-        <entry key="..\:/Users/abdul.sajid/Desktop/Android App/WBCCT-Baseline/app/src/main/res/layout/activity_section_g2.xml" value="0.55859375" />
+        <entry key="..\:/Users/abdul.sajid/Desktop/Android App/WBCCT-Baseline/app/src/main/res/layout/activity_section_g2.xml" value="0.1" />
         <entry key="..\:/Users/abdul.sajid/Desktop/Android App/WBCCT-Baseline/app/src/main/res/layout/activity_section_g3.xml" value="0.55859375" />
         <entry key="..\:/Users/hassan.naqvi/StudioProjects/ENP-Baseline/app/src/main/res/layout/activity_login.xml" value="0.41484375" />
         <entry key="..\:/Users/hassan.naqvi/StudioProjects/ENP-Baseline/app/src/main/res/layout/activity_main.xml" value="0.4140625" />
@@ -116,7 +116,7 @@
     </option>
   </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_X" default="true" project-jdk-name="16" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_15" project-jdk-name="16" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>

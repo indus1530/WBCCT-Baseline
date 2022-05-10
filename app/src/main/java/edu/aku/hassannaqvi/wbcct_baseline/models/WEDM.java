@@ -721,6 +721,7 @@ public class WEDM extends BaseObservable implements Observable {
 
     public void setSg7a(String sg7a) {
         this.sg7a = sg7a;
+        setSg7ar(sg7a.equals("1") ? this.sg7ar : "");
         notifyPropertyChanged(BR.sg7a);
     }
 
@@ -741,6 +742,7 @@ public class WEDM extends BaseObservable implements Observable {
 
     public void setSg7b(String sg7b) {
         this.sg7b = sg7b;
+        setSg7br(sg7b.equals("1") ? this.sg7br : "");
         notifyPropertyChanged(BR.sg7b);
     }
 
@@ -761,6 +763,7 @@ public class WEDM extends BaseObservable implements Observable {
 
     public void setSg7c(String sg7c) {
         this.sg7c = sg7c;
+        setSg7cr(sg7c.equals("1") ? this.sg7cr : "");
         notifyPropertyChanged(BR.sg7c);
     }
 
@@ -781,6 +784,7 @@ public class WEDM extends BaseObservable implements Observable {
 
     public void setSg7d(String sg7d) {
         this.sg7d = sg7d;
+        setSg7dr(sg7d.equals("1") ? this.sg7dr : "");
         notifyPropertyChanged(BR.sg7d);
     }
 
@@ -801,6 +805,7 @@ public class WEDM extends BaseObservable implements Observable {
 
     public void setSg7e(String sg7e) {
         this.sg7e = sg7e;
+        setSg7er(sg7e.equals("1") ? this.sg7er : "");
         notifyPropertyChanged(BR.sg7e);
     }
 
@@ -821,6 +826,7 @@ public class WEDM extends BaseObservable implements Observable {
 
     public void setSg7f(String sg7f) {
         this.sg7f = sg7f;
+        setSg7fr(sg7f.equals("1") ? this.sg7fr : "");
         notifyPropertyChanged(BR.sg7f);
     }
 
@@ -841,6 +847,7 @@ public class WEDM extends BaseObservable implements Observable {
 
     public void setSg7g(String sg7g) {
         this.sg7g = sg7g;
+        setSg7gr(sg7g.equals("1") ? this.sg7gr : "");
         notifyPropertyChanged(BR.sg7g);
     }
 
@@ -881,6 +888,8 @@ public class WEDM extends BaseObservable implements Observable {
 
     public void setSg8a(String sg8a) {
         this.sg8a = sg8a;
+        setSg8an(sg8a.equals("1") ? this.sg8an : "");
+        setSg8ar(sg8a.equals("1") ? this.sg8ar : "");
         notifyPropertyChanged(BR.sg8a);
     }
 
@@ -911,6 +920,8 @@ public class WEDM extends BaseObservable implements Observable {
 
     public void setSg8b(String sg8b) {
         this.sg8b = sg8b;
+        setSg8bn(sg8b.equals("1") ? this.sg8bn : "");
+        setSg8br(sg8b.equals("1") ? this.sg8br : "");
         notifyPropertyChanged(BR.sg8b);
     }
 
@@ -941,6 +952,8 @@ public class WEDM extends BaseObservable implements Observable {
 
     public void setSg8c(String sg8c) {
         this.sg8c = sg8c;
+        setSg8cn(sg8c.equals("1") ? this.sg8cn : "");
+        setSg8cr(sg8c.equals("1") ? this.sg8cr : "");
         notifyPropertyChanged(BR.sg8c);
     }
 
@@ -971,6 +984,8 @@ public class WEDM extends BaseObservable implements Observable {
 
     public void setSg8d(String sg8d) {
         this.sg8d = sg8d;
+        setSg8dn(sg8d.equals("1") ? this.sg8dn : "");
+        setSg8dr(sg8d.equals("1") ? this.sg8dr : "");
         notifyPropertyChanged(BR.sg8d);
     }
 
@@ -1001,6 +1016,8 @@ public class WEDM extends BaseObservable implements Observable {
 
     public void setSg8e(String sg8e) {
         this.sg8e = sg8e;
+        setSg8en(sg8e.equals("1") ? this.sg8en : "");
+        setSg8er(sg8e.equals("1") ? this.sg8er : "");
         notifyPropertyChanged(BR.sg8e);
     }
 
