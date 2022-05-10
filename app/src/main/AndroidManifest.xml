@@ -30,6 +30,9 @@
         android:usesCleartextTraffic="false"
         tools:replace="android:allowBackup">
         <activity
+            android:name=".ui.sections.SectionG3Activity"
+            android:exported="true" />
+        <activity
             android:name=".ui.sections.SectionG2Activity"
             android:exported="true" />
         <activity
