@@ -1,6 +1,5 @@
 package edu.aku.hassannaqvi.wbcct_baseline.ui;
 
-import static edu.aku.hassannaqvi.wbcct_baseline.core.MainApp.selectedCluster;
 import static edu.aku.hassannaqvi.wbcct_baseline.core.MainApp.selectedTehsil;
 import static edu.aku.hassannaqvi.wbcct_baseline.core.MainApp.selectedUc;
 import static edu.aku.hassannaqvi.wbcct_baseline.core.MainApp.sharedPref;
@@ -235,7 +234,7 @@ public class IdentificationActivity extends AppCompatActivity {
     public void btnContinue(View view) {
         if (!formValidation()) return;
 
-        MainApp.selectedPSU = selectedCluster + String.format("%02d", Integer.parseInt(bi.a105b.getText().toString()));
+        //MainApp.selectedPSU = selectedCluster + String.format("%02d", Integer.parseInt(bi.a105b.getText().toString()));
         MainApp.selectedHHID = bi.a106.getText().toString();
         if (!hhExists()) {
             //saveDraftForm();

@@ -345,7 +345,7 @@ public class FamilyMembersListActivity extends AppCompatActivity {
         Toast.makeText(this, "Activity Resumed!", Toast.LENGTH_SHORT).show();
 
 
-        if (childOfSelectedMWRAList.size() > 0 && recipientsList.size() > 0) {
+        if (childOfSelectedMWRAList.size() > 0 /*&& recipientsList.size() > 0*/) {
             bi.familyComplete.setVisibility(View.VISIBLE);
 
         } else {
@@ -354,7 +354,7 @@ public class FamilyMembersListActivity extends AppCompatActivity {
         }
 
         // Disable family complete check if MWRA indexed
-        if (!MainApp.selectedChild.equals("") && !selectedRecipient.equals("")) {
+        if (!MainApp.selectedChild.equals("") /*&& !selectedRecipient.equals("")*/) {
             bi.familyComplete.setChecked(true);
             bi.familyComplete.setEnabled(false);
         }
