@@ -1212,6 +1212,7 @@
 
                 </androidx.cardview.widget.CardView>
 
+
                 <!-- sg9ab  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVsg9ab"
@@ -1277,9 +1278,13 @@
                                 android:checked="@{form.sg9ab.equals(`9`)}"
                                 android:onClick="@{()->form.setSg9ab(`9`)}"
                                 android:text="@string/sg9ab09" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- sg9b  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -1370,9 +1375,13 @@
                                 android:checked="@{form.sg9b.equals(`0`)}"
                                 android:onClick="@{()->form.setSg9b(`0`)}"
                                 android:text="@string/sg9b00" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- sg9bb  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -1439,9 +1448,13 @@
                                 android:checked="@{form.sg9bb.equals(`9`)}"
                                 android:onClick="@{()->form.setSg9bb(`9`)}"
                                 android:text="@string/sg9bb09" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- sg9c  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -1532,9 +1545,13 @@
                                 android:checked="@{form.sg9c.equals(`0`)}"
                                 android:onClick="@{()->form.setSg9c(`0`)}"
                                 android:text="@string/sg9c00" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- sg9cb  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -1601,9 +1618,13 @@
                                 android:checked="@{form.sg9cb.equals(`9`)}"
                                 android:onClick="@{()->form.setSg9cb(`9`)}"
                                 android:text="@string/sg9cb09" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- sg9d  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -1694,9 +1715,13 @@
                                 android:checked="@{form.sg9d.equals(`0`)}"
                                 android:onClick="@{()->form.setSg9d(`0`)}"
                                 android:text="@string/sg9d00" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- sg9db  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -1763,9 +1788,13 @@
                                 android:checked="@{form.sg9db.equals(`9`)}"
                                 android:onClick="@{()->form.setSg9db(`9`)}"
                                 android:text="@string/sg9db09" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- sg9e  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -1856,9 +1885,13 @@
                                 android:checked="@{form.sg9e.equals(`0`)}"
                                 android:onClick="@{()->form.setSg9e(`0`)}"
                                 android:text="@string/sg9e00" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- sg9eb  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -1925,9 +1958,13 @@
                                 android:checked="@{form.sg9eb.equals(`9`)}"
                                 android:onClick="@{()->form.setSg9eb(`9`)}"
                                 android:text="@string/sg9eb09" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- sg9f  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -2018,9 +2055,13 @@
                                 android:checked="@{form.sg9f.equals(`0`)}"
                                 android:onClick="@{()->form.setSg9f(`0`)}"
                                 android:text="@string/sg9f00" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- sg9fb  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -2087,9 +2128,13 @@
                                 android:checked="@{form.sg9fb.equals(`9`)}"
                                 android:onClick="@{()->form.setSg9fb(`9`)}"
                                 android:text="@string/sg9fb09" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- sg9g  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -2180,9 +2225,13 @@
                                 android:checked="@{form.sg9g.equals(`0`)}"
                                 android:onClick="@{()->form.setSg9g(`0`)}"
                                 android:text="@string/sg9g00" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- sg9gb  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -2249,9 +2298,13 @@
                                 android:checked="@{form.sg9gb.equals(`9`)}"
                                 android:onClick="@{()->form.setSg9gb(`9`)}"
                                 android:text="@string/sg9gb09" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- sg9h  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -2342,9 +2395,13 @@
                                 android:checked="@{form.sg9h.equals(`0`)}"
                                 android:onClick="@{()->form.setSg9h(`0`)}"
                                 android:text="@string/sg9h00" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- sg9hb  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -2411,9 +2468,13 @@
                                 android:checked="@{form.sg9hb.equals(`9`)}"
                                 android:onClick="@{()->form.setSg9hb(`9`)}"
                                 android:text="@string/sg9hb09" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- sg9i  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -2504,9 +2565,13 @@
                                 android:checked="@{form.sg9i.equals(`0`)}"
                                 android:onClick="@{()->form.setSg9i(`0`)}"
                                 android:text="@string/sg9i00" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- sg9ib  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -2573,8 +2638,11 @@
                                 android:checked="@{form.sg9ib.equals(`9`)}"
                                 android:onClick="@{()->form.setSg9ib(`9`)}"
                                 android:text="@string/sg9ib09" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
 
