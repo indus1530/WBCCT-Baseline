@@ -324,7 +324,7 @@ public class IdentificationActivity extends AppCompatActivity {
 
         MainApp.form = new Form();
         try {
-            MainApp.form = db.getFormByPSUHHNo(MainApp.selectedPSU, MainApp.selectedHHID);
+            MainApp.form = db.getFormByPSUHHNo(MainApp.selectedVillage, MainApp.selectedHHID);
         } catch (JSONException e) {
             Log.d(TAG, getString(R.string.hh_exists_form) + e.getMessage());
             Toast.makeText(this, getString(R.string.hh_exists_form) + e.getMessage(), Toast.LENGTH_SHORT).show();

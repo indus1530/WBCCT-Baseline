@@ -2094,7 +2094,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return all;
     }
 
-    public Form getFormByPSUHHNo(String psuCode, String hhid) throws JSONException {
+    public Form getFormByPSUHHNo(String villageCode, String hhid) throws JSONException {
 
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c = null;
@@ -2102,9 +2102,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         Boolean distinct = false;
         String tableName = FormsTable.TABLE_NAME;
         String[] columns = null;
-        String whereClause = FormsTable.COLUMN_PSU_CODE + "= ? AND " +
+        String whereClause = FormsTable.COLUMN_VILLAGE_CODE + "= ? AND " +
                 FormsTable.COLUMN_HHID + "= ? ";
-        String[] whereArgs = {psuCode, hhid};
+        String[] whereArgs = {villageCode, hhid};
         String groupBy = null;
         String having = null;
         String orderBy = FormsTable.COLUMN_SYSDATE + " ASC";
