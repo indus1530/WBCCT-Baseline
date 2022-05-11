@@ -49,7 +49,7 @@ public class FormsReportCluster extends AppCompatActivity {
         bi.fcRecyclerView.setLayoutManager(layoutManager);
         bi.clusterFilter.setVisibility(View.VISIBLE);
         db = MainApp.appInfo.dbHelper;
-        fc = db.getFormsByCluster("0000000");
+        fc = db.getFormsByVillage("0000000");
 
         // specify an adapter (see also next example)
         formsAdapter = new FormsAdapter((List<Form>) fc, this);
@@ -58,7 +58,7 @@ public class FormsReportCluster extends AppCompatActivity {
 
     public void filterForms(View view) {
         Toast.makeText(this, "updated", Toast.LENGTH_SHORT).show();
-        fc = db.getFormsByCluster(bi.clusterFilter.getText().toString());
+        fc = db.getFormsByVillage(bi.clusterFilter.getText().toString());
         formsAdapter = new FormsAdapter((List<Form>) fc, this);
         formsAdapter.notifyDataSetChanged();
         bi.fcRecyclerView.setAdapter(formsAdapter);

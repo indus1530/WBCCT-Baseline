@@ -200,7 +200,7 @@ public class FamilyMembersListActivity extends AppCompatActivity {
         MainApp.selectedChildName = "";
         MainApp.selectedRecipient = "";
         MainApp.selectedPreg1st = "";
-        bi.hhNo.setText("Family of: " + MainApp.form.getPsuCode() + "-" + MainApp.form.getHhid());
+        bi.hhNo.setText("Family of: " + MainApp.form.getVillageCode() + "-" + MainApp.form.getHhid());
         // Family Complete criteria: MWRA must exist
         for (FamilyMembers fm : MainApp.familyList) {
             if (!fm.getA208().equals("5") && !fm.getA208().equals("99")) {

@@ -24,7 +24,7 @@ import edu.aku.hassannaqvi.wbcct_baseline.core.MainApp;
 
 public class EntryLog extends BaseObservable implements Observable {
 
-    private final String TAG = "Form";
+    private final String TAG = "EntryLog";
     private final transient PropertyChangeRegistry propertyChangeRegistry = new PropertyChangeRegistry();
 
     private String id = _EMPTY_;
@@ -35,7 +35,7 @@ public class EntryLog extends BaseObservable implements Observable {
     private String userName = _EMPTY_;
     private String sysDate = _EMPTY_;
     private String entryDate = _EMPTY_;         //
-    private String psuCode = _EMPTY_;
+    private String villageCode = _EMPTY_;
     private String hhid = _EMPTY_;
     private String appver = _EMPTY_;            //
     private String iStatus = _EMPTY_;
@@ -58,7 +58,7 @@ public class EntryLog extends BaseObservable implements Observable {
         setUserName(MainApp.user.getUserName());
         setSysDate(MainApp.form.getSysDate());
         setEntryDate(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()));
-        setPsuCode(MainApp.form.getPsuCode());
+        setVillageCode(MainApp.form.getVillageCode());
         setHhid(MainApp.form.getHhid());
         setiStatus(MainApp.form.getiStatus());
         setiStatus96x(MainApp.form.getiStatus96x());
@@ -111,13 +111,13 @@ public class EntryLog extends BaseObservable implements Observable {
 
 
     @Bindable
-    public String getPsuCode() {
-        return psuCode;
+    public String getVillageCode() {
+        return villageCode;
     }
 
-    public void setPsuCode(String psuCode) {
-        this.psuCode = psuCode;
-        notifyPropertyChanged(BR.psuCode);
+    public void setVillageCode(String villageCode) {
+        this.villageCode = villageCode;
+        notifyPropertyChanged(BR.villageCode);
     }
 
     @Bindable
@@ -218,7 +218,7 @@ public class EntryLog extends BaseObservable implements Observable {
         this.uid = cursor.getString(cursor.getColumnIndexOrThrow(EntryLogTable.COLUMN_UID));
         this.uuid = cursor.getString(cursor.getColumnIndexOrThrow(EntryLogTable.COLUMN_UUID));
         this.projectName = cursor.getString(cursor.getColumnIndexOrThrow(EntryLogTable.COLUMN_PROJECT_NAME));
-        this.psuCode = cursor.getString(cursor.getColumnIndexOrThrow(EntryLogTable.COLUMN_PSU_CODE));
+        this.villageCode = cursor.getString(cursor.getColumnIndexOrThrow(EntryLogTable.COLUMN_VILLAGE_CODE));
         this.hhid = cursor.getString(cursor.getColumnIndexOrThrow(EntryLogTable.COLUMN_HHID));
         this.userName = cursor.getString(cursor.getColumnIndexOrThrow(EntryLogTable.COLUMN_USERNAME));
         this.sysDate = cursor.getString(cursor.getColumnIndexOrThrow(EntryLogTable.COLUMN_SYSDATE));
@@ -242,7 +242,7 @@ public class EntryLog extends BaseObservable implements Observable {
         json.put(EntryLogTable.COLUMN_UID, this.uid);
         json.put(EntryLogTable.COLUMN_UUID, this.uuid);
         json.put(EntryLogTable.COLUMN_PROJECT_NAME, this.projectName);
-        json.put(EntryLogTable.COLUMN_PSU_CODE, this.psuCode);
+        json.put(EntryLogTable.COLUMN_VILLAGE_CODE, this.villageCode);
         json.put(EntryLogTable.COLUMN_HHID, this.hhid);
         json.put(EntryLogTable.COLUMN_USERNAME, this.userName);
         json.put(EntryLogTable.COLUMN_SYSDATE, this.sysDate);

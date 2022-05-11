@@ -4,7 +4,6 @@ import static edu.aku.hassannaqvi.wbcct_baseline.core.MainApp.PROJECT_NAME;
 import static edu.aku.hassannaqvi.wbcct_baseline.core.MainApp._EMPTY_;
 import static edu.aku.hassannaqvi.wbcct_baseline.core.MainApp.selectedDistrict;
 import static edu.aku.hassannaqvi.wbcct_baseline.core.MainApp.selectedHHID;
-import static edu.aku.hassannaqvi.wbcct_baseline.core.MainApp.selectedPSU;
 import static edu.aku.hassannaqvi.wbcct_baseline.core.MainApp.selectedProvince;
 import static edu.aku.hassannaqvi.wbcct_baseline.core.MainApp.selectedTehsil;
 import static edu.aku.hassannaqvi.wbcct_baseline.core.MainApp.selectedUc;
@@ -41,7 +40,6 @@ public class Form extends BaseObservable implements Observable {
     private String uid = _EMPTY_;
     private String userName = _EMPTY_;
     private String sysDate = _EMPTY_;
-    private String psuCode = _EMPTY_;
     private String hhid = _EMPTY_;
     private String sno = _EMPTY_;
     private String deviceId = _EMPTY_;
@@ -239,7 +237,7 @@ public class Form extends BaseObservable implements Observable {
         setTehsilCode(selectedTehsil);
         setUcCode(selectedUc);
         setVillageCode(selectedVillage);
-        setPsuCode(selectedPSU);
+        //setPsuCode(selectedPSU);
         setHhid(selectedHHID);
 
 
@@ -270,7 +268,7 @@ public class Form extends BaseObservable implements Observable {
         this.uid = uid;
     }
 
-    @Bindable
+    /*@Bindable
     public String getPsuCode() {
         return psuCode;
     }
@@ -279,7 +277,7 @@ public class Form extends BaseObservable implements Observable {
         this.psuCode = psuCode;
         setA105b(psuCode);
         notifyPropertyChanged(BR.psuCode);
-    }
+    }*/
 
     @Bindable
     public String getHhid() {
@@ -2000,7 +1998,6 @@ public class Form extends BaseObservable implements Observable {
         this.id = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_ID));
         this.uid = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_UID));
         this.projectName = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_PROJECT_NAME));
-        this.psuCode = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_PSU_CODE));
         this.hhid = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_HHID));
         this.sno = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SNO));
         this.userName = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_USERNAME));
@@ -2216,7 +2213,6 @@ public class Form extends BaseObservable implements Observable {
         json.put(FormsTable.COLUMN_ID, this.id);
         json.put(FormsTable.COLUMN_UID, this.uid);
         json.put(FormsTable.COLUMN_PROJECT_NAME, this.projectName);
-        json.put(FormsTable.COLUMN_PSU_CODE, this.psuCode);
         json.put(FormsTable.COLUMN_HHID, this.hhid);
         json.put(FormsTable.COLUMN_SNO, this.sno);
         json.put(FormsTable.COLUMN_USERNAME, this.userName);

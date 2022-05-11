@@ -38,7 +38,7 @@ public class AnthroWRA extends BaseObservable implements Observable {
     private String cluster = _EMPTY_;
     private String hhid = _EMPTY_;
     private String sno = _EMPTY_;
-    private String psuCode = _EMPTY_;
+    private String villageCode = _EMPTY_;
     private String userName = _EMPTY_;
     private String sysDate = _EMPTY_;
     private String deviceId = _EMPTY_;
@@ -86,7 +86,7 @@ public class AnthroWRA extends BaseObservable implements Observable {
         setFmuid(MainApp.familyMember.getUid()); //// not applicable in Form table
         setAppver(MainApp.appInfo.getAppVersion());
         setProjectName(PROJECT_NAME);
-        setpsuCode(MainApp.selectedPSU);
+        setVillageCode(MainApp.selectedVillage);
         setHhid(MainApp.selectedHHID);
 
     }
@@ -244,12 +244,12 @@ public class AnthroWRA extends BaseObservable implements Observable {
         this.syncDate = syncDate;
     }
 
-    public String getpsuCode() {
-        return psuCode;
+    public String getVillageCode() {
+        return villageCode;
     }
 
-    private void setpsuCode(String psuCode) {
-        this.psuCode = psuCode;
+    private void setVillageCode(String villageCode) {
+        this.villageCode = villageCode;
     }
 
 
@@ -456,7 +456,7 @@ public class AnthroWRA extends BaseObservable implements Observable {
         this.uuid = cursor.getString(cursor.getColumnIndexOrThrow(AnthroWRATable.COLUMN_UUID));
         this.fmuid = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.AnthroWRATable.COLUMN_FMUID));
         this.projectName = cursor.getString(cursor.getColumnIndexOrThrow(AnthroWRATable.COLUMN_PROJECT_NAME));
-        this.psuCode = cursor.getString(cursor.getColumnIndexOrThrow(AnthroWRATable.COLUMN_PSU_CODE));
+        this.villageCode = cursor.getString(cursor.getColumnIndexOrThrow(AnthroWRATable.COLUMN_VILLAGE_CODE));
         this.hhid = cursor.getString(cursor.getColumnIndexOrThrow(AnthroWRATable.COLUMN_HHID));
         this.sno = cursor.getString(cursor.getColumnIndexOrThrow(AnthroWRATable.COLUMN_SNO));
         this.userName = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.AnthroWRATable.COLUMN_USERNAME));
@@ -506,12 +506,12 @@ public class AnthroWRA extends BaseObservable implements Observable {
         json.put(AnthroWRATable.COLUMN_UID, this.uid);
         json.put(AnthroWRATable.COLUMN_PROJECT_NAME, this.projectName);
 
-        json.put(AnthroWRATable.COLUMN_UUID, this.uid);
+        json.put(AnthroWRATable.COLUMN_UUID, this.uuid);
         json.put(AnthroWRATable.COLUMN_HHID, this.hhid);
         // json.put(AnthroWRATable.COLUMN_MUID, this.muid);
         json.put(TableContracts.AnthroWRATable.COLUMN_SNO, this.sno);
         json.put(TableContracts.AnthroWRATable.COLUMN_FMUID, this.fmuid);
-        json.put(AnthroWRATable.COLUMN_PSU_CODE, this.psuCode);
+        json.put(AnthroWRATable.COLUMN_VILLAGE_CODE, this.villageCode);
         json.put(AnthroWRATable.COLUMN_USERNAME, this.userName);
         json.put(AnthroWRATable.COLUMN_SYSDATE, this.sysDate);
         json.put(AnthroWRATable.COLUMN_DEVICEID, this.deviceId);

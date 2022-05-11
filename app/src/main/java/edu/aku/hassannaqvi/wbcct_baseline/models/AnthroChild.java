@@ -31,7 +31,7 @@ public class AnthroChild extends BaseObservable implements Observable {
     private String fmuid = _EMPTY_;
     private String userName = _EMPTY_;
     private String sysDate = _EMPTY_;
-    private String psuCode = _EMPTY_;
+    private String villageCode = _EMPTY_;
     private String hhid = _EMPTY_;
     private String sno = _EMPTY_;
     private String deviceId = _EMPTY_;
@@ -79,7 +79,7 @@ public class AnthroChild extends BaseObservable implements Observable {
         setFmuid(MainApp.familyMember.getUid()); //// not applicable in Form table
         setAppver(MainApp.appInfo.getAppVersion());
         setProjectName(PROJECT_NAME);
-        setpsuCode(MainApp.selectedPSU);
+        setVillageCode(MainApp.selectedVillage);
         setHhid(MainApp.selectedHHID);
 
     }
@@ -141,8 +141,8 @@ public class AnthroChild extends BaseObservable implements Observable {
         this.sysDate = sysDate;
     }
 
-    public String getpsuCode() {
-        return psuCode;
+    public String getVillageCode() {
+        return villageCode;
     }
 
     public String getHhid() {
@@ -226,8 +226,8 @@ public class AnthroChild extends BaseObservable implements Observable {
         this.syncDate = syncDate;
     }
 
-    public void setpsuCode(String psuCode) {
-        this.psuCode = psuCode;
+    public void setVillageCode(String villageCode) {
+        this.villageCode = villageCode;
     }
 
 
@@ -473,7 +473,7 @@ public class AnthroChild extends BaseObservable implements Observable {
         this.uid = cursor.getString(cursor.getColumnIndexOrThrow(AnthroChildTable.COLUMN_UID));
         this.uuid = cursor.getString(cursor.getColumnIndexOrThrow(AnthroChildTable.COLUMN_UUID));
         this.fmuid = cursor.getString(cursor.getColumnIndexOrThrow(AnthroChildTable.COLUMN_FMUID));
-        this.psuCode = cursor.getString(cursor.getColumnIndexOrThrow(AnthroChildTable.COLUMN_PSU_CODE));
+        this.villageCode = cursor.getString(cursor.getColumnIndexOrThrow(AnthroChildTable.COLUMN_VILLAGE_CODE));
         this.hhid = cursor.getString(cursor.getColumnIndexOrThrow(AnthroChildTable.COLUMN_HHID));
         this.projectName = cursor.getString(cursor.getColumnIndexOrThrow(AnthroChildTable.COLUMN_PROJECT_NAME));
         this.sno = cursor.getString(cursor.getColumnIndexOrThrow(AnthroChildTable.COLUMN_SNO));
@@ -525,7 +525,7 @@ public class AnthroChild extends BaseObservable implements Observable {
 
         json.put(AnthroChildTable.COLUMN_ID, this.id);
         json.put(AnthroChildTable.COLUMN_UID, this.uid);
-        json.put(AnthroChildTable.COLUMN_PSU_CODE, this.psuCode);
+        json.put(AnthroChildTable.COLUMN_VILLAGE_CODE, this.villageCode);
         json.put(AnthroChildTable.COLUMN_HHID, this.hhid);
         json.put(AnthroChildTable.COLUMN_PROJECT_NAME, this.projectName);
         json.put(AnthroChildTable.COLUMN_UUID, this.uuid);

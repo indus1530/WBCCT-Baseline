@@ -34,7 +34,7 @@ public class Child extends BaseObservable implements Observable {
     private String userName = _EMPTY_;
     private String sysDate = _EMPTY_;
     private String indexed = _EMPTY_;
-    private String psuCode = _EMPTY_;
+    private String villageCode = _EMPTY_;
     private String hhid = _EMPTY_;
     private String sno = _EMPTY_;
     private String deviceId = _EMPTY_;
@@ -293,7 +293,7 @@ public class Child extends BaseObservable implements Observable {
         }
         setAppver(MainApp.appInfo.getAppVersion());
         setProjectName(PROJECT_NAME);
-        setpsuCode(MainApp.selectedPSU);
+        setVillageCode(MainApp.selectedVillage);
         setHhid(MainApp.selectedHHID);
 
     }
@@ -362,8 +362,8 @@ public class Child extends BaseObservable implements Observable {
         this.sysDate = sysDate;
     }
 
-    public String getpsuCode() {
-        return psuCode;
+    public String getVillageCode() {
+        return villageCode;
     }
 
     public String getHhid() {
@@ -454,8 +454,8 @@ public class Child extends BaseObservable implements Observable {
         this.syncDate = syncDate;
     }
 
-    public void setpsuCode(String psuCode) {
-        this.psuCode = psuCode;
+    public void setVillageCode(String villageCode) {
+        this.villageCode = villageCode;
     }
 
 
@@ -3200,7 +3200,7 @@ public class Child extends BaseObservable implements Observable {
         this.fmuid = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_FMUID));
         this.muid = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_MUID));
         this.indexed = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_INDEXED));
-        this.psuCode = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_PSU_CODE));
+        this.villageCode = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_VILLAGE_CODE));
         this.hhid = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_HHID));
         this.projectName = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_PROJECT_NAME));
         this.sno = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_SNO));
@@ -3480,7 +3480,7 @@ public class Child extends BaseObservable implements Observable {
 
         json.put(TableContracts.ChildTable.COLUMN_ID, this.id);
         json.put(TableContracts.ChildTable.COLUMN_UID, this.uid);
-        json.put(TableContracts.ChildTable.COLUMN_PSU_CODE, this.psuCode);
+        json.put(TableContracts.ChildTable.COLUMN_VILLAGE_CODE, this.villageCode);
         json.put(TableContracts.ChildTable.COLUMN_HHID, this.hhid);
         json.put(TableContracts.ChildTable.COLUMN_PROJECT_NAME, this.projectName);
         json.put(TableContracts.ChildTable.COLUMN_UUID, this.uuid);

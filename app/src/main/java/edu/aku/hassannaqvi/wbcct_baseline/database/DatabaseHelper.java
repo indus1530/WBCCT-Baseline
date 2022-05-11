@@ -112,7 +112,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
         values.put(FormsTable.COLUMN_PROJECT_NAME, form.getProjectName());
         values.put(FormsTable.COLUMN_UID, form.getUid());
-        values.put(FormsTable.COLUMN_PSU_CODE, form.getPsuCode());
         values.put(FormsTable.COLUMN_HHID, form.getHhid());
         values.put(FormsTable.COLUMN_SNO, form.getSno());
         values.put(FormsTable.COLUMN_USERNAME, form.getUserName());
@@ -151,7 +150,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
         values.put(EntryLogTable.COLUMN_PROJECT_NAME, entryLog.getProjectName());
         values.put(EntryLogTable.COLUMN_UUID, entryLog.getUuid());
-        values.put(EntryLogTable.COLUMN_PSU_CODE, entryLog.getPsuCode());
+        values.put(EntryLogTable.COLUMN_VILLAGE_CODE, entryLog.getVillageCode());
         values.put(EntryLogTable.COLUMN_HHID, entryLog.getHhid());
         values.put(EntryLogTable.COLUMN_USERNAME, entryLog.getUserName());
         values.put(EntryLogTable.COLUMN_SYSDATE, entryLog.getSysDate());
@@ -181,7 +180,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(MwraTable.COLUMN_FMUID, mwra.getFmuid());
         //  values.put(MwraTable.COLUMN_MUID, mwra.getMuid());
         values.put(MwraTable.COLUMN_SNO, mwra.getSno());
-        values.put(MwraTable.COLUMN_PSU_CODE, mwra.getpsuCode());
+        values.put(MwraTable.COLUMN_VILLAGE_CODE, mwra.getVillageCode());
         values.put(MwraTable.COLUMN_HHID, mwra.getHhid());
         values.put(MwraTable.COLUMN_USERNAME, mwra.getUserName());
         values.put(MwraTable.COLUMN_SYSDATE, mwra.getSysDate());
@@ -212,13 +211,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(WEDMTable.COLUMN_PROJECT_NAME, wedm.getProjectName());
         values.put(WEDMTable.COLUMN_UID, wedm.getUid());
         values.put(WEDMTable.COLUMN_UUID, wedm.getUuid());
-        values.put(WEDMTable.COLUMN_FMUID, wedm.getFmuid());
-        values.put(WEDMTable.COLUMN_SNO, wedm.getSno());
-        values.put(WEDMTable.COLUMN_PSU_CODE, wedm.getpsuCode());
+        values.put(WEDMTable.COLUMN_VILLAGE_CODE, wedm.getVillageCode());
         values.put(WEDMTable.COLUMN_HHID, wedm.getHhid());
         values.put(WEDMTable.COLUMN_USERNAME, wedm.getUserName());
         values.put(WEDMTable.COLUMN_SYSDATE, wedm.getSysDate());
         values.put(WEDMTable.COLUMN_SG1, wedm.sG1toString());
+        values.put(WEDMTable.COLUMN_SG2, wedm.sG2toString());
+        values.put(WEDMTable.COLUMN_SG3, wedm.sG3toString());
         values.put(WEDMTable.COLUMN_ISTATUS, wedm.getiStatus());
         values.put(WEDMTable.COLUMN_DEVICETAGID, wedm.getDeviceTag());
         values.put(WEDMTable.COLUMN_DEVICEID, wedm.getDeviceId());
@@ -243,7 +242,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(TableContracts.AnthroWRATable.COLUMN_FMUID, anthw.getFmuid());
         //  values.put(AnthroWRATable.COLUMN_MUID, anthw.getMuid());
         values.put(TableContracts.AnthroWRATable.COLUMN_SNO, anthw.getSno());
-        values.put(TableContracts.AnthroWRATable.COLUMN_PSU_CODE, anthw.getpsuCode());
+        values.put(TableContracts.AnthroWRATable.COLUMN_VILLAGE_CODE, anthw.getVillageCode());
         values.put(AnthroWRATable.COLUMN_HHID, anthw.getHhid());
         values.put(TableContracts.AnthroWRATable.COLUMN_USERNAME, anthw.getUserName());
         values.put(TableContracts.AnthroWRATable.COLUMN_SYSDATE, anthw.getSysDate());
@@ -272,7 +271,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(ChildTable.COLUMN_FMUID, child.getFmuid());
         values.put(ChildTable.COLUMN_MUID, child.getMuid());
         values.put(ChildTable.COLUMN_SNO, child.getSno());
-        values.put(ChildTable.COLUMN_PSU_CODE, child.getpsuCode());
+        values.put(ChildTable.COLUMN_VILLAGE_CODE, child.getVillageCode());
         values.put(ChildTable.COLUMN_HHID, child.getHhid());
         values.put(ChildTable.COLUMN_USERNAME, child.getUserName());
         values.put(ChildTable.COLUMN_SYSDATE, child.getSysDate());
@@ -302,7 +301,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(AnthroChildTable.COLUMN_UUID, anthc.getUuid());
         values.put(AnthroChildTable.COLUMN_FMUID, anthc.getFmuid());
         values.put(AnthroChildTable.COLUMN_SNO, anthc.getSno());
-        values.put(AnthroChildTable.COLUMN_PSU_CODE, anthc.getpsuCode());
+        values.put(AnthroChildTable.COLUMN_VILLAGE_CODE, anthc.getVillageCode());
         values.put(AnthroChildTable.COLUMN_HHID, anthc.getHhid());
         values.put(AnthroChildTable.COLUMN_USERNAME, anthc.getUserName());
         values.put(AnthroChildTable.COLUMN_SYSDATE, anthc.getSysDate());
@@ -329,7 +328,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(PregnancyTable.COLUMN_UID, preg.getUid());
         values.put(PregnancyTable.COLUMN_UUID, preg.getUuid());
         values.put(PregnancyTable.COLUMN_FMUID, preg.getFmuid());
-        values.put(PregnancyTable.COLUMN_PSU_CODE, preg.getpsuCode());
+        values.put(PregnancyTable.COLUMN_VILLAGE_CODE, preg.getVillageCode());
         values.put(PregnancyTable.COLUMN_HHID, preg.getHhid());
         values.put(PregnancyTable.COLUMN_SNO, preg.getSno());
         values.put(PregnancyTable.COLUMN_USERNAME, preg.getUserName());
@@ -361,7 +360,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FamilyMembersTable.COLUMN_PROJECT_NAME, members.getProjectName());
         values.put(FamilyMembersTable.COLUMN_UID, members.getUid());
         values.put(FamilyMembersTable.COLUMN_UUID, members.getUuid());
-        values.put(FamilyMembersTable.COLUMN_PSU_CODE, members.getpsuCode());
+        values.put(FamilyMembersTable.COLUMN_VILLAGE_CODE, members.getVillageCode());
         values.put(FamilyMembersTable.COLUMN_HHID, members.getHhid());
         values.put(FamilyMembersTable.COLUMN_USERNAME, members.getUserName());
         values.put(FamilyMembersTable.COLUMN_SYSDATE, members.getSysDate());
@@ -396,7 +395,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(RecipientTable.COLUMN_UID, rcpt.getUid());
         values.put(RecipientTable.COLUMN_UUID, rcpt.getUuid());
         values.put(RecipientTable.COLUMN_FMUID, rcpt.getFmuid());
-        values.put(RecipientTable.COLUMN_PSU_CODE, rcpt.getPsuCode());
+        values.put(RecipientTable.COLUMN_VILLAGE_CODE, rcpt.getVillageCode());
         values.put(RecipientTable.COLUMN_HHID, rcpt.getHhid());
         values.put(RecipientTable.COLUMN_USERNAME, rcpt.getUserName());
         values.put(RecipientTable.COLUMN_SYSDATE, rcpt.getSysDate());
@@ -1386,16 +1385,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     }*/
 
-    public Form getFormByPsuHHNo(String psuCode, String hhid) throws JSONException {
+    public Form getFormByVillageHHNo(String villageCode, String hhid) throws JSONException {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c = null;
         String[] columns = null;
 
         String whereClause;
-        whereClause = FormsTable.COLUMN_PSU_CODE + "=? AND " +
+        whereClause = FormsTable.COLUMN_VILLAGE_CODE + "=? AND " +
                 FormsTable.COLUMN_HHID + " =? ";
 
-        String[] whereArgs = {psuCode, hhid};
+        String[] whereArgs = {villageCode, hhid};
 
         String groupBy = null;
         String having = null;
@@ -1428,15 +1427,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
-    public Collection<Form> getFormsByCluster(String cluster) {
-
-        // String sysdate =  spDateT.substring(0, 8).trim()
+    public Collection<Form> getFormsByVillage(String villageCode) {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c = null;
         String[] columns = null;
-        String whereClause = FormsTable.COLUMN_PSU_CODE + " = ? ";
-        String[] whereArgs = new String[]{cluster};
-//        String[] whereArgs = new String[]{"%" + spDateT.substring(0, 8).trim() + "%"};
+        String whereClause = FormsTable.COLUMN_VILLAGE_CODE + " = ? ";
+        String[] whereArgs = new String[]{villageCode};
         String groupBy = null;
         String having = null;
 
@@ -1459,7 +1455,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 fc.setId(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_ID)));
                 fc.setUid(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_UID)));
                 fc.setSysDate(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_SYSDATE)));
-                fc.setPsuCode(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_PSU_CODE)));
+                fc.setVillageCode(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_VILLAGE_CODE)));
                 fc.setHhid(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_HHID)));
                 fc.setSno(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_SNO)));
                 fc.setiStatus(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_ISTATUS)));
@@ -1507,7 +1503,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 fc.setId(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_ID)));
                 fc.setUid(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_UID)));
                 fc.setSysDate(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_SYSDATE)));
-                fc.setPsuCode(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_PSU_CODE)));
+                fc.setVillageCode(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_VILLAGE_CODE)));
                 fc.setHhid(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_HHID)));
                 fc.setiStatus(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_ISTATUS)));
                 fc.setSynced(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_SYNCED)));
@@ -1555,7 +1551,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 fc.setId(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_ID)));
                 fc.setUid(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_UID)));
                 fc.setSysDate(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_SYSDATE)));
-                fc.setPsuCode(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_PSU_CODE)));
+                fc.setVillageCode(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_VILLAGE_CODE)));
                 fc.setHhid(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_HHID)));
                 fc.setSno(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_SNO)));
                 fc.setiStatus(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_ISTATUS)));

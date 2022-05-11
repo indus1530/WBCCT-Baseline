@@ -39,7 +39,7 @@ public class Recipient extends BaseObservable implements Observable {
     private String fmuid = _EMPTY_;
     private String userName = _EMPTY_;
     private String sysDate = _EMPTY_;
-    private String psuCode = _EMPTY_;
+    private String villageCode = _EMPTY_;
     private String hhid = _EMPTY_;
     private String sno = _EMPTY_;
     private String indexed = _EMPTY_;
@@ -216,7 +216,7 @@ public class Recipient extends BaseObservable implements Observable {
         setUuid(MainApp.form.getUid());  // not applicable in Form table
         setAppver(MainApp.appInfo.getAppVersion());
         setProjectName(PROJECT_NAME);
-        setPsuCode(MainApp.selectedPSU);
+        setVillageCode(MainApp.selectedVillage);
         setHhid(MainApp.selectedHHID);
         setFmuid(MainApp.familyMember.getUid());
 
@@ -264,13 +264,13 @@ public class Recipient extends BaseObservable implements Observable {
     }
 
     @Bindable
-    public String getPsuCode() {
-        return psuCode;
+    public String getVillageCode() {
+        return villageCode;
     }
 
-    public void setPsuCode(String psuCode) {
-        this.psuCode = psuCode;
-        notifyPropertyChanged(BR.psuCode);
+    public void setVillageCode(String villageCode) {
+        this.villageCode = villageCode;
+        notifyPropertyChanged(BR.villageCode);
     }
 
     @Bindable
@@ -1994,7 +1994,7 @@ public class Recipient extends BaseObservable implements Observable {
         this.uuid = cursor.getString(cursor.getColumnIndexOrThrow(RecipientTable.COLUMN_UUID));
         this.fmuid = cursor.getString(cursor.getColumnIndexOrThrow(RecipientTable.COLUMN_FMUID));
         this.projectName = cursor.getString(cursor.getColumnIndexOrThrow(RecipientTable.COLUMN_PROJECT_NAME));
-        this.psuCode = cursor.getString(cursor.getColumnIndexOrThrow(RecipientTable.COLUMN_PSU_CODE));
+        this.villageCode = cursor.getString(cursor.getColumnIndexOrThrow(RecipientTable.COLUMN_VILLAGE_CODE));
         this.hhid = cursor.getString(cursor.getColumnIndexOrThrow(RecipientTable.COLUMN_HHID));
         this.sno = cursor.getString(cursor.getColumnIndexOrThrow(RecipientTable.COLUMN_SNO));
         this.indexed = cursor.getString(cursor.getColumnIndexOrThrow(RecipientTable.COLUMN_INDEXED));
@@ -2179,7 +2179,7 @@ public class Recipient extends BaseObservable implements Observable {
         json.put(RecipientTable.COLUMN_UUID, this.uuid);
         json.put(RecipientTable.COLUMN_FMUID, this.fmuid);
         json.put(RecipientTable.COLUMN_PROJECT_NAME, this.projectName);
-        json.put(RecipientTable.COLUMN_PSU_CODE, this.psuCode);
+        json.put(RecipientTable.COLUMN_VILLAGE_CODE, this.villageCode);
         json.put(RecipientTable.COLUMN_HHID, this.hhid);
         json.put(RecipientTable.COLUMN_INDEXED, this.indexed);
         json.put(RecipientTable.COLUMN_SNO, this.sno);

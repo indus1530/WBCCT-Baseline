@@ -2,7 +2,6 @@ package edu.aku.hassannaqvi.wbcct_baseline.models;
 
 import static edu.aku.hassannaqvi.wbcct_baseline.core.MainApp.PROJECT_NAME;
 import static edu.aku.hassannaqvi.wbcct_baseline.core.MainApp._EMPTY_;
-import static edu.aku.hassannaqvi.wbcct_baseline.core.MainApp.selectedMWRA;
 
 import android.database.Cursor;
 import android.util.Log;
@@ -34,15 +33,10 @@ public class WEDM extends BaseObservable implements Observable {
     private String id = _EMPTY_;
     private String uid = _EMPTY_;
     private String uuid = _EMPTY_;
-    private String fmuid = _EMPTY_;
-    // private String muid = _EMPTY_;
-    private String cluster = _EMPTY_;
+    private String villageCode = _EMPTY_;
     private String hhid = _EMPTY_;
-    private String sno = _EMPTY_;
-    private String psuCode = _EMPTY_;
     private String userName = _EMPTY_;
     private String sysDate = _EMPTY_;
-    private String indexed = _EMPTY_;
     private String deviceId = _EMPTY_;
     private String deviceTag = _EMPTY_;
     private String appver = _EMPTY_;
@@ -58,11 +52,6 @@ public class WEDM extends BaseObservable implements Observable {
     private String istgb96x = _EMPTY_;
 
     // FIELD VARIABLES
-    private String villagename = _EMPTY_;
-    private String district = _EMPTY_;
-    private String hcla = _EMPTY_;
-    private String household = _EMPTY_;
-    private String qnumber = _EMPTY_;
     private String sg1a = _EMPTY_;
     private String sg1b = _EMPTY_;
     private String sg1c = _EMPTY_;
@@ -194,12 +183,9 @@ public class WEDM extends BaseObservable implements Observable {
         setUserName(MainApp.user.getUserName());
         setDeviceId(MainApp.deviceid);
         setUuid(MainApp.form.getUid());  // not applicable in Form table
-        setFmuid(MainApp.familyMember.getUid()); //// not applicable in Form table
-        // setMuid(MainApp.familyList.get(Integer.parseInt(selectedMWRA) - 1).getUid());  // not applicable in Form table
-        setSno(selectedMWRA);
         setAppver(MainApp.appInfo.getAppVersion());
         setProjectName(PROJECT_NAME);
-        setpsuCode(MainApp.selectedPSU);
+        setVillageCode(MainApp.selectedVillage);
         setHhid(MainApp.selectedHHID);
 
     }
@@ -228,14 +214,7 @@ public class WEDM extends BaseObservable implements Observable {
     public void setUid(String uid) {
         this.uid = uid;
     }
-/*
-    public String getMuid() {
-        return muid;
-    }
 
-    public void setMuid(String muid) {
-        this.muid = muid;
-    }*/
 
     public String getUuid() {
         return uuid;
@@ -245,21 +224,15 @@ public class WEDM extends BaseObservable implements Observable {
         this.uuid = uuid;
     }
 
-    public String getFmuid() {
-        return fmuid;
+
+    public String getVillageCode() {
+        return villageCode;
     }
 
-    public void setFmuid(String fmuid) {
-        this.fmuid = fmuid;
+    private void setVillageCode(String villageCode) {
+        this.villageCode = villageCode;
     }
 
-    public String getCluster() {
-        return cluster;
-    }
-
-    public void setCluster(String cluster) {
-        this.cluster = cluster;
-    }
 
     public String getHhid() {
         return hhid;
@@ -269,13 +242,6 @@ public class WEDM extends BaseObservable implements Observable {
         this.hhid = hhid;
     }
 
-    public String getSno() {
-        return sno;
-    }
-
-    public void setSno(String sno) {
-        this.sno = sno;
-    }
 
     public String getUserName() {
         return userName;
@@ -293,13 +259,6 @@ public class WEDM extends BaseObservable implements Observable {
         this.sysDate = sysDate;
     }
 
-    public String getIndexed() {
-        return indexed;
-    }
-
-    public void setIndexed(String indexed) {
-        this.indexed = indexed;
-    }
 
     public String getDeviceId() {
         return deviceId;
@@ -365,64 +324,7 @@ public class WEDM extends BaseObservable implements Observable {
         this.syncDate = syncDate;
     }
 
-    public String getpsuCode() {
-        return psuCode;
-    }
 
-    private void setpsuCode(String psuCode) {
-        this.psuCode = psuCode;
-    }
-
-
-    @Bindable
-    public String getVillagename() {
-        return villagename;
-    }
-
-    public void setVillagename(String villagename) {
-        this.villagename = villagename;
-        notifyPropertyChanged(BR.villagename);
-    }
-
-    @Bindable
-    public String getDistrict() {
-        return district;
-    }
-
-    public void setDistrict(String district) {
-        this.district = district;
-        notifyPropertyChanged(BR.district);
-    }
-
-    @Bindable
-    public String getHcla() {
-        return hcla;
-    }
-
-    public void setHcla(String hcla) {
-        this.hcla = hcla;
-        notifyPropertyChanged(BR.hcla);
-    }
-
-    @Bindable
-    public String getHousehold() {
-        return household;
-    }
-
-    public void setHousehold(String household) {
-        this.household = household;
-        notifyPropertyChanged(BR.household);
-    }
-
-    @Bindable
-    public String getQnumber() {
-        return qnumber;
-    }
-
-    public void setQnumber(String qnumber) {
-        this.qnumber = qnumber;
-        notifyPropertyChanged(BR.qnumber);
-    }
 
     @Bindable
     public String getSg1a() {
@@ -1657,12 +1559,9 @@ public class WEDM extends BaseObservable implements Observable {
         this.id = cursor.getString(cursor.getColumnIndexOrThrow(WEDMTable.COLUMN_ID));
         this.uid = cursor.getString(cursor.getColumnIndexOrThrow(WEDMTable.COLUMN_UID));
         this.uuid = cursor.getString(cursor.getColumnIndexOrThrow(WEDMTable.COLUMN_UUID));
-        this.fmuid = cursor.getString(cursor.getColumnIndexOrThrow(WEDMTable.COLUMN_FMUID));
         this.projectName = cursor.getString(cursor.getColumnIndexOrThrow(WEDMTable.COLUMN_PROJECT_NAME));
-        this.psuCode = cursor.getString(cursor.getColumnIndexOrThrow(WEDMTable.COLUMN_PSU_CODE));
+        this.villageCode = cursor.getString(cursor.getColumnIndexOrThrow(WEDMTable.COLUMN_VILLAGE_CODE));
         this.hhid = cursor.getString(cursor.getColumnIndexOrThrow(WEDMTable.COLUMN_HHID));
-        this.indexed = cursor.getString(cursor.getColumnIndexOrThrow(WEDMTable.COLUMN_INDEXED));
-        this.sno = cursor.getString(cursor.getColumnIndexOrThrow(WEDMTable.COLUMN_SNO));
         this.userName = cursor.getString(cursor.getColumnIndexOrThrow(WEDMTable.COLUMN_USERNAME));
         this.sysDate = cursor.getString(cursor.getColumnIndexOrThrow(WEDMTable.COLUMN_SYSDATE));
         this.deviceId = cursor.getString(cursor.getColumnIndexOrThrow(WEDMTable.COLUMN_DEVICEID));
@@ -1672,6 +1571,8 @@ public class WEDM extends BaseObservable implements Observable {
         this.synced = cursor.getString(cursor.getColumnIndexOrThrow(WEDMTable.COLUMN_SYNCED));
         this.syncDate = cursor.getString(cursor.getColumnIndexOrThrow(WEDMTable.COLUMN_SYNCED_DATE));
         sG1Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(WEDMTable.COLUMN_SG1)));
+        sG2Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(WEDMTable.COLUMN_SG2)));
+        sG3Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(WEDMTable.COLUMN_SG3)));
         return this;
     }
 
@@ -1680,11 +1581,6 @@ public class WEDM extends BaseObservable implements Observable {
         if (string != null) {
             JSONObject json = null;
             json = new JSONObject(string);
-            this.villagename = json.getString("villagename");
-            this.district = json.getString("district");
-            this.hcla = json.getString("hcla");
-            this.household = json.getString("household");
-            this.qnumber = json.getString("qnumber");
             this.sg1a = json.getString("sg1a");
             this.sg1b = json.getString("sg1b");
             this.sg1c = json.getString("sg1c");
@@ -1730,6 +1626,14 @@ public class WEDM extends BaseObservable implements Observable {
             this.sg7g01x = json.getString("sg7g01x");
             this.sg7gxx = json.getString("sg7gxx");
             this.sg7gr = json.getString("sg7gr");
+        }
+    }
+
+    public void sG2Hydrate(String string) throws JSONException {
+        Log.d(TAG, "sG2Hydrate: " + string);
+        if (string != null) {
+            JSONObject json = null;
+            json = new JSONObject(string);
             this.sg8a = json.getString("sg8a");
             this.sg8an = json.getString("sg8an");
             this.sg8ar = json.getString("sg8ar");
@@ -1763,6 +1667,14 @@ public class WEDM extends BaseObservable implements Observable {
             this.sg9hb = json.getString("sg9hb");
             this.sg9i = json.getString("sg9i");
             this.sg9ib = json.getString("sg9ib");
+        }
+    }
+
+    public void sG3Hydrate(String string) throws JSONException {
+        Log.d(TAG, "sG3Hydrate: " + string);
+        if (string != null) {
+            JSONObject json = null;
+            json = new JSONObject(string);
             this.sg9j = json.getString("sg9j");
             this.sg9jb = json.getString("sg9jb");
             this.sg9k = json.getString("sg9k");
@@ -1817,12 +1729,9 @@ public class WEDM extends BaseObservable implements Observable {
         json.put(WEDMTable.COLUMN_ID, this.id);
         json.put(WEDMTable.COLUMN_UID, this.uid);
         json.put(WEDMTable.COLUMN_PROJECT_NAME, this.projectName);
-        json.put(WEDMTable.COLUMN_UUID, this.uid);
+        json.put(WEDMTable.COLUMN_UUID, this.uuid);
+        json.put(WEDMTable.COLUMN_VILLAGE_CODE, this.villageCode);
         json.put(WEDMTable.COLUMN_HHID, this.hhid);
-        json.put(WEDMTable.COLUMN_SNO, this.sno);
-        json.put(WEDMTable.COLUMN_FMUID, this.fmuid);
-        json.put(WEDMTable.COLUMN_INDEXED, this.indexed);
-        json.put(WEDMTable.COLUMN_PSU_CODE, this.psuCode);
         json.put(WEDMTable.COLUMN_USERNAME, this.userName);
         json.put(WEDMTable.COLUMN_SYSDATE, this.sysDate);
         json.put(WEDMTable.COLUMN_DEVICEID, this.deviceId);
@@ -1832,18 +1741,15 @@ public class WEDM extends BaseObservable implements Observable {
         json.put(WEDMTable.COLUMN_SYNCED_DATE, this.syncDate);
         json.put(WEDMTable.COLUMN_APPVERSION, this.appver);
         json.put(WEDMTable.COLUMN_SG1, new JSONObject(sG1toString()));
+        json.put(WEDMTable.COLUMN_SG2, new JSONObject(sG2toString()));
+        json.put(WEDMTable.COLUMN_SG3, new JSONObject(sG3toString()));
         return json;
     }
 
     public String sG1toString() throws JSONException {
-        Log.d(TAG, "sC1toString: ");
+        Log.d(TAG, "sG1toString: ");
         JSONObject json = new JSONObject();
-        json.put("villagename", villagename)
-                .put("district", district)
-                .put("hcla", hcla)
-                .put("household", household)
-                .put("qnumber", qnumber)
-                .put("sg1a", sg1a)
+        json.put("sg1a", sg1a)
                 .put("sg1b", sg1b)
                 .put("sg1c", sg1c)
                 .put("sg1d", sg1d)
@@ -1887,8 +1793,14 @@ public class WEDM extends BaseObservable implements Observable {
                 .put("sg7g", sg7g)
                 .put("sg7g01x", sg7g01x)
                 .put("sg7gxx", sg7gxx)
-                .put("sg7gr", sg7gr)
-                .put("sg8a", sg8a)
+                .put("sg7gr", sg7gr);
+        return json.toString();
+    }
+
+    public String sG2toString() throws JSONException {
+        Log.d(TAG, "sG2toString: ");
+        JSONObject json = new JSONObject();
+        json.put("sg8a", sg8a)
                 .put("sg8an", sg8an)
                 .put("sg8ar", sg8ar)
                 .put("sg8b", sg8b)
@@ -1920,8 +1832,14 @@ public class WEDM extends BaseObservable implements Observable {
                 .put("sg9h", sg9h)
                 .put("sg9hb", sg9hb)
                 .put("sg9i", sg9i)
-                .put("sg9ib", sg9ib)
-                .put("sg9j", sg9j)
+                .put("sg9ib", sg9ib);
+        return json.toString();
+    }
+
+    public String sG3toString() throws JSONException {
+        Log.d(TAG, "sG3toString: ");
+        JSONObject json = new JSONObject();
+        json.put("sg9j", sg9j)
                 .put("sg9jb", sg9jb)
                 .put("sg9k", sg9k)
                 .put("sg9kb", sg9kb)

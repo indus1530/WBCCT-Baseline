@@ -40,7 +40,7 @@ public class FamilyMembers extends BaseObservable implements Observable {
     private String uuid = _EMPTY_;
     private String userName = _EMPTY_;
     private String sysDate = _EMPTY_;
-    private String psuCode = _EMPTY_;
+    private String villageCode = _EMPTY_;
     private String hhid = _EMPTY_;
     private String sno = _EMPTY_;
     private String deviceId = _EMPTY_;
@@ -99,7 +99,7 @@ public class FamilyMembers extends BaseObservable implements Observable {
         setDeviceId(MainApp.form.getDeviceId());
         setUuid(MainApp.form.getUid());
         setAppver(MainApp.form.getAppver());
-        setpsuCode(MainApp.form.getPsuCode());
+        setVillageCode(MainApp.form.getVillageCode());
         setHhid(MainApp.form.getHhid());
     }
 
@@ -137,12 +137,12 @@ public class FamilyMembers extends BaseObservable implements Observable {
     }
 
     @Bindable
-    public String getpsuCode() {
-        return psuCode;
+    public String getVillageCode() {
+        return villageCode;
     }
 
-    public void setpsuCode(String psuCode) {
-        this.psuCode = psuCode;
+    public void setVillageCode(String villageCode) {
+        this.villageCode = villageCode;
     }
 
     @Bindable
@@ -674,7 +674,7 @@ public class FamilyMembers extends BaseObservable implements Observable {
         this.uid = cursor.getString(cursor.getColumnIndexOrThrow(FamilyMembersTable.COLUMN_UID));
         this.uuid = cursor.getString(cursor.getColumnIndexOrThrow(FamilyMembersTable.COLUMN_UUID));
         this.projectName = cursor.getString(cursor.getColumnIndexOrThrow(FamilyMembersTable.COLUMN_PROJECT_NAME));
-        this.psuCode = cursor.getString(cursor.getColumnIndexOrThrow(FamilyMembersTable.COLUMN_PSU_CODE));
+        this.villageCode = cursor.getString(cursor.getColumnIndexOrThrow(FamilyMembersTable.COLUMN_VILLAGE_CODE));
         this.hhid = cursor.getString(cursor.getColumnIndexOrThrow(FamilyMembersTable.COLUMN_HHID));
         this.sno = cursor.getString(cursor.getColumnIndexOrThrow(FamilyMembersTable.COLUMN_SNO));
         this.indexed = cursor.getString(cursor.getColumnIndexOrThrow(FamilyMembersTable.COLUMN_INDEXED));
@@ -740,7 +740,7 @@ public class FamilyMembers extends BaseObservable implements Observable {
         json.put(FamilyMembersTable.COLUMN_UID, this.uid);
         json.put(FamilyMembersTable.COLUMN_UUID, this.uuid);
         json.put(FamilyMembersTable.COLUMN_PROJECT_NAME, this.projectName);
-        json.put(FamilyMembersTable.COLUMN_PSU_CODE, this.psuCode);
+        json.put(FamilyMembersTable.COLUMN_VILLAGE_CODE, this.villageCode);
         json.put(FamilyMembersTable.COLUMN_HHID, this.hhid);
         json.put(FamilyMembersTable.COLUMN_INDEXED, this.indexed);
         json.put(FamilyMembersTable.COLUMN_SNO, this.sno);

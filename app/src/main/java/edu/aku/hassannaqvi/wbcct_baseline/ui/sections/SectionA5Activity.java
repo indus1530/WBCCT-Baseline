@@ -69,8 +69,14 @@ public class SectionA5Activity extends AppCompatActivity {
         if (!formValidation()) return;
         if (updateDB()) {
             finish();
-            startActivity(new Intent(this, SectionG1Activity.class));
-            //startActivity(new Intent(this, SectionB1Activity.class));
+            try {
+                MainApp.wedm = db.getWEDMByUUid();
+                startActivity(new Intent(this, SectionG1Activity.class));
+            } catch (JSONException e) {
+                e.printStackTrace();
+                Toast.makeText(this, "JSONException(WEDM): " + e.getMessage(), Toast.LENGTH_SHORT).show();
+
+            }
         } else Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
     }
 
