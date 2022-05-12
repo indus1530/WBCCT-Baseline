@@ -75,8 +75,9 @@ public class SectionG3Activity extends AppCompatActivity {
         new Handler().postDelayed(() -> bi.llbtn.setVisibility(View.VISIBLE), 5000);
         if (!formValidation()) return;
         if (updateDB()) {
+            Intent i = new Intent();
             if (!MainApp.selectedRecipient.isEmpty()) {
-                startActivity(new Intent(this, SectionB1Activity.class));
+                i = new Intent(this, SectionB1Activity.class);
             } else {
 
                 // selected familymember (Child)
@@ -87,12 +88,12 @@ public class SectionG3Activity extends AppCompatActivity {
                         MainApp.familyMember = db.getSelectedMemberBYUID(MainApp.form.getUid(), "2");
 
                         MainApp.mwra = db.getMWRAByFMUID(MainApp.familyMember.getUid());
-                        startActivity(new Intent(this, SectionC1Activity.class));
+                        i = new Intent(this, SectionC1Activity.class);
                     } else {
                         MainApp.familyMember = db.getSelectedMemberBYUID(MainApp.form.getUid(), "1");
 
                         MainApp.child = db.getChildByFMUID(MainApp.familyMember.getUid());
-                        startActivity(new Intent(this, SectionD1Activity.class));
+                        i = new Intent(this, SectionD1Activity.class);
                     }
 
                 } catch (JSONException e) {
@@ -101,6 +102,8 @@ public class SectionG3Activity extends AppCompatActivity {
 
                 }
             }
+            finish();
+            startActivity(i);
         } else Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
     }
 

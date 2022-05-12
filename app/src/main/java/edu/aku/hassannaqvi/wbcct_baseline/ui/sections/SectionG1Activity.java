@@ -93,8 +93,10 @@ public class SectionG1Activity extends AppCompatActivity {
         new Handler().postDelayed(() -> bi.llbtn.setVisibility(View.VISIBLE), 5000);
         if (!formValidation()) return;
         if (!insertNewRecord()) return;
-        if (updateDB()) startActivity(new Intent(this, SectionG2Activity.class));
-        else Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
+        if (updateDB()) {
+            finish();
+            startActivity(new Intent(this, SectionG2Activity.class));
+        } else Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
     }
 
 
