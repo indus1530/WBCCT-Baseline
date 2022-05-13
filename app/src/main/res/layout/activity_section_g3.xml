@@ -1457,11 +1457,11 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center"
-                            android:hint="###"
+                            android:hint="##"
                             android:inputType="number"
-                            android:maxLength="3"
+                            android:maxLength="2"
                             android:text="@={form.sg10a}"
-                            app:maxValue="100"
+                            app:maxValue="10"
                             app:minValue="0"
                             app:type="range" />
 
@@ -1521,7 +1521,7 @@
                             android:maxLength="2"
                             android:text="@={form.sg11a}"
                             app:maxValue="10"
-                            app:minValue="1"
+                            app:minValue="0"
                             app:type="range" />
 
                     </LinearLayout>
