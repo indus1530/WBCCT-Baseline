@@ -584,6 +584,7 @@ public class WEDM extends BaseObservable implements Observable {
 
     public void setSg6a(String sg6a) {
         this.sg6a = sg6a;
+        setSg6ar(sg6a.equals("2") || sg6a.equals("4") || sg6a.equals("6") ? this.sg6ar : "");
         notifyPropertyChanged(BR.sg6a);
     }
 
@@ -604,6 +605,7 @@ public class WEDM extends BaseObservable implements Observable {
 
     public void setSg6b(String sg6b) {
         this.sg6b = sg6b;
+        setSg6br(sg6b.equals("2") || sg6b.equals("4") || sg6b.equals("6") ? this.sg6br : "");
         notifyPropertyChanged(BR.sg6b);
     }
 

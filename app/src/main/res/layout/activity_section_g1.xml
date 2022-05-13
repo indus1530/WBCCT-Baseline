@@ -1820,7 +1820,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sg6a.equals(`1`)}"
-                                android:onClick="@{()->form.setSg6a(`1`)}"
+                                android:onClick="@{()->form.setSg6a(`1`) + sg6ar.clearCheck()}"
                                 android:text="@string/sg6a01" />
 
                             <RadioButton
@@ -1836,7 +1836,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sg6a.equals(`3`)}"
-                                android:onClick="@{()->form.setSg6a(`3`)}"
+                                android:onClick="@{()->form.setSg6a(`3`) + sg6ar.clearCheck()}"
                                 android:text="@string/sg6a03" />
 
                             <RadioButton
@@ -1852,7 +1852,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sg6a.equals(`5`)}"
-                                android:onClick="@{()->form.setSg6a(`5`)}"
+                                android:onClick="@{()->form.setSg6a(`5`) + sg6ar.clearCheck()}"
                                 android:text="@string/sg6a05" />
 
                             <RadioButton
@@ -1868,7 +1868,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sg6a.equals(`0`)}"
-                                android:onClick="@{()->form.setSg6a(`0`)}"
+                                android:onClick="@{()->form.setSg6a(`0`) + sg6ar.clearCheck()}"
                                 android:text="@string/sg6a00" />
 
                         </RadioGroup>
@@ -1881,7 +1881,8 @@
                 <!-- sg6ar  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVsg6ar"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{form.sg6a.equals(`2`) || form.sg6a.equals(`4`)  || form.sg6a.equals(`6`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -1943,8 +1944,11 @@
                                 android:checked="@{form.sg6ar.equals(`9`)}"
                                 android:onClick="@{()->form.setSg6ar(`9`)}"
                                 android:text="@string/sg6ar09" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
 
@@ -1987,7 +1991,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sg6b.equals(`1`)}"
-                                android:onClick="@{()->form.setSg6b(`1`)}"
+                                android:onClick="@{()->form.setSg6b(`1`) + sg6br.clearCheck()}"
                                 android:text="@string/sg6b01" />
 
                             <RadioButton
@@ -2003,7 +2007,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sg6b.equals(`3`)}"
-                                android:onClick="@{()->form.setSg6b(`3`)}"
+                                android:onClick="@{()->form.setSg6b(`3`) + sg6br.clearCheck()}"
                                 android:text="@string/sg6b03" />
 
                             <RadioButton
@@ -2019,7 +2023,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sg6b.equals(`5`)}"
-                                android:onClick="@{()->form.setSg6b(`5`)}"
+                                android:onClick="@{()->form.setSg6b(`5`) + sg6br.clearCheck()}"
                                 android:text="@string/sg6b05" />
 
                             <RadioButton
@@ -2035,17 +2039,21 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sg6b.equals(`0`)}"
-                                android:onClick="@{()->form.setSg6b(`0`)}"
+                                android:onClick="@{()->form.setSg6b(`0`) + sg6br.clearCheck()}"
                                 android:text="@string/sg6b00" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
 
                 <!-- sg6br  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVsg6br"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{form.sg6b.equals(`2`) || form.sg6b.equals(`4`)  || form.sg6b.equals(`6`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -2107,8 +2115,11 @@
                                 android:checked="@{form.sg6br.equals(`9`)}"
                                 android:onClick="@{()->form.setSg6br(`9`)}"
                                 android:text="@string/sg6br09" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
 
