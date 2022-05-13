@@ -954,6 +954,7 @@ public class WEDM extends BaseObservable implements Observable {
 
     public void setSg9a(String sg9a) {
         this.sg9a = sg9a;
+        setSg9ab(sg9a.equals("2") || sg9a.equals("6") ? this.sg9ab : "");
         notifyPropertyChanged(BR.sg9a);
     }
 
@@ -974,6 +975,7 @@ public class WEDM extends BaseObservable implements Observable {
 
     public void setSg9b(String sg9b) {
         this.sg9b = sg9b;
+        setSg9bb(sg9b.equals("2") || sg9b.equals("6") ? this.sg9bb : "");
         notifyPropertyChanged(BR.sg9b);
     }
 
@@ -994,6 +996,7 @@ public class WEDM extends BaseObservable implements Observable {
 
     public void setSg9c(String sg9c) {
         this.sg9c = sg9c;
+        setSg9cb(sg9c.equals("2") || sg9c.equals("6") ? this.sg9cb : "");
         notifyPropertyChanged(BR.sg9c);
     }
 
@@ -1014,6 +1017,7 @@ public class WEDM extends BaseObservable implements Observable {
 
     public void setSg9d(String sg9d) {
         this.sg9d = sg9d;
+        setSg9db(sg9d.equals("2") || sg9d.equals("6") ? this.sg9db : "");
         notifyPropertyChanged(BR.sg9d);
     }
 
@@ -1034,6 +1038,7 @@ public class WEDM extends BaseObservable implements Observable {
 
     public void setSg9e(String sg9e) {
         this.sg9e = sg9e;
+        setSg9eb(sg9e.equals("2") || sg9e.equals("6") ? this.sg9eb : "");
         notifyPropertyChanged(BR.sg9e);
     }
 
@@ -1054,6 +1059,7 @@ public class WEDM extends BaseObservable implements Observable {
 
     public void setSg9f(String sg9f) {
         this.sg9f = sg9f;
+        setSg9fb(sg9f.equals("2") || sg9f.equals("6") ? this.sg9fb : "");
         notifyPropertyChanged(BR.sg9f);
     }
 
@@ -1074,6 +1080,7 @@ public class WEDM extends BaseObservable implements Observable {
 
     public void setSg9g(String sg9g) {
         this.sg9g = sg9g;
+        setSg9gb(sg9g.equals("2") || sg9g.equals("6") ? this.sg9gb : "");
         notifyPropertyChanged(BR.sg9g);
     }
 
@@ -1094,6 +1101,7 @@ public class WEDM extends BaseObservable implements Observable {
 
     public void setSg9h(String sg9h) {
         this.sg9h = sg9h;
+        setSg9hb(sg9h.equals("2") || sg9h.equals("6") ? this.sg9hb : "");
         notifyPropertyChanged(BR.sg9h);
     }
 
@@ -1114,6 +1122,7 @@ public class WEDM extends BaseObservable implements Observable {
 
     public void setSg9i(String sg9i) {
         this.sg9i = sg9i;
+        setSg9ib(sg9i.equals("2") || sg9i.equals("6") ? this.sg9ib : "");
         notifyPropertyChanged(BR.sg9i);
     }
 
@@ -1134,6 +1143,7 @@ public class WEDM extends BaseObservable implements Observable {
 
     public void setSg9j(String sg9j) {
         this.sg9j = sg9j;
+        setSg9jb(sg9j.equals("2") || sg9j.equals("6") ? this.sg9jb : "");
         notifyPropertyChanged(BR.sg9j);
     }
 
@@ -1154,6 +1164,7 @@ public class WEDM extends BaseObservable implements Observable {
 
     public void setSg9k(String sg9k) {
         this.sg9k = sg9k;
+        setSg9kb(sg9k.equals("2") || sg9k.equals("6") ? this.sg9kb : "");
         notifyPropertyChanged(BR.sg9k);
     }
 
@@ -1174,6 +1185,7 @@ public class WEDM extends BaseObservable implements Observable {
 
     public void setSg9l(String sg9l) {
         this.sg9l = sg9l;
+        setSg9lb(sg9l.equals("2") || sg9l.equals("6") ? this.sg9lb : "");
         notifyPropertyChanged(BR.sg9l);
     }
 
@@ -1194,6 +1206,7 @@ public class WEDM extends BaseObservable implements Observable {
 
     public void setSg9m(String sg9m) {
         this.sg9m = sg9m;
+        setSg9mb(sg9m.equals("2") || sg9m.equals("6") ? this.sg9mb : "");
         notifyPropertyChanged(BR.sg9m);
     }
 
@@ -1214,6 +1227,7 @@ public class WEDM extends BaseObservable implements Observable {
 
     public void setSg9n(String sg9n) {
         this.sg9n = sg9n;
+        setSg9nb(sg9n.equals("2") || sg9n.equals("6") ? this.sg9nb : "");
         notifyPropertyChanged(BR.sg9n);
     }
 
@@ -1234,6 +1248,7 @@ public class WEDM extends BaseObservable implements Observable {
 
     public void setSg9o(String sg9o) {
         this.sg9o = sg9o;
+        setSg9ob(sg9o.equals("2") || sg9o.equals("6") ? this.sg9ob : "");
         notifyPropertyChanged(BR.sg9o);
     }
 
@@ -1254,6 +1269,7 @@ public class WEDM extends BaseObservable implements Observable {
 
     public void setSg9p(String sg9p) {
         this.sg9p = sg9p;
+        setSg9pb(sg9p.equals("2") || sg9p.equals("6") ? this.sg9pb : "");
         notifyPropertyChanged(BR.sg9p);
     }
 
@@ -1274,6 +1290,7 @@ public class WEDM extends BaseObservable implements Observable {
 
     public void setSg9q(String sg9q) {
         this.sg9q = sg9q;
+        setSg9qb(sg9q.equals("2") || sg9q.equals("6") ? this.sg9qb : "");
         notifyPropertyChanged(BR.sg9q);
     }
 
