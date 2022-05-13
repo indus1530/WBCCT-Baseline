@@ -207,9 +207,16 @@ public class SectionF2Activity extends AppCompatActivity {
             if (anthroWRAList.size() > 0) {
                 startActivity(new Intent(this, SectionF2Activity.class));
             } else {
-                startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
+                finish();
+                try {
+                    MainApp.wedm = db.getWEDMByUUid();
+                    startActivity(new Intent(this, SectionG1Activity.class));
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    Toast.makeText(this, "JSONException(WEDM): " + e.getMessage(), Toast.LENGTH_SHORT).show();
+
+                }
             }
-            finish();
         } else Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
     }
 

@@ -1,6 +1,5 @@
 package edu.aku.hassannaqvi.wbcct_baseline.ui.sections;
 
-import static edu.aku.hassannaqvi.wbcct_baseline.core.MainApp.selectedMWRA;
 import static edu.aku.hassannaqvi.wbcct_baseline.core.MainApp.sharedPref;
 import static edu.aku.hassannaqvi.wbcct_baseline.core.MainApp.wedm;
 
@@ -75,35 +74,8 @@ public class SectionG3Activity extends AppCompatActivity {
         new Handler().postDelayed(() -> bi.llbtn.setVisibility(View.VISIBLE), 5000);
         if (!formValidation()) return;
         if (updateDB()) {
-            Intent i = new Intent();
-            if (!MainApp.selectedRecipient.isEmpty()) {
-                i = new Intent(this, SectionB1Activity.class);
-            } else {
-
-                // selected familymember (Child)
-                try {
-                    // populate mother/caregiver data if already exisits
-                    MainApp.mwra = db.getMWRAByFMUID(MainApp.familyMember.getUid());
-                    if (!selectedMWRA.equals("97")) {
-                        MainApp.familyMember = db.getSelectedMemberBYUID(MainApp.form.getUid(), "2");
-
-                        MainApp.mwra = db.getMWRAByFMUID(MainApp.familyMember.getUid());
-                        i = new Intent(this, SectionC1Activity.class);
-                    } else {
-                        MainApp.familyMember = db.getSelectedMemberBYUID(MainApp.form.getUid(), "1");
-
-                        MainApp.child = db.getChildByFMUID(MainApp.familyMember.getUid());
-                        i = new Intent(this, SectionD1Activity.class);
-                    }
-
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                    Toast.makeText(this, "JSONException(familymember/mwra): " + e.getMessage(), Toast.LENGTH_SHORT).show();
-
-                }
-            }
             finish();
-            startActivity(i);
+            startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
         } else Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
     }
 
