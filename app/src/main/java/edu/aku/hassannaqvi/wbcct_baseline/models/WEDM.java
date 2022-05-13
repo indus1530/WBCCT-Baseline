@@ -1331,6 +1331,8 @@ public class WEDM extends BaseObservable implements Observable {
 
     public void setSg12a(String sg12a) {
         this.sg12a = sg12a;
+        setSg12ar(sg12a.equals("1") ? this.sg12ar : "");
+        setSg12an(sg12a.equals("1") ? this.sg12an : "");
         notifyPropertyChanged(BR.sg12a);
     }
 
@@ -1361,6 +1363,8 @@ public class WEDM extends BaseObservable implements Observable {
 
     public void setSg12b(String sg12b) {
         this.sg12b = sg12b;
+        setSg12br(sg12b.equals("1") ? this.sg12br : "");
+        setSg12bn(sg12b.equals("1") ? this.sg12bn : "");
         notifyPropertyChanged(BR.sg12b);
     }
 
@@ -1391,6 +1395,8 @@ public class WEDM extends BaseObservable implements Observable {
 
     public void setSg12c(String sg12c) {
         this.sg12c = sg12c;
+        setSg12cr(sg12c.equals("1") ? this.sg12cr : "");
+        setSg12cn(sg12c.equals("1") ? this.sg12cn : "");
         notifyPropertyChanged(BR.sg12c);
     }
 
@@ -1421,6 +1427,8 @@ public class WEDM extends BaseObservable implements Observable {
 
     public void setSg12d(String sg12d) {
         this.sg12d = sg12d;
+        setSg12dr(sg12d.equals("1") ? this.sg12dr : "");
+        setSg12dn(sg12d.equals("1") ? this.sg12dn : "");
         notifyPropertyChanged(BR.sg12d);
     }
 
@@ -1451,6 +1459,8 @@ public class WEDM extends BaseObservable implements Observable {
 
     public void setSg12e(String sg12e) {
         this.sg12e = sg12e;
+        setSg12er(sg12e.equals("1") ? this.sg12er : "");
+        setSg12en(sg12e.equals("1") ? this.sg12en : "");
         notifyPropertyChanged(BR.sg12e);
     }
 
