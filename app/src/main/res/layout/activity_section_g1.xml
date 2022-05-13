@@ -3042,6 +3042,16 @@
 
                         </RadioGroup>
 
+                        <EditText
+                            android:id="@+id/sg7g01x"
+                            android:layout_width="match_parent"
+                            android:layout_height="52dp"
+                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                            android:hint="@string/sg7gx"
+                            android:text="@={form.sg7g01x}"
+                            android:textDirection="ltr"
+                            android:visibility="@{form.sg7g.equals(`1`) ? View.VISIBLE : View.GONE}" />
+
                     </LinearLayout>
 
                 </androidx.cardview.widget.CardView>

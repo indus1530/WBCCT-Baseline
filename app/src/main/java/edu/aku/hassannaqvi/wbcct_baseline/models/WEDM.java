@@ -752,6 +752,7 @@ public class WEDM extends BaseObservable implements Observable {
 
     public void setSg7g(String sg7g) {
         this.sg7g = sg7g;
+        setSg7g01x(sg7g01x.equals("1") ? this.sg7g01x : "");
         setSg7gr(sg7g.equals("1") ? this.sg7gr : "");
         notifyPropertyChanged(BR.sg7g);
     }
