@@ -219,7 +219,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(WEDMTable.COLUMN_SG2, wedm.sG2toString());
         values.put(WEDMTable.COLUMN_SG3, wedm.sG3toString());
         values.put(WEDMTable.COLUMN_ISTATUS, wedm.getiStatus());
-        values.put(WEDMTable.COLUMN_DEVICETAGID, wedm.getDeviceTag());
+        values.put(WEDMTable.COLUMN_DEVICETAG, wedm.getDeviceTag());
         values.put(WEDMTable.COLUMN_DEVICEID, wedm.getDeviceId());
         values.put(WEDMTable.COLUMN_APPVERSION, wedm.getAppver());
         values.put(WEDMTable.COLUMN_SYNCED, wedm.getSynced());

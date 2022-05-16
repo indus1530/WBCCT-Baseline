@@ -1596,7 +1596,7 @@ public class WEDM extends BaseObservable implements Observable {
         this.userName = cursor.getString(cursor.getColumnIndexOrThrow(WEDMTable.COLUMN_USERNAME));
         this.sysDate = cursor.getString(cursor.getColumnIndexOrThrow(WEDMTable.COLUMN_SYSDATE));
         this.deviceId = cursor.getString(cursor.getColumnIndexOrThrow(WEDMTable.COLUMN_DEVICEID));
-        this.deviceTag = cursor.getString(cursor.getColumnIndexOrThrow(WEDMTable.COLUMN_DEVICETAGID));
+        this.deviceTag = cursor.getString(cursor.getColumnIndexOrThrow(WEDMTable.COLUMN_DEVICETAG));
         this.appver = cursor.getString(cursor.getColumnIndexOrThrow(WEDMTable.COLUMN_APPVERSION));
         this.iStatus = cursor.getString(cursor.getColumnIndexOrThrow(WEDMTable.COLUMN_ISTATUS));
         this.synced = cursor.getString(cursor.getColumnIndexOrThrow(WEDMTable.COLUMN_SYNCED));
@@ -1766,7 +1766,7 @@ public class WEDM extends BaseObservable implements Observable {
         json.put(WEDMTable.COLUMN_USERNAME, this.userName);
         json.put(WEDMTable.COLUMN_SYSDATE, this.sysDate);
         json.put(WEDMTable.COLUMN_DEVICEID, this.deviceId);
-        json.put(WEDMTable.COLUMN_DEVICETAGID, this.deviceTag);
+        json.put(WEDMTable.COLUMN_DEVICETAG, this.deviceTag);
         json.put(WEDMTable.COLUMN_ISTATUS, this.iStatus);
         json.put(WEDMTable.COLUMN_SYNCED, this.synced);
         json.put(WEDMTable.COLUMN_SYNCED_DATE, this.syncDate);

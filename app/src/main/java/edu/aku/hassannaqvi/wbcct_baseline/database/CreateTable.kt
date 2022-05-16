@@ -126,7 +126,7 @@ object CreateTable {
             + WEDMTable.COLUMN_SYSDATE + " TEXT,"
             + WEDMTable.COLUMN_ISTATUS + " TEXT,"
             + WEDMTable.COLUMN_DEVICEID + " TEXT,"
-            + WEDMTable.COLUMN_DEVICETAGID + " TEXT,"
+            + WEDMTable.COLUMN_DEVICETAG + " TEXT,"
             + WEDMTable.COLUMN_SYNCED + " TEXT,"
             + WEDMTable.COLUMN_SYNCED_DATE + " TEXT,"
             + WEDMTable.COLUMN_APPVERSION + " TEXT,"

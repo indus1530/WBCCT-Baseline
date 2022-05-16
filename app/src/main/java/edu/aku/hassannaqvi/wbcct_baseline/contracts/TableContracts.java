@@ -200,9 +200,9 @@ public class TableContracts {
         public static final String COLUMN_SG3 = "sG3";
 
         public static final String COLUMN_DEVICEID = "deviceid";
-        public static final String COLUMN_DEVICETAGID = "devicetagid";
+        public static final String COLUMN_DEVICETAG = "deviceTag";
         public static final String COLUMN_SYNCED = "synced";
-        public static final String COLUMN_SYNCED_DATE = "synced_date";
+        public static final String COLUMN_SYNCED_DATE = "syncDate";
         public static final String COLUMN_APPVERSION = "appversion";
         public static final String COLUMN_ISTATUS = "istatus";
     }
