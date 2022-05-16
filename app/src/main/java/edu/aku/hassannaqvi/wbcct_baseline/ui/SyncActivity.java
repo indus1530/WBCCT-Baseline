@@ -184,7 +184,7 @@ public class SyncActivity extends AppCompatActivity {
                     MainApp.uploadData.add(db.getUnsyncedWEDM());
                 } catch (JSONException e) {
                     e.printStackTrace();
-                    Toast.makeText(SyncActivity.this, "JSONException(MWRA)" + e.getMessage(), Toast.LENGTH_LONG).show();
+                    Toast.makeText(SyncActivity.this, "JSONException(WEDM)" + e.getMessage(), Toast.LENGTH_LONG).show();
 
                 }
 
