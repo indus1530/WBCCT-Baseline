@@ -1599,8 +1599,8 @@
     <string name="dinstrc2">If there are more than one under-2 children available in the household then use Kish grid for selection.</string>
     <string name="dinstrc3">Section D2 ‘IYCF and Food diversity’ will only be filled for children 0–23 months. If the child’s age is 24–59 months, then Section D2 will be skipped.</string>
     <string name="d101">Name of the Child</string>
-    <string name="d102">Line number of the Child</string>
-    <string name="d103">Line number of the respondent</string>
+    <string name="d102"> Child Line No: </string>
+    <string name="d103">  Respondent Line No: </string>
     <string name="d104"> Relationship of child with the respondent </string>
     <string name="d10401">Mother</string>
     <string name="d10402">Caretaker</string>
