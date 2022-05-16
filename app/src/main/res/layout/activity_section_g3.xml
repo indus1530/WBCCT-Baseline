@@ -112,7 +112,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sg9j.equals(`4`)}"
-                                android:onClick="@{()->form.setSg9j(`4`) + sg9jb.clearCheck()}"
+                                android:onClick="@{()->form.setSg9j(`4`)}"
                                 android:text="@string/sg9j04" />
 
                             <RadioButton
@@ -150,7 +150,7 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVsg9jb"
                     style="@style/cardView"
-                    android:visibility="@{form.sg9j.equals(`2`) || form.sg9j.equals(`6`) ? View.VISIBLE : View.GONE}">
+                    android:visibility="@{form.sg9j.equals(`2`) || form.sg9j.equals(`4`) || form.sg9j.equals(`6`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -283,7 +283,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sg9k.equals(`4`)}"
-                                android:onClick="@{()->form.setSg9k(`4`) + sg9kb.clearCheck()}"
+                                android:onClick="@{()->form.setSg9k(`4`)}"
                                 android:text="@string/sg9k04" />
 
                             <RadioButton
@@ -321,7 +321,7 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVsg9kb"
                     style="@style/cardView"
-                    android:visibility="@{form.sg9k.equals(`2`) || form.sg9k.equals(`6`) ? View.VISIBLE : View.GONE}">
+                    android:visibility="@{form.sg9k.equals(`2`) || form.sg9k.equals(`4`) || form.sg9k.equals(`6`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -454,7 +454,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sg9l.equals(`4`)}"
-                                android:onClick="@{()->form.setSg9l(`4`) + sg9lb.clearCheck()}"
+                                android:onClick="@{()->form.setSg9l(`4`)}"
                                 android:text="@string/sg9l04" />
 
                             <RadioButton
@@ -492,7 +492,7 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVsg9lb"
                     style="@style/cardView"
-                    android:visibility="@{form.sg9l.equals(`2`) || form.sg9l.equals(`6`) ? View.VISIBLE : View.GONE}">
+                    android:visibility="@{form.sg9l.equals(`2`) || form.sg9l.equals(`4`) || form.sg9l.equals(`6`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -625,7 +625,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sg9m.equals(`4`)}"
-                                android:onClick="@{()->form.setSg9m(`4`) + sg9mb.clearCheck()}"
+                                android:onClick="@{()->form.setSg9m(`4`)}"
                                 android:text="@string/sg9m04" />
 
                             <RadioButton
@@ -663,7 +663,7 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVsg9mb"
                     style="@style/cardView"
-                    android:visibility="@{form.sg9m.equals(`2`) || form.sg9m.equals(`6`) ? View.VISIBLE : View.GONE}">
+                    android:visibility="@{form.sg9m.equals(`2`) || form.sg9m.equals(`4`) || form.sg9m.equals(`6`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -796,7 +796,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sg9n.equals(`4`)}"
-                                android:onClick="@{()->form.setSg9n(`4`) + sg9nb.clearCheck()}"
+                                android:onClick="@{()->form.setSg9n(`4`)}"
                                 android:text="@string/sg9n04" />
 
                             <RadioButton
@@ -834,7 +834,7 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVsg9nb"
                     style="@style/cardView"
-                    android:visibility="@{form.sg9n.equals(`2`) || form.sg9n.equals(`6`) ? View.VISIBLE : View.GONE}">
+                    android:visibility="@{form.sg9n.equals(`2`) || form.sg9n.equals(`4`) || form.sg9n.equals(`6`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -967,7 +967,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sg9o.equals(`4`)}"
-                                android:onClick="@{()->form.setSg9o(`4`) + sg9ob.clearCheck()}"
+                                android:onClick="@{()->form.setSg9o(`4`)}"
                                 android:text="@string/sg9o04" />
 
                             <RadioButton
@@ -1005,7 +1005,7 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVsg9ob"
                     style="@style/cardView"
-                    android:visibility="@{form.sg9o.equals(`2`) || form.sg9o.equals(`6`) ? View.VISIBLE : View.GONE}">
+                    android:visibility="@{form.sg9o.equals(`2`) || form.sg9o.equals(`4`) || form.sg9o.equals(`6`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -1138,7 +1138,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sg9p.equals(`4`)}"
-                                android:onClick="@{()->form.setSg9p(`4`) + sg9pb.clearCheck()}"
+                                android:onClick="@{()->form.setSg9p(`4`)}"
                                 android:text="@string/sg9p04" />
 
                             <RadioButton
@@ -1176,7 +1176,7 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVsg9pb"
                     style="@style/cardView"
-                    android:visibility="@{form.sg9p.equals(`2`) || form.sg9p.equals(`6`) ? View.VISIBLE : View.GONE}">
+                    android:visibility="@{form.sg9p.equals(`2`) || form.sg9p.equals(`4`) || form.sg9p.equals(`6`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -1309,7 +1309,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.sg9q.equals(`4`)}"
-                                android:onClick="@{()->form.setSg9q(`4`) + sg9qb.clearCheck()}"
+                                android:onClick="@{()->form.setSg9q(`4`)}"
                                 android:text="@string/sg9q04" />
 
                             <RadioButton
@@ -1347,7 +1347,7 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVsg9qb"
                     style="@style/cardView"
-                    android:visibility="@{form.sg9q.equals(`2`) || form.sg9q.equals(`6`) ? View.VISIBLE : View.GONE}">
+                    android:visibility="@{form.sg9q.equals(`2`) || form.sg9q.equals(`4`) || form.sg9q.equals(`6`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
