@@ -61,11 +61,32 @@ public class SectionD3Activity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if (bi.d304y.getText().toString().isEmpty()) return;
-                bi.d304d.setMaxvalue(Integer.parseInt(bi.d304y.getText().toString()) == Calendar.getInstance().get(Calendar.YEAR) ?
-                        Calendar.getInstance().get(Calendar.DAY_OF_MONTH) : 31f);
+                if (bi.d304y.getText().toString().isEmpty() && bi.d304m.getText().toString().isEmpty())
+                    return;
                 bi.d304m.setMaxvalue(Integer.parseInt(bi.d304y.getText().toString()) == Calendar.getInstance().get(Calendar.YEAR) ?
                         Calendar.getInstance().get(Calendar.MONTH) + 1 : 12f);
+                bi.d304d.setMaxvalue(Integer.parseInt(bi.d304y.getText().toString()) == Calendar.getInstance().get(Calendar.YEAR)
+                        && Integer.parseInt(bi.d304m.getText().toString()) == Calendar.getInstance().get(Calendar.MONTH) + 1 ?
+                        Calendar.getInstance().get(Calendar.DAY_OF_MONTH) : 31f);
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+            }
+        });
+
+        bi.d304m.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (bi.d304y.getText().toString().isEmpty() || bi.d304m.getText().toString().isEmpty())
+                    return;
+                bi.d304d.setMaxvalue(Integer.parseInt(bi.d304y.getText().toString()) == Calendar.getInstance().get(Calendar.YEAR)
+                        && Integer.parseInt(bi.d304m.getText().toString()) == Calendar.getInstance().get(Calendar.MONTH) + 1 ?
+                        Calendar.getInstance().get(Calendar.DAY_OF_MONTH) : 31f);
             }
 
             @Override
