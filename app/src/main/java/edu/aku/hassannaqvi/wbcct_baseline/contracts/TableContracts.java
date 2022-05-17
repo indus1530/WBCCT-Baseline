@@ -20,9 +20,6 @@ public class TableContracts {
         public static final String COLUMN_TEHSIL_CODE = "tehsilCode";
         public static final String COLUMN_UC_CODE = "ucCode";
         public static final String COLUMN_VILLAGE_CODE = "villageCode";
-        public static final String COLUMN_A105B = "a105B";
-        public static final String COLUMN_A106 = "a106";
-        public static final String COLUMN_A107 = "a107";
         public static final String COLUMN_SA1 = "sA1";
         public static final String COLUMN_SA3A = "sA3A";
         public static final String COLUMN_SA3B = "sA3B";

@@ -483,7 +483,7 @@ public class MWRA extends BaseObservable implements Observable {
         setSno(selectedMWRA);
         setAppver(MainApp.appInfo.getAppVersion());
         setProjectName(PROJECT_NAME);
-        setVillageCode(MainApp.selectedPSU);
+        setVillageCode(MainApp.villageCode);
         setHhid(MainApp.selectedHHID);
 
     }

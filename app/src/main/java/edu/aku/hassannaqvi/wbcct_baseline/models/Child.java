@@ -293,7 +293,7 @@ public class Child extends BaseObservable implements Observable {
         }
         setAppver(MainApp.appInfo.getAppVersion());
         setProjectName(PROJECT_NAME);
-        setVillageCode(MainApp.selectedVillage);
+        setVillageCode(MainApp.villageCode);
         setHhid(MainApp.selectedHHID);
 
     }

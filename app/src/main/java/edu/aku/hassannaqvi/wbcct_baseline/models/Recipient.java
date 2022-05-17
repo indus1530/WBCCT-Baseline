@@ -216,7 +216,7 @@ public class Recipient extends BaseObservable implements Observable {
         setUuid(MainApp.form.getUid());  // not applicable in Form table
         setAppver(MainApp.appInfo.getAppVersion());
         setProjectName(PROJECT_NAME);
-        setVillageCode(MainApp.selectedVillage);
+        setVillageCode(MainApp.villageCode);
         setHhid(MainApp.selectedHHID);
         setFmuid(MainApp.familyMember.getUid());
 

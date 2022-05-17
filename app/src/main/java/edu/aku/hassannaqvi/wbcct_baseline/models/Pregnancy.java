@@ -225,7 +225,7 @@ public class Pregnancy extends BaseObservable implements Observable {
         //setMsno(MainApp.mwra.getBs1q1());
         setAppver(MainApp.appInfo.getAppVersion());
         setProjectName(PROJECT_NAME);
-        setVillageCode(MainApp.selectedVillage);
+        setVillageCode(MainApp.villageCode);
         setHhid(MainApp.selectedHHID);
     }
 

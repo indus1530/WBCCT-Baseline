@@ -178,8 +178,7 @@
     <string name="a102"> District: </string>
     <string name="a103"> Tehsil / Taluka: </string>
     <string name="a104"> Union Council: </string>
-    <string name="a105a"> Village Name </string>
-    <string name="a105b"> Cluster Number </string>
+    <string name="a105"> Village Name </string>
     <string name="a106"> Household number: </string>
     <string name="a107"> Questionnaire Number </string>
     <string name="a108"> Date of Interview: </string>
@@ -2060,7 +2059,7 @@
     <string name="mode"> Module E: </string>
     <string name="e1"> E1: Reproductive History: </string>
     <string name="ehtitle"> Household Identification </string>
-    <string name="eh101"> Cluster Number </string>
+    <string name="eh101"> Village Name </string>
     <string name="eh102"> District: </string>
     <string name="eh103"> Household Number: </string>
     <string name="eh104"> Questionnaire Number </string>
@@ -3025,8 +3024,7 @@ Has anyone ever done any of the following to you during the last 12 months?</str
     <string name='Q_a102'>a102</string>
     <string name='Q_a103'>a103</string>
     <string name='Q_a104'>a104</string>
-    <string name='Q_a105a'>a105a</string>
-    <string name='Q_a105b'>a105b</string>
+    <string name='Q_a105'>a105</string>
     <string name='Q_a106'>a106</string>
     <string name='Q_a107'>a107</string>
     <string name='Q_a108'>a108</string>

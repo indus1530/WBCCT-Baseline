@@ -77,8 +77,7 @@
     <string name="a102"> ضلع </string>
     <string name="a103"> تحصیل /  تعلقہ </string>
     <string name="a104"> یونین کونسل </string>
-    <string name="a105a"> گاؤں کا نام </string>
-    <string name="a105b"> کلسٹر نمبر </string>
+    <string name="a105"> گاؤں کا نام </string>
     <string name="a106"> گھرانہ نمبر </string>
     <string name="a107"> سوالنامہ نمبر </string>
     <string name="a108"> انٹرویو کی تاریخ </string>
@@ -1940,7 +1939,7 @@
     <string name="dstab96"> دیگر وضاحت کریں </string>
 
     <string name="ehtitle"> گهر کی شناخت </string>
-    <string name="eh101"> کلسٹر نمبر</string>
+    <string name="eh101"> گاؤں کا نام </string>
     <string name="eh102"> ضلع</string>
     <string name="eh103"> گھرانہ نمبر</string>
     <string name="eh104">سوالنامہ نمبر</string>
@@ -2906,8 +2905,7 @@
     <string name='Q_a102'>a102</string>
     <string name='Q_a103'>a103</string>
     <string name='Q_a104'>a104</string>
-    <string name='Q_a105a'>a105a</string>
-    <string name='Q_a105b'>a105b</string>
+    <string name='Q_a105'>a105</string>
     <string name='Q_a106'>a106</string>
     <string name='Q_a107'>a107</string>
     <string name='Q_a108'>a108</string>
@@ -3613,17 +3611,6 @@
     <string name='Q_sginst2'>sginst2</string>
     <string name='Q_sginst3'>sginst3</string>
     <string name='Q_villagename'>villagename</string>
-
-
-    <string name="title_activity_lock">LockActivity</string>
-    <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
-
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 
 
 </resources>

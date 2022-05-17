@@ -86,7 +86,7 @@ public class AnthroWRA extends BaseObservable implements Observable {
         setFmuid(MainApp.familyMember.getUid()); //// not applicable in Form table
         setAppver(MainApp.appInfo.getAppVersion());
         setProjectName(PROJECT_NAME);
-        setVillageCode(MainApp.selectedVillage);
+        setVillageCode(MainApp.villageCode);
         setHhid(MainApp.selectedHHID);
 
     }

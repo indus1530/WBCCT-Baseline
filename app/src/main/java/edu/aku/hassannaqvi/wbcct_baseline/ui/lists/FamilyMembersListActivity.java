@@ -301,7 +301,7 @@ public class FamilyMembersListActivity extends AppCompatActivity {
 
         }
 
-        if (!selectedChild.equals("") && !selectedRecipient.equals("")) {
+        if (!selectedChild.equals("") /*&& !selectedRecipient.equals("")*/) {
             bi.btnRand.setVisibility(View.INVISIBLE);
             //bi.btnContinue.setVisibility(View.VISIBLE);
             bi.btnContinue.setEnabled(true);

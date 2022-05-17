@@ -220,69 +220,23 @@
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:text="@string/Q_a105a" />
+                            android:text="@string/Q_a105" />
 
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:gravity="center"
-                            android:text="@string/a105a" />
+                            android:text="@string/a105" />
 
                         <androidx.appcompat.widget.AppCompatSpinner
-                            android:id="@+id/a105a"
+                            android:id="@+id/a105"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="2"
                             android:minHeight="56dp"
-                            android:prompt="@string/a105a"
+                            android:prompt="@string/a105"
                             android:spinnerMode="dropdown" />
-
-                    </LinearLayout>
-
-                </androidx.cardview.widget.CardView>
-
-
-                <!-- a105b  Input   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVa105b"
-                    style="@style/cardView"
-                    android:visibility="gone">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bottom"
-                        android:minHeight="60dp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="@string/Q_a105b" />
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            android:text="@string/a105b" />
-
-                        <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/a105b"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="2"
-                            android:gravity="center"
-                            android:hint="##"
-                            android:inputType="number"
-                            android:maxLength="2"
-                            android:textDirection="ltr"
-                            app:mask="##"
-                            app:maxValue="57"
-                            app:minValue="1"
-                            app:type="range" />
 
                     </LinearLayout>
 

@@ -3140,7 +3140,7 @@
 
                             <TextView
                                 style="@style/textView"
-                                android:layout_width="wrap_content"
+                                android:layout_width="188dp"
                                 android:layout_height="match_parent"
                                 android:text="@string/istga" />
 
@@ -3172,7 +3172,7 @@
 
                             <TextView
                                 style="@style/textView"
-                                android:layout_width="wrap_content"
+                                android:layout_width="188dp"
                                 android:layout_height="match_parent"
                                 android:gravity="top|center"
                                 android:text="@string/istgb" />

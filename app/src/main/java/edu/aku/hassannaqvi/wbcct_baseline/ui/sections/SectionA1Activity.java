@@ -47,11 +47,13 @@ public class SectionA1Activity extends AppCompatActivity {
             bi.btnContinue.setText("Review Next");
     }
 
+
     @Override
     protected void onResume() {
         super.onResume();
         MainApp.lockScreen(this);
     }
+
 
     private void setupSkips() {
 
@@ -102,9 +104,7 @@ public class SectionA1Activity extends AppCompatActivity {
 
     private boolean insertNewRecord() {
         if (!MainApp.form.getUid().equals("") || MainApp.superuser) return true;
-
         MainApp.form.populateMeta();
-
         long rowId = 0;
         try {
             rowId = db.addForm(MainApp.form);

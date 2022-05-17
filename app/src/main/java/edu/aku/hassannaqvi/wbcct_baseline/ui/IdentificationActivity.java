@@ -1,8 +1,8 @@
 package edu.aku.hassannaqvi.wbcct_baseline.ui;
 
-import static edu.aku.hassannaqvi.wbcct_baseline.core.MainApp.selectedTehsil;
-import static edu.aku.hassannaqvi.wbcct_baseline.core.MainApp.selectedUc;
 import static edu.aku.hassannaqvi.wbcct_baseline.core.MainApp.sharedPref;
+import static edu.aku.hassannaqvi.wbcct_baseline.core.MainApp.tehsilCode;
+import static edu.aku.hassannaqvi.wbcct_baseline.core.MainApp.ucCode;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -47,7 +47,6 @@ public class IdentificationActivity extends AppCompatActivity {
     private ArrayList<String> ucCodes;
     private ArrayList<String> villageNames;
     private ArrayList<String> villageCodes;
-    private ArrayList<String> clusterNo;
     private ArrayList<String> headHH;
     private Intent openIntent;
 
@@ -91,13 +90,14 @@ public class IdentificationActivity extends AppCompatActivity {
                 bi.a102.setAdapter(null);
                 bi.a103.setAdapter(null);
                 bi.a104.setAdapter(null);
-                bi.a105a.setAdapter(null);
+                bi.a105.setAdapter(null);
                 bi.a106.setText(null);
 
                 if (position == 0) return;
-                MainApp.selectedProvince = provinceCodes.get(position);
+                MainApp.provinceCode = provinceCodes.get(position);
+                MainApp.provinceName = provinceNames.get(position);
                 // Populate Districts
-                Collection<Clusters> districts = db.getDistrictsByProvince(MainApp.selectedProvince);
+                Collection<Clusters> districts = db.getDistrictsByProvince(MainApp.provinceCode);
                 districtNames = new ArrayList<>();
                 districtCodes = new ArrayList<>();
                 districtNames.add("...");
@@ -122,12 +122,13 @@ public class IdentificationActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 bi.a103.setAdapter(null);
                 bi.a104.setAdapter(null);
-                bi.a105a.setAdapter(null);
+                bi.a105.setAdapter(null);
                 bi.a106.setText(null);
                 if (position == 0) return;
-                MainApp.selectedDistrict = districtCodes.get(position);
+                MainApp.districtCode = districtCodes.get(position);
+                MainApp.districtName = districtNames.get(position);
                 // Populate TEHSILS
-                Collection<Clusters> tehsils = db.getTehsilsByDistrict(MainApp.selectedProvince, MainApp.selectedDistrict);
+                Collection<Clusters> tehsils = db.getTehsilsByDistrict(MainApp.provinceCode, MainApp.districtCode);
                 tehsilNames = new ArrayList<>();
                 tehsilCodes = new ArrayList<>();
                 tehsilNames.add("...");
@@ -152,12 +153,13 @@ public class IdentificationActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 bi.a104.setAdapter(null);
-                bi.a105a.setAdapter(null);
+                bi.a105.setAdapter(null);
                 bi.a106.setText(null);
                 if (position == 0) return;
-                MainApp.selectedTehsil = tehsilCodes.get(position);
+                MainApp.tehsilCode = tehsilCodes.get(position);
+                MainApp.tehsilName = tehsilNames.get(position);
                 // Populate UCS
-                Collection<Clusters> ucs = db.getUcsByTehsil(MainApp.selectedDistrict, tehsilCodes.get(position));
+                Collection<Clusters> ucs = db.getUcsByTehsil(MainApp.districtCode, tehsilCodes.get(position));
                 ucNames = new ArrayList<>();
                 ucCodes = new ArrayList<>();
                 ucNames.add("...");
@@ -183,28 +185,25 @@ public class IdentificationActivity extends AppCompatActivity {
         bi.a104.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                bi.a105a.setAdapter(null);
-                bi.a105b.setText(null);
+                bi.a105.setAdapter(null);
                 bi.a106.setText(null);
                 if (position == 0) return;
-                MainApp.selectedUc = ucCodes.get(position);
+                MainApp.ucCode = ucCodes.get(position);
+                MainApp.ucName = ucNames.get(position);
                 // Populate Clusters
-                Collection<Clusters> villages = db.getVillagesByUc(selectedTehsil, selectedUc);
+                Collection<Clusters> villages = db.getVillagesByUc(tehsilCode, ucCode);
                 villageNames = new ArrayList<>();
                 villageCodes = new ArrayList<>();
-                clusterNo = new ArrayList<>();
                 villageNames.add("...");
                 villageCodes.add("...");
-                clusterNo.add("...");
 
                 for (Clusters v : villages) {
                     villageNames.add(v.getVillageName());
                     villageCodes.add(v.getVillageCode());
-                    clusterNo.add(v.getClusterNo());
                 }
 
                 ArrayAdapter<String> adapter = new ArrayAdapter<String>(IdentificationActivity.this, R.layout.custom_spinner, villageNames);
-                bi.a105a.setAdapter(adapter);
+                bi.a105.setAdapter(adapter);
 
 
             }
@@ -215,14 +214,13 @@ public class IdentificationActivity extends AppCompatActivity {
             }
         });
 
-        bi.a105a.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        bi.a105.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                bi.a105b.setText(null);
                 bi.a106.setText(null);
                 if (position == 0) return;
-                MainApp.selectedVillage = villageCodes.get(position);
-                MainApp.selectedCluster = clusterNo.get(position);
+                MainApp.villageCode = villageCodes.get(position);
+                MainApp.villageName = villageNames.get(position);
             }
 
             @Override
@@ -324,7 +322,7 @@ public class IdentificationActivity extends AppCompatActivity {
 
         MainApp.form = new Form();
         try {
-            MainApp.form = db.getFormByPSUHHNo(MainApp.selectedVillage, MainApp.selectedHHID);
+            MainApp.form = db.getFormByVillageCodeHHNo(MainApp.villageCode, MainApp.selectedHHID);
         } catch (JSONException e) {
             Log.d(TAG, getString(R.string.hh_exists_form) + e.getMessage());
             Toast.makeText(this, getString(R.string.hh_exists_form) + e.getMessage(), Toast.LENGTH_SHORT).show();
