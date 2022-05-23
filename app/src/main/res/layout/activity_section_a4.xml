@@ -578,8 +578,8 @@
                                 android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                 android:hint="@string/a40696"
                                 android:tag="a40696"
-                                android:text="@={form.a40696x}"
                                 android:textDirection="ltr"
+                                android:text="@={form.a40696x}"
                                 android:visibility="@{form.a40696.equals(`96`) ? View.VISIBLE : View.GONE}" />
 
                         </LinearLayout>
