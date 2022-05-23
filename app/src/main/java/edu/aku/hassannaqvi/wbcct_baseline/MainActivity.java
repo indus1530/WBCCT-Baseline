@@ -244,7 +244,6 @@ public class MainActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.item_menu, menu);
         MenuItem action_database = menu.findItem(R.id.action_database);
-
         action_database.setVisible(MainApp.admin);
         return true;
 

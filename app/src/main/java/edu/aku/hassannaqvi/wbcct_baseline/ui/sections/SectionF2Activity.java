@@ -203,20 +203,23 @@ public class SectionF2Activity extends AppCompatActivity {
         if (!formValidation()) return;
         if (!insertNewRecord()) return;
         if (updateDB()) {
+            Intent i = new Intent();
             anthroWRAList.remove(anthroWRAListPos - 1);
             if (anthroWRAList.size() > 0) {
-                startActivity(new Intent(this, SectionF2Activity.class));
+                i = new Intent(this, SectionF2Activity.class);
             } else {
                 finish();
                 try {
                     MainApp.wedm = db.getWEDMByUUid();
-                    startActivity(new Intent(this, SectionG1Activity.class));
+                    i = new Intent(this, SectionG1Activity.class);
                 } catch (JSONException e) {
                     e.printStackTrace();
                     Toast.makeText(this, "JSONException(WEDM): " + e.getMessage(), Toast.LENGTH_SHORT).show();
 
                 }
             }
+            finish();
+            startActivity(i);
         } else Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
     }
 
