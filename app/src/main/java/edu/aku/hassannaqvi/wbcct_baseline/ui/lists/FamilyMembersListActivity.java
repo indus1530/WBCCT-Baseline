@@ -32,7 +32,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.validatorcrawler.aliazaz.Validator;
 
 import org.json.JSONException;
@@ -317,21 +316,16 @@ public class FamilyMembersListActivity extends AppCompatActivity {
         bi.rvMwra.setAdapter(familyMembersAdapter);
         bi.rvMwra.setLayoutManager(new LinearLayoutManager(this));
 
+        bi.fab.setOnClickListener(view -> {
+            if (MainApp.superuser) {
+                Toast.makeText(FamilyMembersListActivity.this, "Supervisors cannot add new members.", Toast.LENGTH_LONG).show();
 
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (MainApp.superuser) {
-                    Toast.makeText(FamilyMembersListActivity.this, "Supervisors cannot add new members.", Toast.LENGTH_LONG).show();
-
-                } else if (MainApp.selectedMWRA.equals("")) {
-                    //     Toast.makeText(MwraActivity.this, "Opening Mwra Form", Toast.LENGTH_LONG).show();
-                    MainApp.familyMember = new FamilyMembers();
-                    addFemale();
-                } else {
-                    Toast.makeText(FamilyMembersListActivity.this, "This form has been locked. You cannot add new family member to locked forms", Toast.LENGTH_LONG).show();
-                }
+            } else if (MainApp.selectedMWRA.equals("")) {
+                //     Toast.makeText(MwraActivity.this, "Opening Mwra Form", Toast.LENGTH_LONG).show();
+                MainApp.familyMember = new FamilyMembers();
+                addFemale();
+            } else {
+                Toast.makeText(FamilyMembersListActivity.this, "This form has been locked. You cannot add new family member to locked forms", Toast.LENGTH_LONG).show();
             }
         });
 

@@ -2338,8 +2338,8 @@
     <string name="f101name">Name of Child</string>
     <string name="f101">Line Number</string>
     <string name="f102"> Age in Months &amp; Days </string>
-    <string name="f102m"> Months </string>
-    <string name="f102d"> Days </string>
+    <string name="f102m">Month</string>
+    <string name="f102d">Day</string>
     <string name="f103">Sex/ Gender</string>
     <string name="f10301">Male</string>
     <string name="f10302">Female</string>

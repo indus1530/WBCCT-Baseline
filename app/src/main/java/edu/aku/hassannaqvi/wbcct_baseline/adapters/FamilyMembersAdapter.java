@@ -18,7 +18,7 @@ import edu.aku.hassannaqvi.wbcct_baseline.models.FamilyMembers;
 
 
 public class FamilyMembersAdapter extends RecyclerView.Adapter<FamilyMembersAdapter.ViewHolder> {
-    private static final String TAG = "MWRAAdapter";
+    private static final String TAG = "FamilyMembersAdapter";
     private final Context mContext;
     private final List<FamilyMembers> member;
     private final int mExpandedPosition = -1;
