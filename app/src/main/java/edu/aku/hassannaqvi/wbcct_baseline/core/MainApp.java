@@ -9,6 +9,10 @@ import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.media.AudioManager;
 import android.media.ToneGenerator;
+import android.net.ConnectivityManager;
+import android.net.Network;
+import android.net.NetworkCapabilities;
+import android.net.NetworkInfo;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -25,7 +29,6 @@ import org.json.JSONArray;
 import java.io.File;
 import java.util.List;
 
-import edu.aku.hassannaqvi.wbcct_baseline.BuildConfig;
 import edu.aku.hassannaqvi.wbcct_baseline.models.AnthroChild;
 import edu.aku.hassannaqvi.wbcct_baseline.models.AnthroWRA;
 import edu.aku.hassannaqvi.wbcct_baseline.models.Child;
@@ -49,13 +52,15 @@ public class MainApp extends Application {
     //public static final String _IP = "http://43.245.131.159:8080";// .TEST server
     //public static final String _IP = "http://cls-pae-fp51764";// .TEST server
     public static final String _HOST_URL = MainApp._IP + "/enp_wb/api/";// .TEST server;
-    public static final String _SERVER_URL = "syncenc.php";
-    public static final String _SERVER_GET_URL = "getDataEnc.php";
+    public static final String _SERVER_URL = "syncGCM.php";
+    public static final String _SERVER_GET_URL = "getDataGCM.php";
     public static final String _PHOTO_UPLOAD_URL = _HOST_URL + "uploads.php";
     public static final String _UPDATE_URL = MainApp._IP + "/enp_wb/app/hhsurvey";
+    public static final String _APP_FOLDER = "../app/survey";
     public static final String _EMPTY_ = "";
     public static final String _USER_URL = "resetpassword.php";
     private static final String TAG = "MainApp";
+    public static int TRATS = 8;
     public static String IBAHC = "";
 
     //COUNTRIES
@@ -88,8 +93,8 @@ public class MainApp extends Application {
     public static SharedPreferences.Editor editor;
     public static SharedPreferences sharedPref;
     public static String deviceid;
-    public static int versionCode = BuildConfig.VERSION_CODE;
-    public static String versionName = BuildConfig.VERSION_NAME;
+    public static int versionCode = edu.aku.hassannaqvi.wbcct_baseline.BuildConfig.VERSION_CODE;
+    public static String versionName = edu.aku.hassannaqvi.wbcct_baseline.BuildConfig.VERSION_NAME;
     public static int MY_PERMISSIONS_REQUEST_READ_PHONE_STATE = 2;
     public static long TWO_MINUTES = 1000 * 60 * 2;
     public static boolean permissionCheck = false;
@@ -220,6 +225,19 @@ public class MainApp extends Application {
          *  return Index of MWRAList (SNO-1)
          */
         return String.valueOf((grid[household][eligibles - 1]) - 1);
+    }
+
+    public static Boolean isNetworkAvailable(Context c) {
+        ConnectivityManager connectivityManager = (ConnectivityManager) c.getSystemService(Context.CONNECTIVITY_SERVICE);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            Network nw = connectivityManager.getActiveNetwork();
+            if (nw == null) return false;
+            NetworkCapabilities actNw = connectivityManager.getNetworkCapabilities(nw);
+            return actNw != null && (actNw.hasTransport(NetworkCapabilities.TRANSPORT_WIFI) || actNw.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR) || actNw.hasTransport(NetworkCapabilities.TRANSPORT_ETHERNET) || actNw.hasTransport(NetworkCapabilities.TRANSPORT_BLUETOOTH));
+        } else {
+            NetworkInfo nwInfo = connectivityManager.getActiveNetworkInfo();
+            return nwInfo != null && nwInfo.isConnected();
+        }
     }
 
     public static void lockScreen(Context c) {

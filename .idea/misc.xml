@@ -63,6 +63,7 @@
         <entry key="..\:/Users/abdul.sajid/Desktop/Android App/WBCCT-Baseline/app/src/main/res/drawable/ic_language_change.xml" value="0.5828125" />
         <entry key="..\:/Users/abdul.sajid/Desktop/Android App/WBCCT-Baseline/app/src/main/res/drawable/ic_menu_hamburger.xml" value="0.5828125" />
         <entry key="..\:/Users/abdul.sajid/Desktop/Android App/WBCCT-Baseline/app/src/main/res/drawable/splash_screen.xml" value="0.5828125" />
+        <entry key="..\:/Users/abdul.sajid/Desktop/Android App/WBCCT-Baseline/app/src/main/res/layout/activity_change_password.xml" value="0.41625" />
         <entry key="..\:/Users/abdul.sajid/Desktop/Android App/WBCCT-Baseline/app/src/main/res/layout/activity_consent.xml" value="0.49765625" />
         <entry key="..\:/Users/abdul.sajid/Desktop/Android App/WBCCT-Baseline/app/src/main/res/layout/activity_ending.xml" value="0.55859375" />
         <entry key="..\:/Users/abdul.sajid/Desktop/Android App/WBCCT-Baseline/app/src/main/res/layout/activity_family_list.xml" value="0.55859375" />
@@ -94,6 +95,7 @@
         <entry key="..\:/Users/abdul.sajid/Desktop/Android App/WBCCT-Baseline/app/src/main/res/layout/activity_section_g3.xml" value="0.55859375" />
         <entry key="..\:/Users/abdul.sajid/Desktop/Android App/WBCCT-Baseline/app/src/main/res/layout/famlily_member_row.xml" value="0.55859375" />
         <entry key="..\:/Users/abdul.sajid/Desktop/Android App/WBCCT-Baseline/app/src/main/res/layout/pendingform_layout.xml" value="0.536" />
+        <entry key="..\:/Users/abdul.sajid/Desktop/Android App/WBCCT-Baseline/app/src/main/res/layout/sync_list_adapter.xml" value="0.55859375" />
         <entry key="..\:/Users/abdul.sajid/Desktop/Android App/WBCCT-Baseline/app/src/main/res/menu/item_menu.xml" value="0.55859375" />
         <entry key="..\:/Users/abdul.sajid/Desktop/Android App/WBCCT-Baseline/app/src/main/res/menu/language_menu.xml" value="0.55859375" />
         <entry key="..\:/Users/abdul.sajid/Desktop/Android App/WBCCT-Baseline/app/src/main/res/menu/main_menu.xml" value="0.29765625" />
@@ -132,7 +134,7 @@
     </option>
   </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_15" project-jdk-name="16" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_X" default="true" project-jdk-name="16" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>

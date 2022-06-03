@@ -23,11 +23,20 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.UnsupportedEncodingException;
+import java.security.InvalidAlgorithmParameterException;
+import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;
 
+import javax.crypto.BadPaddingException;
+import javax.crypto.IllegalBlockSizeException;
+import javax.crypto.NoSuchPaddingException;
+
 import edu.aku.hassannaqvi.wbcct_baseline.R;
+import edu.aku.hassannaqvi.wbcct_baseline.core.CipherSecure;
 import edu.aku.hassannaqvi.wbcct_baseline.core.MainApp;
+import edu.aku.hassannaqvi.wbcct_baseline.core.UserAuth;
 import edu.aku.hassannaqvi.wbcct_baseline.database.DatabaseHelper;
 import edu.aku.hassannaqvi.wbcct_baseline.databinding.ActivityChangePasswordBinding;
 import edu.aku.hassannaqvi.wbcct_baseline.workers.UserWorker;
@@ -63,6 +72,7 @@ public class ChangePasswordActivity extends AppCompatActivity {
             p.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_lock_open, 0, 0, 0);
         }
     }
+
 
     public void attemptReset(View view) {
 
@@ -185,6 +195,9 @@ public class ChangePasswordActivity extends AppCompatActivity {
                         }
                     });
 
+
+            Log.d(TAG, "attemptReset: " + CipherSecure.encryptGCM(bi.password2.getText().toString()));
+
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
             Toast.makeText(this, "NoSuchAlgorithmException(UserAuth):" + e.getMessage(), Toast.LENGTH_SHORT).show();
@@ -192,6 +205,28 @@ public class ChangePasswordActivity extends AppCompatActivity {
             e.printStackTrace();
             Toast.makeText(this, "InvalidKeySpecException(UserAuth):" + e.getMessage(), Toast.LENGTH_SHORT).show();
 
+        } catch (InvalidKeyException e) {
+            e.printStackTrace();
+            Toast.makeText(this, "InvalidKeyException(UserAuth):" + e.getMessage(), Toast.LENGTH_SHORT).show();
+
+        } catch (InvalidAlgorithmParameterException e) {
+            e.printStackTrace();
+            Toast.makeText(this, "InvalidAlgorithmParameterException(UserAuth):" + e.getMessage(), Toast.LENGTH_SHORT).show();
+
+        } catch (NoSuchPaddingException e) {
+            e.printStackTrace();
+            Toast.makeText(this, "NoSuchPaddingException(UserAuth):" + e.getMessage(), Toast.LENGTH_SHORT).show();
+
+        } catch (BadPaddingException e) {
+            e.printStackTrace();
+            Toast.makeText(this, "BadPaddingException(UserAuth):" + e.getMessage(), Toast.LENGTH_SHORT).show();
+
+        } catch (IllegalBlockSizeException e) {
+            e.printStackTrace();
+            Toast.makeText(this, "IllegalBlockSizeException(UserAuth):" + e.getMessage(), Toast.LENGTH_SHORT).show();
+
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
         }
 
     }
@@ -230,11 +265,28 @@ public class ChangePasswordActivity extends AppCompatActivity {
 
     public boolean isValidPassword(String password) {
         boolean isValid = true;
+
+        // Check not same as previous
+        try {
+            if (UserAuth.checkPassword(password, MainApp.user.getPassword())) {
+                System.out.println("Password is same as previous.");
+                bi.password1.setError("Password must not be same as previous.");
+                isValid = false;
+            }
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        } catch (InvalidKeySpecException e) {
+            e.printStackTrace();
+        }
+
+        // Check password length
         if (password.length() < 8) {
             System.out.println("Password must be at least 8 characters in length.");
             bi.password1.setError("Password must be at least 8 characters in length.");
             isValid = false;
         }
+
+        // Check special characters
         String upperCaseChars = "(.*[a-zA-Z].*)";
         if (!password.matches(upperCaseChars)) {
             System.out.println("Password must have atleast one alphabet");
@@ -247,12 +299,15 @@ public class ChangePasswordActivity extends AppCompatActivity {
             System.out.println("Password must have atleast one lowercase character");
             isValid = false;
         }*/
+
+        // Check number
         String numbers = "(.*[0-9].*)";
         if (!password.matches(numbers)) {
             System.out.println("Password must have atleast one number");
             bi.password1.setError("Password must have atleast one number");
             isValid = false;
         }
+
         /*String specialChars = "(.*[@,#,$,%].*$)";
         if (!password.matches(specialChars ))
         {
