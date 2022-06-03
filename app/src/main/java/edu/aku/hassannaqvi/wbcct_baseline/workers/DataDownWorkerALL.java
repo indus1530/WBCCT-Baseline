@@ -130,38 +130,6 @@ public class DataDownWorkerALL extends Worker {
         return null;
     }*/
 
-    public static void longInfo(String str) {
-        if (str.length() > 4000) {
-            Log.i(TAG, str.substring(0, 4000));
-            longInfo(str.substring(4000));
-        } else
-            Log.i(TAG, str);
-    }
-
-   /* private boolean certIsValid(Certificate[] certs, Certificate ca) {
-        for (Certificate cert : certs) {
-            System.out.println("Certificate is: " + cert);
-            if (cert instanceof X509Certificate) {
-
-                try {
-                    ((X509Certificate) cert).checkValidity();
-
-                    System.out.println("Certificate is active for current date");
-                    if (cert.equals(ca)) {
-
-                        return true;
-                    }
-                    //  Toast.makeText(mContext, "Certificate is active for current date", Toast.LENGTH_SHORT).show();
-                } catch (CertificateExpiredException | CertificateNotYetValidException e) {
-                    e.printStackTrace();
-                    return false;
-                }
-            }
-
-        }
-        return false;
-    }*/
-
     @NonNull
     @Override
     public Result doWork() {
@@ -389,6 +357,39 @@ public class DataDownWorkerALL extends Worker {
 
         return Result.success(data);
     }
+
+   /* private boolean certIsValid(Certificate[] certs, Certificate ca) {
+        for (Certificate cert : certs) {
+            System.out.println("Certificate is: " + cert);
+            if (cert instanceof X509Certificate) {
+
+                try {
+                    ((X509Certificate) cert).checkValidity();
+
+                    System.out.println("Certificate is active for current date");
+                    if (cert.equals(ca)) {
+
+                        return true;
+                    }
+                    //  Toast.makeText(mContext, "Certificate is active for current date", Toast.LENGTH_SHORT).show();
+                } catch (CertificateExpiredException | CertificateNotYetValidException e) {
+                    e.printStackTrace();
+                    return false;
+                }
+            }
+
+        }
+        return false;
+    }*/
+
+    public static void longInfo(String str) {
+        if (str.length() > 4000) {
+            Log.i(TAG, str.substring(0, 4000));
+            longInfo(str.substring(4000));
+        } else
+            Log.i(TAG, str);
+    }
+
 
     private String getSize(int length) {
         if (length < 0) return "0B";
