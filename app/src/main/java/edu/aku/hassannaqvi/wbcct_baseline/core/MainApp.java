@@ -1,5 +1,8 @@
 package edu.aku.hassannaqvi.wbcct_baseline.core;
 
+import static edu.aku.hassannaqvi.wbcct_baseline.database.DatabaseHelper.DATABASE_NAME;
+import static edu.aku.hassannaqvi.wbcct_baseline.database.DatabaseHelper.DATABASE_PASSWORD;
+
 import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
@@ -294,19 +297,42 @@ public class MainApp extends Application {
         deviceid = Settings.Secure.getString(getContentResolver(), Settings.Secure.ANDROID_ID);
 
         // Initialize SQLCipher library
-        SQLiteDatabase.loadLibs(this);
+        initSecure();
+ /*       SQLiteDatabase.loadLibs(this);
 
         ApplicationInfo ai = null;
         try {
             ai = getPackageManager().getApplicationInfo(getPackageName(), PackageManager.GET_META_DATA);
             Bundle bundle = ai.metaData;
             int TRATS = bundle.getInt("YEK_TRATS");
-            IBAHC = bundle.getString("YEK_REVRES").substring(TRATS, TRATS + 16);
+            IBAHC = bundle.getString("YEK_REVRES").substring(TRATS, TRATS + 32);
+            Log.d(TAG, "onCreate: YEK_REVRES = " + IBAHC);
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }*/
+        toneGen1 = new ToneGenerator(AudioManager.STREAM_MUSIC, 100);
+    }
+
+    private void initSecure() {
+        // Initialize SQLCipher library
+        SQLiteDatabase.loadLibs(this);
+        File databaseFile = getDatabasePath(DATABASE_NAME);
+       /* databaseFile.mkdirs();
+        databaseFile.delete();*/
+        SQLiteDatabase database = SQLiteDatabase.openOrCreateDatabase(databaseFile, DATABASE_PASSWORD, null);
+        // Prepare encryption KEY
+        ApplicationInfo ai = null;
+        try {
+            ai = getPackageManager().getApplicationInfo(getPackageName(), PackageManager.GET_META_DATA);
+            Bundle bundle = ai.metaData;
+            TRATS = bundle.getInt("YEK_TRATS");
+            //IBAHC = bundle.getString("YEK_REVRES").substring(TRATS, TRATS + 16);
+            IBAHC = bundle.getString("YEK_REVRES");
             Log.d(TAG, "onCreate: YEK_REVRES = " + IBAHC);
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
         }
-        toneGen1 = new ToneGenerator(AudioManager.STREAM_MUSIC, 100);
     }
+
 
 }
