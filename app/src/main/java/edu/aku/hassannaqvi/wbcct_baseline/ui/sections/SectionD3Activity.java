@@ -160,11 +160,32 @@ public class SectionD3Activity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if (year.getText().toString().isEmpty()) return;
-                day.setMaxvalue(Integer.parseInt(year.getText().toString()) == Calendar.getInstance().get(Calendar.YEAR) ?
-                        Calendar.getInstance().get(Calendar.DAY_OF_MONTH) : 31f);
+                if (year.getText().toString().isEmpty() && mon.getText().toString().isEmpty())
+                    return;
                 mon.setMaxvalue(Integer.parseInt(year.getText().toString()) == Calendar.getInstance().get(Calendar.YEAR) ?
                         Calendar.getInstance().get(Calendar.MONTH) + 1 : 12f);
+                day.setMaxvalue(Integer.parseInt(year.getText().toString()) == Calendar.getInstance().get(Calendar.YEAR)
+                        && Integer.parseInt(mon.getText().toString()) == Calendar.getInstance().get(Calendar.MONTH) + 1 ?
+                        Calendar.getInstance().get(Calendar.DAY_OF_MONTH) : 31f);
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+            }
+        });
+
+        mon.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (year.getText().toString().isEmpty() || mon.getText().toString().isEmpty())
+                    return;
+                day.setMaxvalue(Integer.parseInt(year.getText().toString()) == Calendar.getInstance().get(Calendar.YEAR)
+                        && Integer.parseInt(mon.getText().toString()) == Calendar.getInstance().get(Calendar.MONTH) + 1 ?
+                        Calendar.getInstance().get(Calendar.DAY_OF_MONTH) : 31f);
             }
 
             @Override
