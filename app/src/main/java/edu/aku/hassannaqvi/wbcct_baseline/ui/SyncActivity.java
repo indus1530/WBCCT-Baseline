@@ -47,17 +47,11 @@ import java.util.concurrent.TimeUnit;
 
 import edu.aku.hassannaqvi.wbcct_baseline.R;
 import edu.aku.hassannaqvi.wbcct_baseline.adapters.SyncListAdapter;
-import edu.aku.hassannaqvi.wbcct_baseline.contracts.TableContracts.AnthroChildTable;
-import edu.aku.hassannaqvi.wbcct_baseline.contracts.TableContracts.AnthroWRATable;
+import edu.aku.hassannaqvi.wbcct_baseline.contracts.TableContracts;
 import edu.aku.hassannaqvi.wbcct_baseline.contracts.TableContracts.ChildTable;
 import edu.aku.hassannaqvi.wbcct_baseline.contracts.TableContracts.EntryLogTable;
-import edu.aku.hassannaqvi.wbcct_baseline.contracts.TableContracts.FamilyMembersTable;
 import edu.aku.hassannaqvi.wbcct_baseline.contracts.TableContracts.FormsTable;
-import edu.aku.hassannaqvi.wbcct_baseline.contracts.TableContracts.MwraTable;
-import edu.aku.hassannaqvi.wbcct_baseline.contracts.TableContracts.PregnancyTable;
-import edu.aku.hassannaqvi.wbcct_baseline.contracts.TableContracts.RecipientTable;
 import edu.aku.hassannaqvi.wbcct_baseline.contracts.TableContracts.UsersTable;
-import edu.aku.hassannaqvi.wbcct_baseline.contracts.TableContracts.WEDMTable;
 import edu.aku.hassannaqvi.wbcct_baseline.core.MainApp;
 import edu.aku.hassannaqvi.wbcct_baseline.database.DatabaseHelper;
 import edu.aku.hassannaqvi.wbcct_baseline.databinding.ActivitySyncBinding;
@@ -82,7 +76,6 @@ public class SyncActivity extends AppCompatActivity {
     private long tStart;
     private String progress;
     private long startTime;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -165,8 +158,18 @@ public class SyncActivity extends AppCompatActivity {
                     Toast.makeText(this, "JSONException(Forms): " + e.getMessage(), Toast.LENGTH_SHORT).show();
                 }
 
+                // WEDM
+                uploadTables.add(new SyncModel(TableContracts.WEDMTable.TABLE_NAME));
+                try {
+                    MainApp.uploadData.add(db.getUnsyncedWEDM());
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    Log.d(TAG, "ProcessStart: JSONException(WEDM): " + e.getMessage());
+                    Toast.makeText(this, "JSONException(WEDM): " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+
                 // FamilyMembers
-                uploadTables.add(new SyncModel(FamilyMembersTable.TABLE_NAME));
+                uploadTables.add(new SyncModel(TableContracts.FamilyMembersTable.TABLE_NAME));
                 try {
                     MainApp.uploadData.add(db.getUnsyncedFamilyMembers());
                 } catch (JSONException e) {
@@ -176,7 +179,7 @@ public class SyncActivity extends AppCompatActivity {
                 }
 
                 // Recipient
-                uploadTables.add(new SyncModel(RecipientTable.TABLE_NAME));
+                uploadTables.add(new SyncModel(TableContracts.RecipientTable.TABLE_NAME));
                 try {
                     MainApp.uploadData.add(db.getUnsyncedRecipient());
                 } catch (JSONException e) {
@@ -185,8 +188,8 @@ public class SyncActivity extends AppCompatActivity {
                     Toast.makeText(this, "JSONException(Recipient): " + e.getMessage(), Toast.LENGTH_SHORT).show();
                 }
 
-                // MWRA
-                uploadTables.add(new SyncModel(MwraTable.TABLE_NAME));
+                //MWRA
+                uploadTables.add(new SyncModel(TableContracts.MwraTable.TABLE_NAME));
                 try {
                     MainApp.uploadData.add(db.getUnsyncedMWRA());
                 } catch (JSONException e) {
@@ -195,18 +198,8 @@ public class SyncActivity extends AppCompatActivity {
                     Toast.makeText(this, "JSONException(MWRA): " + e.getMessage(), Toast.LENGTH_SHORT).show();
                 }
 
-                // WEDM
-                uploadTables.add(new SyncModel(WEDMTable.TABLE_NAME));
-                try {
-                    MainApp.uploadData.add(db.getUnsyncedWEDM());
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                    Log.d(TAG, "ProcessStart: JSONException(WEDM): " + e.getMessage());
-                    Toast.makeText(this, "JSONException(WEDM): " + e.getMessage(), Toast.LENGTH_SHORT).show();
-                }
-
-                // Pregnancy
-                uploadTables.add(new SyncModel(PregnancyTable.TABLE_NAME));
+                //Pregnancy
+                uploadTables.add(new SyncModel(TableContracts.PregnancyTable.TABLE_NAME));
                 try {
                     MainApp.uploadData.add(db.getUnsyncedPregnancy());
                 } catch (JSONException e) {
@@ -214,7 +207,6 @@ public class SyncActivity extends AppCompatActivity {
                     Log.d(TAG, "ProcessStart: JSONException(Pregnancy): " + e.getMessage());
                     Toast.makeText(this, "JSONException(Pregnancy): " + e.getMessage(), Toast.LENGTH_SHORT).show();
                 }
-
 
                 //Child
                 uploadTables.add(new SyncModel(ChildTable.TABLE_NAME));
@@ -227,9 +219,8 @@ public class SyncActivity extends AppCompatActivity {
 
                 }
 
-
                 //AnthroChild
-                uploadTables.add(new SyncModel(AnthroChildTable.TABLE_NAME));
+                uploadTables.add(new SyncModel(TableContracts.AnthroChildTable.TABLE_NAME));
                 try {
                     MainApp.uploadData.add(db.getUnsyncedAnthroChild());
                 } catch (JSONException e) {
@@ -239,9 +230,8 @@ public class SyncActivity extends AppCompatActivity {
 
                 }
 
-
                 //AnthroWRA
-                uploadTables.add(new SyncModel(AnthroWRATable.TABLE_NAME));
+                uploadTables.add(new SyncModel(TableContracts.AnthroWRATable.TABLE_NAME));
                 try {
                     MainApp.uploadData.add(db.getUnsyncedAnthroWRA());
                 } catch (JSONException e) {
@@ -293,8 +283,7 @@ public class SyncActivity extends AppCompatActivity {
 
                     select = " * ";
                     filter = " (colflag != '1' or colflag is null) AND dist_id = '" + MainApp.user.getDist_id() + "' ";
-                    downloadTables.add(new SyncModel(UsersTable.TABLE_NAME, select, filter));
-                    downloadTables.add(new SyncModel("versionApp", select, filter));
+                    downloadTables.add(new SyncModel(TableContracts.ClustersTable.TABLE_NAME, select, filter));
                 }
                 MainApp.downloadData = new String[downloadTables.size()];
                 setAdapter(downloadTables);
@@ -359,7 +348,7 @@ public class SyncActivity extends AppCompatActivity {
                             System.out.println("SYSTEM onChanged: result" + result);
                             db = MainApp.appInfo.dbHelper;
                             JSONArray jsonArray = new JSONArray();
-                            final int[] insertCount = {0};
+                            //int insertCount = 0;
 
                             Method method = null;
                             for (Method method1 : db.getClass().getDeclaredMethods()) {
@@ -406,6 +395,7 @@ public class SyncActivity extends AppCompatActivity {
                                         JSONArray finalJsonArray = jsonArray;
                                         String finalTime = time;
                                         String finalSize = size;
+
                                         SyncModel downloadTable = downloadTables.get(position);
                                         new Thread(new Runnable() {
 
@@ -421,9 +411,9 @@ public class SyncActivity extends AppCompatActivity {
                                                         syncListAdapter.updatesyncList(downloadTables);
                                                     }
                                                 });
-                                                Object returnValue = null;
+                                                int insertCount = 0;
                                                 try {
-                                                    returnValue = finalMethod.invoke(db, finalJsonArray);
+                                                    insertCount = (int) finalMethod.invoke(db, finalJsonArray);
                                                 } catch (IllegalAccessException | InvocationTargetException ite) {
                                                     ite.printStackTrace();
                                                     downloadTable.setstatus("Process Failed2");
@@ -436,12 +426,11 @@ public class SyncActivity extends AppCompatActivity {
                                                         }
                                                     });
                                                 }
-                                                insertCount[0] = (int) returnValue;
 
-                                                downloadTable.setmessage("Received: " + finalJsonArray.length() + "  •  Saved: " + insertCount[0]);
-                                                downloadTable.setstatus(insertCount[0] == 0 ? "Unsuccessful" : "Successful");
+                                                downloadTable.setmessage("Received: " + finalJsonArray.length() + "  •  Saved: " + insertCount);
+                                                downloadTable.setstatus(insertCount == 0 ? "Unsuccessful" : "Successful");
                                                 downloadTables.get(position).setInfo("Time: " + finalTime + "/" + getTime() + "\t Size: " + finalSize);
-                                                downloadTable.setstatusID(insertCount[0] == 0 ? 1 : 3);
+                                                downloadTable.setstatusID(insertCount == 0 ? 1 : 3);
                                                 runOnUiThread(new Runnable() {
                                                     @Override
                                                     public void run() {
