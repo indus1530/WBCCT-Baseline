@@ -362,7 +362,7 @@ public class LoginActivity extends AppCompatActivity {
         } catch (SQLiteException e) {
             Toast.makeText(this, "SQLiteException(EntryLog)" + entryLog, Toast.LENGTH_SHORT).show();
         }
-        if (rowId != -1) {
+        if (rowId != null && rowId != -1) {
             entryLog.setId(String.valueOf(rowId));
             entryLog.setUid(entryLog.getDeviceId() + entryLog.getId());
             db.updatesEntryLogColumn(TableContracts.EntryLogTable.COLUMN_UID, entryLog.getUid(), entryLog.getId());
