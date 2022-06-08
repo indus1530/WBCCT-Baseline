@@ -78,6 +78,7 @@
     <string name="ageCalc" translatable="false">"Both Month and Year don't be zero!!"</string>
     <string name="action_database" translatable="false">Database Manager</string>
     <string name="action_data_sync" translatable="false">Sync Data</string>
+    <string name="btnReset" translatable="false">Reset</string>
     <string name="no"> No </string>
     <string name="dkn"> Don’t Know </string>
     <string name="none"> No one </string>

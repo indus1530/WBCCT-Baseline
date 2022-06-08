@@ -277,12 +277,13 @@ public class SyncActivity extends AppCompatActivity {
                     filter = " enabled = '1' ";
 
                     downloadTables.add(new SyncModel(UsersTable.TABLE_NAME));
+                    downloadTables.add(new SyncModel(TableContracts.ClustersTable.TABLE_NAME));
                     downloadTables.add(new SyncModel("versionApp"));
                 } else {
 
                     select = " * ";
                     filter = " (colflag != '1' or colflag is null) AND dist_id = '" + MainApp.user.getDist_id() + "' ";
-                    downloadTables.add(new SyncModel(TableContracts.ClustersTable.TABLE_NAME, select, filter));
+                    //downloadTables.add(new SyncModel(TableContracts.ClustersTable.TABLE_NAME, select, filter));
                 }
                 MainApp.downloadData = new String[downloadTables.size()];
                 setAdapter(downloadTables);

@@ -46,7 +46,7 @@ public class SyncModel {
 
     }
 
-    public String getTableTitle() {
+    public String /**/getTableTitle() {
         return tableTitle;
     }
 

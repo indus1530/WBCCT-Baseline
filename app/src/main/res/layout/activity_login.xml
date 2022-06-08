@@ -7,14 +7,10 @@
 
         <import type="android.view.View" />
 
-        <variable
-            name="rcpt"
-            type="edu.aku.hassannaqvi.wbcct_baseline.models.Recipient" />
     </data>
 
 
-    <FrameLayout
-        android:id="@+id/mainFrame"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/app_bg"
@@ -22,20 +18,17 @@
         android:gravity="center_horizontal"
         android:orientation="vertical">
 
-
-        <!-- CUSTOM TOOLBAR -->
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
-            style="@null"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@android:color/transparent"
-            android:minHeight="?attr/actionBarSize"
-            android:theme="@style/CustomToolbarTheme"
-            app:popupTheme="@style/CustomPopupTheme"
-            app:subtitleTextAppearance="@style/Toolbar.SubtitleText"
-            app:titleTextAppearance="@style/Toolbar.TitleText" />
-
+            android:layout_height="?attr/actionBarSize"
+            android:textAlignment="center"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:menu="@menu/language_menu"
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            app:subtitleTextColor="@color/colorPrimaryLight"
+            app:title="@string/app_name"
+            app:titleTextColor="@color/colorPrimary" />
 
         <!-- Login progress -->
         <ProgressBar
@@ -51,6 +44,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center"
+            android:background="@drawable/vignette_effect"
             android:padding="16dp">
 
             <LinearLayout
@@ -62,29 +56,13 @@
                 android:orientation="vertical"
                 android:paddingTop="8dp"
                 android:radius="8dp">
-                <!--       <com.edittextpicker.aliazaz.EditTextPicker
-                           android:id="@+id/b103"
-                           android:layout_width="match_parent"
-                           android:layout_height="match_parent"
-                           android:layoutDirection="ltr"
-                           android:textDirection="ltr"
-                           android:enabled="@{!rcpt.b10398.equals(`998`)}"
-                           android:gravity="center"
-                           android:hint="#####-#######-#"
-                           android:inputType="number"
-                           android:maxLength="13"
-                           android:text="@={rcpt.b103}"
-                           app:defaultValue="null"
-                           app:pattern="[0-9]{5,5}[0-9]{7,7}[0-9]{1,1}"
-                           app:required="true"
-                           app:type="equal" />-->
+
                 <ImageView
                     android:layout_width="180dp"
                     android:layout_height="180dp"
                     android:layout_gravity="center"
                     android:paddingTop="24dp"
                     android:src="@drawable/app_icon" />
-
 
                 <TextView
                     android:layout_width="match_parent"
@@ -135,7 +113,6 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_margin="20dp"
-                                android:layoutDirection="ltr"
                                 android:orientation="vertical">
 
                                 <EditText
@@ -206,6 +183,32 @@
 
                                 </LinearLayout>
 
+                                <!--               <LinearLayout
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="wrap_content"
+                                                   android:background="@drawable/bottom"
+                                                   android:minHeight="60dp"
+                                                   android:orientation="horizontal"
+                                                   android:visibility="gone"
+                                                   tool:visibility="visible">
+
+                                                   <TextView
+                                                       android:id="@+id/as1q01"
+                                                       style="@style/sub_labels"
+                                                       android:layout_width="wrap_content"
+                                                       android:layout_height="match_parent"
+                                                       android:gravity="center"
+                                                       android:text="@string/as1q01" />
+
+                                                   <androidx.appcompat.widget.AppCompatSpinner
+                                                       android:id="@+id/countrySwitch"
+                                                       android:layout_width="match_parent"
+                                                       android:layout_height="match_parent"
+                                                       android:prompt="@string/as1q01"
+                                                       android:spinnerMode="dropdown" />
+
+                                               </LinearLayout>-->
+
                                 <ProgressBar
                                     android:id="@+id/pbarMR"
                                     android:layout_width="wrap_content"
@@ -213,24 +216,52 @@
                                     android:layout_gravity="center"
                                     android:visibility="gone" />
 
-                                <androidx.appcompat.widget.AppCompatButton
-                                    android:id="@+id/btnSignin"
-                                    android:layout_width="150dp"
+                                <LinearLayout
+                                    android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:layout_gravity="center"
-                                    android:layout_marginTop="16dp"
-                                    android:layout_marginBottom="16dp"
-                                    android:background="@drawable/all_round_corners"
-                                    android:backgroundTint="@color/colorAccent"
-                                    android:elevation="1dp"
-                                    android:onClick="attemptLogin"
-                                    android:paddingStart="12dp"
-                                    android:paddingEnd="12dp"
-                                    android:radius="5dp"
-                                    android:text="@string/btnLogin"
-                                    android:textColor="@color/black"
-                                    android:textStyle="bold"
-                                    android:visibility="visible" />
+                                    android:gravity="center"
+                                    android:orientation="horizontal">
+
+                                    <androidx.appcompat.widget.AppCompatButton
+                                        android:id="@+id/btnSignin"
+                                        android:layout_width="120dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginTop="16dp"
+                                        android:layout_marginBottom="16dp"
+                                        android:background="@drawable/all_round_corners"
+                                        android:backgroundTint="@color/colorAccent"
+                                        android:elevation="1dp"
+                                        android:onClick="attemptLogin"
+                                        android:paddingStart="12dp"
+                                        android:paddingEnd="12dp"
+                                        android:radius="5dp"
+                                        android:text="@string/btnLogin"
+                                        android:textColor="@color/colorPrimary"
+                                        android:textStyle="bold"
+                                        android:visibility="visible" />
+
+                                    <androidx.appcompat.widget.AppCompatButton
+                                        android:id="@+id/btnReset"
+                                        android:layout_width="120dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginStart="10dp"
+                                        android:layout_marginTop="16dp"
+                                        android:layout_marginBottom="16dp"
+                                        android:background="@drawable/all_round_corners"
+                                        android:backgroundTint="@color/colorAccent"
+                                        android:elevation="1dp"
+                                        android:onClick="resetPassword"
+                                        android:paddingStart="12dp"
+                                        android:paddingEnd="12dp"
+                                        android:radius="5dp"
+                                        android:text="@string/btnReset"
+                                        android:textColor="@color/black"
+                                        android:textStyle="bold"
+                                        android:visibility="gone" />
+
+                                </LinearLayout>
 
                             </LinearLayout>
 
@@ -242,7 +273,7 @@
                                                             android:checked="false"
                                                             android:gravity="center_horizontal|center_vertical"
                                                             android:padding="8dp"
-                                                            android:text="@string/country"
+                                                            android:text="@string/clusterNo"
                                                             android:textSize="16sp" />-->
 
                             <Button
@@ -261,7 +292,7 @@
                                 android:paddingStart="12dp"
                                 android:paddingEnd="12dp"
                                 android:text="@string/downData"
-                                android:textColor="@color/colorPrimaryDark" />
+                                android:textColor="@color/white" />
                         </LinearLayout>
 
 
@@ -287,7 +318,7 @@
                                         style="@style/quesNum"
                                         android:layout_width="wrap_content"
                                         android:layout_height="match_parent"
-                                        android:text="@string/Q_b117" />
+                                        android:text="@string/Qb117" />
 
                                     <TextView
                                         android:layout_width="match_parent"
@@ -352,17 +383,14 @@
                     android:shadowDx="1"
                     android:shadowDy="1"
                     android:shadowRadius="1"
+                    android:onClick="showCredits"
                     android:text="Ver."
-                    android:textColor="#989898"
+                    android:textColor="@color/white"
                     android:textSize="11sp" />
             </LinearLayout>
 
         </ScrollView>
-        <FrameLayout
-            android:id="@+id/frameLayout"
-            android:background="#7f000000"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:visibility="gone" />
-    </FrameLayout>
+
+    </LinearLayout>
+
 </layout>

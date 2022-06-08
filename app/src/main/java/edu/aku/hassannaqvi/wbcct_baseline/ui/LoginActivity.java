@@ -386,6 +386,12 @@ public class LoginActivity extends AppCompatActivity {
         return sb.toString();
     }
 
+    public void resetPassword(View view) {
+        finish();
+        startActivity(new Intent(this, WebViewActivity.class));
+    }
+
+
     @Override
     public void onWindowFocusChanged(boolean hasFocus) {
         super.onWindowFocusChanged(hasFocus);
@@ -395,12 +401,18 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void hideSystemUI() {
+        // Enables regular immersive mode.
+        // For "lean back" mode, remove SYSTEM_UI_FLAG_IMMERSIVE.
+        // Or for "sticky immersive," replace it with SYSTEM_UI_FLAG_IMMERSIVE_STICKY
         View decorView = getWindow().getDecorView();
         decorView.setSystemUiVisibility(
                 View.SYSTEM_UI_FLAG_IMMERSIVE
+                        // Set the content to appear under the system bars so that the
+                        // content doesn't resize when the system bars hide and show.
                         | View.SYSTEM_UI_FLAG_LAYOUT_STABLE
                         | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
                         | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                        // Hide the nav bar and status bar
                         | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
                         | View.SYSTEM_UI_FLAG_FULLSCREEN);
     }
@@ -481,6 +493,7 @@ public class LoginActivity extends AppCompatActivity {
 
     }*/
 
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -495,16 +508,10 @@ public class LoginActivity extends AppCompatActivity {
             case R.id.NO:
                 return true;
 
-            case R.id.PK:
+            case R.id.UR:
                 MainApp.selectedLanguage = 1;
                 MainApp.langRTL = true;
                 break;
-
-            /*case R.id.SD:
-                MainApp.selectedLanguage = 2;
-                MainApp.langRTL = true;
-                break;*/
-
 
             default:
                 MainApp.selectedLanguage = 0;
@@ -518,11 +525,11 @@ public class LoginActivity extends AppCompatActivity {
         return true;
     }
 
-    public void attemptUnlock() {
+    /*public void attemptUnlock() {
         bi.mainFrame.setClickable(true);
         bi.frameLayout.setVisibility(View.GONE);
         MainApp.timer.start();
-    }
+    }*/
 
 
 }
