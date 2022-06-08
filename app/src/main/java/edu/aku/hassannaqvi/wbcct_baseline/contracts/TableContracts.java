@@ -106,7 +106,7 @@ public class TableContracts {
 
     public static abstract class UsersTable implements BaseColumns {
         public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
-        public static final String TABLE_NAME = "users";
+        public static final String TABLE_NAME = "Users";
         public static final String COLUMN_ID = "_id";
         public static final String COLUMN_UID = "_uid";
         public static final String COLUMN_USERNAME = "username";
@@ -122,7 +122,7 @@ public class TableContracts {
 
     public static abstract class ClustersTable implements BaseColumns {
         public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
-        public static final String TABLE_NAME = "clusters";
+        public static final String TABLE_NAME = "Clusters";
         public static final String COLUMN_ID = "_id";
         public static final String COLUMN_PROVINCE_CODE = "provinceCode";
         public static final String COLUMN_PROVINCE_NAME = "provinceName";
@@ -140,7 +140,7 @@ public class TableContracts {
 
     public static abstract class VersionTable implements BaseColumns {
         public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
-        public static final String TABLE_NAME = "versionApp";
+        public static final String TABLE_NAME = "VersionApp";
         public static final String COLUMN_ID = "_id";
         public static final String COLUMN_VERSION_PATH = "elements";
         public static final String COLUMN_VERSION_CODE = "versionCode";

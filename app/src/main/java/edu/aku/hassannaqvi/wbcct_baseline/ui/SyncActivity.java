@@ -112,7 +112,6 @@ public class SyncActivity extends AppCompatActivity {
                 new OneTimeWorkRequest.Builder(ReadJSONWorker.class)
                         .build();
         WorkManager.getInstance(this).enqueue(JSONWorker);*/
-        toKeepUnusedFunctions();
     }
 
     void setAdapter(List<SyncModel> tables) {
@@ -975,16 +974,6 @@ public class SyncActivity extends AppCompatActivity {
 
     }*/
 
-    public void toKeepUnusedFunctions() {
-        JSONArray dummylist = new JSONArray();
-
-        try {
-            db.syncUser(dummylist);
-            db.syncversionApp(dummylist);
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-    }
 
     private String getTime() {
 
