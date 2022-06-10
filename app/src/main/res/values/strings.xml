@@ -2995,10 +2995,11 @@ Has anyone ever done any of the following to you during the last 12 months?</str
     <string name="sg15inst">STEREOTYPES IN THE COMMUNITY (MEN’S PERCEPTIONS)</string>
     <string name="sg15inst1">To what extent do you think men in your community agree with the following statements?</string>
     <string name="sg15a">Women are just as capable as men of contributing to household income</string>
-    <string name="sg15a01">Disagree</string>
-    <string name="sg15a02">Partly Disagree</string>
-    <string name="sg15a03">Partly Agree</string>
-    <string name="sg15a04">Strongly Agree</string>
+    <string name="sg15a01"> Disagree </string>
+    <string name="sg15a02"> Partly Disagree </string>
+    <string name="sg15a03"> Partly Agree </string>
+    <string name="sg15a04"> Strongly Agree </string>
+    <string name="sg15a97"> Not Applicable </string>
     <string name="sg15b">A man’s job is to earn money; a woman’s job is to look after home and family</string>
     <string name="sg15b01">Disagree</string>
     <string name="sg15b02">Partly Disagree</string>

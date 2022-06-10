@@ -1531,6 +1531,8 @@ public class WEDM extends BaseObservable implements Observable {
 
     public void setSg15a(String sg15a) {
         this.sg15a = sg15a;
+        setSg15b(sg15a.equals("97") ? "" : this.sg15b);
+        setSg15c(sg15a.equals("97") ? "" : this.sg15c);
         notifyPropertyChanged(BR.sg15a);
     }
 

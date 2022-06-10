@@ -208,7 +208,6 @@ public class SectionF2Activity extends AppCompatActivity {
             if (anthroWRAList.size() > 0) {
                 i = new Intent(this, SectionF2Activity.class);
             } else {
-                finish();
                 try {
                     MainApp.wedm = db.getWEDMByUUid();
                     i = new Intent(this, SectionG1Activity.class);
