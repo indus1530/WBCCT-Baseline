@@ -196,7 +196,8 @@ public class SectionF1Activity extends AppCompatActivity {
         bi.llbtn.setVisibility(View.GONE);
         new Handler().postDelayed(() -> bi.llbtn.setVisibility(View.VISIBLE), 5000);
         if (!formValidation()) return;
-        if (anthc.getUid().isEmpty()) if (!insertNewRecord()) return;
+        /*if (anthc.getUid().isEmpty())*/
+        if (!insertNewRecord()) return;
         if (updateDB()) {
             Intent i;
             anthroChildList.remove(anthroChildListPos - 1);
