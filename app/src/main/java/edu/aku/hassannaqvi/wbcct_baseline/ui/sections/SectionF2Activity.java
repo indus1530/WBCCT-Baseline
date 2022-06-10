@@ -35,7 +35,6 @@ import edu.aku.hassannaqvi.wbcct_baseline.contracts.TableContracts;
 import edu.aku.hassannaqvi.wbcct_baseline.core.MainApp;
 import edu.aku.hassannaqvi.wbcct_baseline.database.DatabaseHelper;
 import edu.aku.hassannaqvi.wbcct_baseline.databinding.ActivitySectionF2Binding;
-import edu.aku.hassannaqvi.wbcct_baseline.models.AnthroChild;
 import edu.aku.hassannaqvi.wbcct_baseline.models.AnthroWRA;
 import edu.aku.hassannaqvi.wbcct_baseline.models.FamilyMembers;
 import edu.aku.hassannaqvi.wbcct_baseline.ui.EndingActivity;
@@ -89,7 +88,7 @@ public class SectionF2Activity extends AppCompatActivity {
                 bi.f201.setText(null);
                 anthroWRAListPos = -1;
                 MainApp.selectedChild = "";
-                anthc = new AnthroChild();
+                anthw = new AnthroWRA();
                 familyMember = new FamilyMembers();
 
                 if (position == 0) return;
@@ -201,7 +200,7 @@ public class SectionF2Activity extends AppCompatActivity {
         bi.llbtn.setVisibility(View.GONE);
         new Handler().postDelayed(() -> bi.llbtn.setVisibility(View.VISIBLE), 5000);
         if (!formValidation()) return;
-        if (!insertNewRecord()) return;
+        if (anthc.getUid().isEmpty()) if (!insertNewRecord()) return;
         if (updateDB()) {
             Intent i = new Intent();
             anthroWRAList.remove(anthroWRAListPos - 1);

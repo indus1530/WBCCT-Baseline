@@ -101,7 +101,6 @@ public class SectionF1Activity extends AppCompatActivity {
                 familyMember = MainApp.familyList.get(Integer.parseInt(MainApp.selectedChild) - 1);
                 try {
                     anthc = db.getAnthroChilByFmUID(familyMember.getUid());
-
                 } catch (JSONException e) {
                     e.printStackTrace();
                     Toast.makeText(SectionF1Activity.this, "JSONException (AnthroChild): " + e.getMessage(), Toast.LENGTH_LONG).show();
@@ -197,7 +196,7 @@ public class SectionF1Activity extends AppCompatActivity {
         bi.llbtn.setVisibility(View.GONE);
         new Handler().postDelayed(() -> bi.llbtn.setVisibility(View.VISIBLE), 5000);
         if (!formValidation()) return;
-        if (!insertNewRecord()) return;
+        if (anthc.getUid().isEmpty()) if (!insertNewRecord()) return;
         if (updateDB()) {
             Intent i;
             anthroChildList.remove(anthroChildListPos - 1);
