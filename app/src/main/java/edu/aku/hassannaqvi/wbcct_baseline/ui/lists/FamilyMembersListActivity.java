@@ -141,7 +141,7 @@ public class FamilyMembersListActivity extends AppCompatActivity {
                          *
                          */
                         if (MainApp.familyMember.getA214().equals("1")) {
-                            if ((Integer.parseInt(MainApp.familyMember.getA206y()) < 2)) {
+                            if ((Integer.parseInt(MainApp.familyMember.getA206y()) < 5)) {
                                 anthroChildList.add(Integer.valueOf(MainApp.familyMember.getA201()));
                             }
                             if (
