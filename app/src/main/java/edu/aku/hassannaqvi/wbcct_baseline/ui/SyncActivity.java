@@ -76,6 +76,8 @@ public class SyncActivity extends AppCompatActivity {
     private long tStart;
     private String progress;
     private long startTime;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -107,6 +109,7 @@ public class SyncActivity extends AppCompatActivity {
         WorkManager.getInstance(this).enqueue(JSONWorker);*/
     }
 
+
     void setAdapter(List<SyncModel> tables) {
         syncListAdapter = new SyncListAdapter(tables);
         RecyclerView.LayoutManager mLayoutManager2 = new LinearLayoutManager(getApplicationContext());
@@ -121,12 +124,14 @@ public class SyncActivity extends AppCompatActivity {
         }
     }
 
+
     @Override
     public void onBackPressed() {
         super.onBackPressed();
         setResult(RESULT_OK);
         finish();
     }
+
 
     @SuppressLint("NonConstantResourceId")
     public void ProcessStart(View view) {
@@ -279,12 +284,12 @@ public class SyncActivity extends AppCompatActivity {
                     downloadTables.add(new SyncModel(UsersTable.TABLE_NAME));
                     downloadTables.add(new SyncModel(TableContracts.ClustersTable.TABLE_NAME));
                     downloadTables.add(new SyncModel("versionApp"));
-                } else {
+                } /*else {
 
-                    select = " * ";
-                    filter = " (colflag != '1' or colflag is null) AND dist_id = '" + MainApp.user.getDist_id() + "' ";
+                    //select = " * ";
+                    //filter = " (colflag != '1' or colflag is null) AND dist_id = '" + MainApp.user.getDist_id() + "' ";
                     //downloadTables.add(new SyncModel(TableContracts.ClustersTable.TABLE_NAME, select, filter));
-                }
+                }*/
                 MainApp.downloadData = new String[downloadTables.size()];
                 setAdapter(downloadTables);
                 BeginDownload();
@@ -294,6 +299,7 @@ public class SyncActivity extends AppCompatActivity {
                 throw new IllegalStateException("Unexpected value: " + view.getId());
         }
     }
+
 
     private void BeginDownload() {
 
@@ -554,6 +560,7 @@ public class SyncActivity extends AppCompatActivity {
         });
     }
 
+
     private void BeginUpload() {
 
         Constraints constraints = new Constraints.Builder()
@@ -743,6 +750,7 @@ public class SyncActivity extends AppCompatActivity {
 
     }
 
+
     public void UploadPhotos(View view) {
         bi.dataLayout.setVisibility(View.GONE);
         bi.photoLayout.setVisibility(View.VISIBLE);
@@ -878,6 +886,7 @@ public class SyncActivity extends AppCompatActivity {
         }
     }
 
+
     private void upDatePhotoCount() {
         if (sdDir.exists()) {
             Log.d("DIR", "onCreate: " + sdDir.getName());
@@ -927,6 +936,7 @@ public class SyncActivity extends AppCompatActivity {
         }
     }
 
+
     private void sortBySize(File[] files) {
         Arrays.sort(files, new Comparator<File>() {
             @Override
@@ -973,6 +983,7 @@ public class SyncActivity extends AppCompatActivity {
 
         return toMinutes > 0 ? toMinutes + "m " + toSeconds + "s" : toSeconds > 0 ? TimeUnit.MILLISECONDS.toSeconds(timeElapsed) + "s" : timeElapsed + "ms";
     }
+
 
     public void btnContinue(View view) {
         finish();

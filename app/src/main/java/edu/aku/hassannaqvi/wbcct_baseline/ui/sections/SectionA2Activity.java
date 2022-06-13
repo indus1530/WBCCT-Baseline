@@ -91,6 +91,7 @@ public class SectionA2Activity extends AppCompatActivity {
                         Calendar.getInstance().get(Calendar.MONTH) + 1 : 12f);
                 bi.a205d.setMaxvalue(Integer.parseInt(bi.a205y.getText().toString()) == Calendar.getInstance().get(Calendar.YEAR) ?
                         Calendar.getInstance().get(Calendar.DAY_OF_MONTH) : 31f);
+                bi.a205m.setEnabled(true);
             }
 
             @Override
@@ -110,6 +111,7 @@ public class SectionA2Activity extends AppCompatActivity {
                 bi.a205d.setMaxvalue(Integer.parseInt(bi.a205y.getText().toString()) == Calendar.getInstance().get(Calendar.YEAR)
                         && Integer.parseInt(bi.a205m.getText().toString()) == Calendar.getInstance().get(Calendar.MONTH) + 1 ?
                         Calendar.getInstance().get(Calendar.DAY_OF_MONTH) : 31f);
+                bi.a205d.setEnabled(true);
             }
 
             @Override

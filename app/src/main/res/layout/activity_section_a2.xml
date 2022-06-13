@@ -543,21 +543,21 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:text="@string/a205d" />
+                                android:text="@string/a205y" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
-                                android:id="@+id/a205d"
+                                android:id="@+id/a205y"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:gravity="center"
-                                android:hint="##"
+                                android:hint="####"
                                 android:inputType="number"
-                                android:maxLength="2"
-                                android:text="@={familymember.a205d}"
-                                app:defaultValue="98"
-                                app:maxValue="31"
-                                app:minValue="1"
+                                android:maxLength="4"
+                                android:text="@={familymember.a205y}"
+                                app:defaultValue="9998"
+                                app:maxValue="0"
+                                app:minValue="0"
                                 app:type="range" />
 
                             <View
@@ -576,6 +576,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
+                                android:enabled="false"
                                 android:gravity="center"
                                 android:hint="##"
                                 android:inputType="number"
@@ -595,21 +596,22 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:text="@string/a205y" />
+                                android:text="@string/a205d" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
-                                android:id="@+id/a205y"
+                                android:id="@+id/a205d"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
+                                android:enabled="false"
                                 android:gravity="center"
-                                android:hint="####"
+                                android:hint="##"
                                 android:inputType="number"
-                                android:maxLength="4"
-                                android:text="@={familymember.a205y}"
-                                app:defaultValue="9998"
-                                app:maxValue="0"
-                                app:minValue="0"
+                                android:maxLength="2"
+                                android:text="@={familymember.a205d}"
+                                app:defaultValue="98"
+                                app:maxValue="31"
+                                app:minValue="1"
                                 app:type="range" />
 
                         </LinearLayout>
