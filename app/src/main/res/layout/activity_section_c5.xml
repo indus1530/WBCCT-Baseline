@@ -244,8 +244,8 @@
                                 android:inputType="number"
                                 android:maxLength="3"
                                 android:text="@={mwra.c5013}"
-                                app:maxValue="100"
-                                app:minValue="0"
+                                app:maxValue="270"
+                                app:minValue="1"
                                 app:type="range" />
 
                         </LinearLayout>
@@ -409,8 +409,8 @@
                                 android:inputType="number"
                                 android:maxLength="3"
                                 android:text="@={mwra.c5023}"
-                                app:maxValue="100"
-                                app:minValue="0"
+                                app:maxValue="270"
+                                app:minValue="1"
                                 app:type="range" />
 
                         </LinearLayout>
@@ -574,8 +574,8 @@
                                 android:inputType="number"
                                 android:maxLength="3"
                                 android:text="@={mwra.c5033}"
-                                app:maxValue="100"
-                                app:minValue="0"
+                                app:maxValue="270"
+                                app:minValue="1"
                                 app:type="range" />
 
                         </LinearLayout>
@@ -764,8 +764,8 @@
                                 android:inputType="number"
                                 android:maxLength="3"
                                 android:text="@={mwra.c5043}"
-                                app:maxValue="100"
-                                app:minValue="0"
+                                app:maxValue="270"
+                                app:minValue="1"
                                 app:type="range" />
 
                         </LinearLayout>
